@@ -1,16 +1,12 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
 
 export const useToggleStore = defineStore("toggle", {
-  state: () => {
-    return { show: null };
-  },
-
+  state: () => ({
+    show: false,
+  }),
   actions: {
-    async toggleShow() {
-      const show = ref(false);
-      show.value = !show.value;
-      console.log(show.value);
+    toggleShow() {
+      this.show = !this.show;
     },
   },
 });
