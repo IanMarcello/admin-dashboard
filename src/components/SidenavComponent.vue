@@ -7,12 +7,12 @@ const toggleStore = useToggleStore();
 
 <template>
   <nav
-    class="order-first w-64 px-2 transition-transform -translate-x-full bg-white border-r sm:flex dark:border-slate-500 border-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 md:translate-x-0 md:shadow-lg"
-    :class="toggleStore.show ? 'translate-x-0 ' : '-translate-x-full'"
+    class="fixed w-full px-2 transition-transform -translate-x-full bg-white border-r-0 top-20 sm:top-0 sm:relative sm:order-first sm:border-r sm:w-64 sm:flex dark:border-slate-500 border-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 md:translate-x-0 md:shadow-lg"
+    :class="toggleStore.show ? 'translate-x-0 shadow-lg' : '-translate-x-full'"
   >
     <div class="flex flex-col justify-between h-full px-3 py-4">
       <div
-        class="flex overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
+        class="mb-2 overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
       >
         <ul>
           <li>
@@ -63,7 +63,7 @@ const toggleStore = useToggleStore();
           <li>
             <Disclosure v-slot="{ open }">
               <DisclosureButton
-                class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
               >
                 <span class="material-symbols-outlined"> fast_forward </span>
                 <span class="ml-3">Dummy Link #6</span>
@@ -78,30 +78,33 @@ const toggleStore = useToggleStore();
                   expand_more
                 </span>
               </DisclosureButton>
-              <DisclosurePanel class="pb-2 pl-10 text-sm text-gray-500">
+
+              <DisclosurePanel
+                class="pb-2 pl-10 mr-5 text-sm text-gray-500 sm:mr-0 l-3"
+              >
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #5</span>
+                  <span class="ml-3">Dummy Link #6-1</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #5</span>
+                  <span class="ml-3">Dummy Link #6-2</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #5</span>
+                  <span class="ml-3">Dummy Link #6-3</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #5</span>
+                  <span class="ml-3">Dummy Link #6-4</span>
                 </router-link>
               </DisclosurePanel>
             </Disclosure>
@@ -109,18 +112,9 @@ const toggleStore = useToggleStore();
         </ul>
       </div>
 
-      <div class="flex md:hidden">
+      <div class="md:hidden">
         <ul>
-          <hr class="w-full mb-2 sm:w-42" />
-          <li>
-            <router-link
-              :to="{ name: '' }"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
-            >
-              <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #6</span>
-            </router-link>
-          </li>
+          <hr class="mb-2 border-1" />
           <li>
             <router-link
               :to="{ name: '' }"
@@ -130,13 +124,22 @@ const toggleStore = useToggleStore();
               <span class="ml-3">Dummy Link #7</span>
             </router-link>
           </li>
+          <li>
+            <router-link
+              :to="{ name: '' }"
+              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+            >
+              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="ml-3">Dummy Link #8</span>
+            </router-link>
+          </li>
 
           <li>
             <a
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #8</span>
+              <span class="ml-3">Dummy Link #9</span>
             </a>
           </li>
         </ul>

@@ -19,29 +19,23 @@
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute right-0 z-20 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute right-0 z-20 mt-2 origin-top-right bg-white divide-y rounded-md shadow-lg divide-slate-400 dark:divide-slate-200 dark:bg-slate-800 w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <div class="px-1 py-1">
-          <MenuItem v-slot="{ active }">
+          <MenuItem>
             <button
               @click="$i18n.locale = 'en'"
-              :class="[
-                active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-              ]"
+              class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               English
             </button>
           </MenuItem>
         </div>
         <div class="px-1 py-1">
-          <MenuItem v-slot="{ active }">
+          <MenuItem>
             <button
               @click="$i18n.locale = 'sw'"
-              :class="[
-                active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-              ]"
+              class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               Swahili
             </button>
