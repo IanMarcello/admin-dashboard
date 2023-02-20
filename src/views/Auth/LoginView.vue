@@ -1,6 +1,7 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
+import AuthLocaleComponent from "@/components/AuthLocaleComponent.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -15,21 +16,21 @@ const login = async () => {
 </script>
 
 <template>
-  <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <div class="flex flex-col justify-center min-h-full py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <router-link :to="{ name: 'home' }"
+      <!-- <router-link :to="{ name: 'home' }"
         ><img
-          class="mx-auto h-12 w-auto"
+          class="w-auto h-12 mx-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
           alt="Your Company"
         />
-      </router-link>
+      </router-link> -->
       <h2
-        class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"
+        class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900"
       >
         {{ $t("login_account") }}
       </h2>
-      <p class="mt-2 text-center text-sm text-gray-600">
+      <p class="mt-2 text-sm text-center text-gray-600">
         {{ $t("no_account") }},
         {{ " " }}
         <router-link
@@ -41,7 +42,7 @@ const login = async () => {
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
         <form class="space-y-6" @submit.prevent="login">
           <div>
             <label
@@ -57,7 +58,7 @@ const login = async () => {
                 autocomplete="email"
                 required
                 v-model="authStore.email"
-                class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
@@ -76,7 +77,7 @@ const login = async () => {
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
-                class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
@@ -87,11 +88,11 @@ const login = async () => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
               />
               <label
                 for="remember-me"
-                class="ml-2 block text-sm text-gray-900"
+                class="block ml-2 text-sm text-gray-900"
                 >{{ $t("remember_me") }}</label
               >
             </div>
@@ -108,7 +109,7 @@ const login = async () => {
           <div>
             <button
               type="submit"
-              class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               {{ $t("login") }}
             </button>
@@ -121,21 +122,21 @@ const login = async () => {
               <div class="w-full border-t border-gray-300" />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="bg-white px-2 text-gray-500">{{
+              <span class="px-2 text-gray-500 bg-white">{{
                 $t("continue_with")
               }}</span>
             </div>
           </div>
 
-          <div class="mt-6 grid grid-cols-3 gap-3">
+          <div class="grid grid-cols-3 gap-3 mt-6">
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
               >
                 <span class="sr-only">Sign in with Facebook</span>
                 <svg
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -152,11 +153,11 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
               >
                 <span class="sr-only">Sign in with Twitter</span>
                 <svg
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -171,11 +172,11 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
               >
                 <span class="sr-only">Sign in with GitHub</span>
                 <svg
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -189,6 +190,21 @@ const login = async () => {
               </router-link>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed bottom-0 w-screen">
+      <div class="flex items-center justify-center">
+        <AuthLocaleComponent />
+
+        <div class="pr-2">
+          <span
+            @click="toggleDark()"
+            class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
+          >
+            light_mode
+          </span>
         </div>
       </div>
     </div>
