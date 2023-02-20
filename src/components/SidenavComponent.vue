@@ -7,7 +7,7 @@ const toggleStore = useToggleStore();
 
 <template>
   <nav
-    class="fixed w-full px-2 transition-transform -translate-x-full bg-white border-r-0 top-20 sm:top-0 sm:relative sm:order-first sm:border-r sm:w-64 sm:flex dark:border-slate-500 border-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 md:translate-x-0 md:shadow-lg"
+    class="fixed w-full px-2 transition-transform -translate-x-full bg-white border-r-0 max-h-fit top-20 sm:top-0 sm:relative sm:order-first sm:border-r sm:w-64 sm:flex dark:border-slate-500 border-slate-300 text-slate-900 dark:bg-slate-800 dark:text-slate-200 md:translate-x-0 md:shadow-lg"
     :class="toggleStore.show ? 'translate-x-0 shadow-lg' : '-translate-x-full'"
   >
     <div class="flex flex-col justify-between h-full px-3 py-4">
