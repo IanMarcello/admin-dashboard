@@ -16,6 +16,16 @@ export default defineConfig({
       ),
     }),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://restapi.adequateshop.com/api/",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
