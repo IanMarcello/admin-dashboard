@@ -7,15 +7,14 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
 </script>
 
 <template>
-  <main
-    class="flex flex-1 -mt-c70 sm:-mt-0 text-center sm:items-center justify-center"
-  >
+  <main class="flex justify-center flex-1 text-center sm:items-center">
     <div>
       <p class="text-base font-semibold text-indigo-600">
-        {{ $t("welcome") }},
+        <!-- {{ $t("welcome") }}, -->
+        WELCOME,
       </p>
       <h1
-        class="capitalize text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+        class="text-4xl font-bold tracking-tight text-gray-900 capitalize sm:text-5xl"
       >
         {{ user }}
       </h1>
@@ -25,7 +24,8 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
           :to="{ name: 'todo' }"
           class="text-base font-medium text-indigo-600 hover:text-indigo-500"
         >
-          {{ $t("see_task") }}
+          <!-- {{ $t("see_task") }} -->
+          SEE YOUR TASKS
           <span aria-hidden="true"> &rarr;</span>
         </router-link>
       </div>
