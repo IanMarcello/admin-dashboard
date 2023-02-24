@@ -25,7 +25,7 @@
           <MenuItem>
             <button
               @click="$i18n.locale = 'en'"
-              class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+              class="flex items-center w-full px-2 py-2 text-sm rounded-lg text-slate-900 dark:text-slate-200 group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               English
             </button>
@@ -35,7 +35,7 @@
           <MenuItem>
             <button
               @click="$i18n.locale = 'sw'"
-              class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+              class="flex items-center w-full px-2 py-2 text-sm rounded-lg text-slate-900 dark:text-slate-200 group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               Swahili
             </button>
