@@ -1,7 +1,11 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import AuthLocaleComponent from "@/components/AuthLocaleComponent.vue";
+import LocaleComponent from "@/components/LocaleComponent.vue";
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -15,8 +19,12 @@ const register = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center min-h-full py-6 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+  <div
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
+  >
+    <div
+      class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
+    >
       <!-- <router-link :to="{ name: 'home' }">
         <img
           class="w-auto h-12 mx-auto"
@@ -24,12 +32,10 @@ const register = async () => {
           alt="Your Company"
         />
       </router-link> -->
-      <h2
-        class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900"
-      >
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("register") }}
       </h2>
-      <p class="mt-2 text-sm text-center text-gray-600">
+      <p class="mt-2 text-sm text-center text-slate-600 dark:text-slate-400">
         {{ $t("have_account") }},
         {{ " " }}
         <router-link
@@ -41,10 +47,12 @@ const register = async () => {
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+      <div
+        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+      >
         <form class="space-y-6" @submit.prevent="register">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">{{
+            <label for="name" class="block text-sm font-medium">{{
               $t("full_name")
             }}</label>
             <div class="mt-1">
@@ -52,60 +60,54 @@ const register = async () => {
                 id="name"
                 name="name"
                 type="text"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.name"
               />
             </div>
           </div>
 
           <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-700"
-              >{{ $t("email_address") }}</label
-            >
+            <label for="email" class="block text-sm font-medium">{{
+              $t("email_address")
+            }}</label>
             <div class="mt-1">
               <input
                 id="email"
                 name="email"
                 type="email"
                 autocomplete="email"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.email"
               />
             </div>
           </div>
 
           <div>
-            <label
-              for="password"
-              class="block text-sm font-medium text-gray-700"
-              >{{ $t("password") }}</label
-            >
+            <label for="password" class="block text-sm font-medium">{{
+              $t("password")
+            }}</label>
             <div class="mt-1">
               <input
                 id="password"
                 name="password"
                 type="password"
                 autocomplete="current-password"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.password"
               />
             </div>
           </div>
 
           <div>
-            <label
-              for="confirm_password"
-              class="block text-sm font-medium text-gray-700"
-              >{{ $t("confirm_password") }}</label
-            >
+            <label for="confirm_password" class="block text-sm font-medium">{{
+              $t("confirm_password")
+            }}</label>
             <div class="mt-1">
               <input
                 id="confirm_password"
                 name="confirm_password"
                 type="password"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.confirm_password"
               />
             </div>
@@ -124,10 +126,12 @@ const register = async () => {
         <div class="mt-6">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-gray-300" />
+              <div
+                class="w-full border-t border-slate-300 dark:border-slate-700"
+              />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 text-gray-500 bg-white">{{
+              <span class="px-2 rounded bg-slate-100 dark:bg-slate-700">{{
                 $t("register_with")
               }}</span>
             </div>
@@ -137,7 +141,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-500 border-slate-300 text-slate-500 hover:bg-slate-50"
               >
                 <span class="sr-only">Sign up with Facebook</span>
                 <svg
@@ -158,7 +162,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-white text-slate-500 border-slate-300 hover:bg-slate-50"
               >
                 <span class="sr-only">Sign up with Twitter</span>
                 <svg
@@ -177,7 +181,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-white text-slate-500 border-slate-300 hover:bg-slate-50"
               >
                 <span class="sr-only">Sign up with GitHub</span>
                 <svg
@@ -199,18 +203,16 @@ const register = async () => {
       </div>
     </div>
 
-    <div class="fixed bottom-0 w-screen">
-      <div class="flex items-center justify-center">
-        <AuthLocaleComponent />
+    <div class="flex items-center justify-center gap-3 mt-8">
+      <LocaleComponent />
 
-        <div class="pr-2">
-          <span
-            @click="toggleDark()"
-            class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-          >
-            light_mode
-          </span>
-        </div>
+      <div class="pr-2">
+        <span
+          @click="toggleDark()"
+          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
+        >
+          light_mode
+        </span>
       </div>
     </div>
   </div>
