@@ -22,17 +22,23 @@ const register = async () => {
   <div
     class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
   >
+    <div class="flex items-center justify-end gap-3">
+      <LocaleComponent />
+
+      <div class="pr-2">
+        <span
+          @click="toggleDark()"
+          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
+        >
+          light_mode
+        </span>
+      </div>
+    </div>
+
     <div
       class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
     >
-      <!-- <router-link :to="{ name: 'home' }">
-        <img
-          class="w-auto h-12 mx-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          alt="Your Company"
-        />
-      </router-link> -->
-      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-center">
         {{ $t("register") }}
       </h2>
       <p class="mt-2 text-sm text-center text-slate-600 dark:text-slate-400">
@@ -48,7 +54,7 @@ const register = async () => {
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
-        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 rounded-md bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
       >
         <form class="space-y-6" @submit.prevent="register">
           <div>
@@ -141,7 +147,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-500 border-slate-300 text-slate-500 hover:bg-slate-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with Facebook</span>
                 <svg
@@ -162,7 +168,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-white text-slate-500 border-slate-300 hover:bg-slate-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with Twitter</span>
                 <svg
@@ -181,7 +187,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-white text-slate-500 border-slate-300 hover:bg-slate-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with GitHub</span>
                 <svg
@@ -200,19 +206,6 @@ const register = async () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="flex items-center justify-center gap-3 mt-8">
-      <LocaleComponent />
-
-      <div class="pr-2">
-        <span
-          @click="toggleDark()"
-          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
-        >
-          light_mode
-        </span>
       </div>
     </div>
   </div>

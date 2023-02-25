@@ -1,68 +1,63 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
 import LocaleComponent from "@/components/LocaleComponent.vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
-const router = useRouter();
+// const router = useRouter();
 const authStore = useAuthStore();
 const toggleDark = useToggle(isDark);
 
-const register = async () => {
-  const response = await authStore.register();
-  if (response.status == 201 || response.status == 200) {
-    router.push({ name: "login" });
-  }
-};
+// const register = async () => {
+//   const response = await authStore.register();
+//   if (response.status == 201 || response.status == 200) {
+//     router.push({ name: "login" });
+//   }
+// };
 </script>
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen sm:px-0 bg-slate-100 dark:bg-slate-900"
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
   >
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <!-- <router-link :to="{ name: 'home' }">
-        <img
-          class="w-auto h-12 mx-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          alt="Your Company"
-        />
-      </router-link> -->
-      <h2
-        class="mt-6 text-3xl font-bold tracking-tight text-center text-slate-900 dark:text-slate-200"
-      >
+    <div class="flex items-center justify-center gap-3">
+      <LocaleComponent />
+
+      <div class="pr-2">
+        <span
+          @click="toggleDark()"
+          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
+        >
+          light_mode
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
+    >
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("") }} Reset Password
       </h2>
-      <p class="mt-2 text-sm text-center text-gray-600">
-        <!-- {{ $t("have_account") }}, -->
-        <!-- {{ " " }}
-        <router-link
-          :to="{ name: 'login' }"
-          class="font-medium text-indigo-600 hover:text-indigo-500"
-          >{{ $t("Log In") }}</router-link
-        > -->
-      </p>
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
-        class="px-4 py-8 shadow-lg bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 rounded-md bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
       >
-        <form class="space-y-6" @submit.prevent="register">
+        <form class="space-y-6" @submit.prevent="password_reset">
           <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-slate-700 dark:text-slate-200"
-              >{{ $t("email_address") }}</label
-            >
+            <label for="email" class="block text-sm font-medium">{{
+              $t("email_address")
+            }}</label>
             <div class="mt-1">
               <input
                 id="email"
                 name="email"
                 type="email"
                 autocomplete="email"
-                class="block w-full px-3 py-2 border border-gray-200 rounded-md shadow-sm appearance-none dark:border-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.email"
               />
             </div>
@@ -80,16 +75,31 @@ const register = async () => {
       </div>
     </div>
 
-    <div class="flex items-center justify-center gap-3 mt-8">
-      <LocaleComponent />
+    <div
+      class="flex mt-8 items-center justify-evenly sm:mx-auto sm:w-full sm:max-w-md"
+    >
+      <div class="pr-2">
+        <div>
+          <router-link
+            :to="{ name: 'register' }"
+            class="text-base font-medium text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-500"
+          >
+            <span aria-hidden="true"> &larr;</span>
+            Register
+          </router-link>
+        </div>
+      </div>
 
       <div class="pr-2">
-        <span
-          @click="toggleDark()"
-          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
-        >
-          light_mode
-        </span>
+        <div>
+          <router-link
+            :to="{ name: 'login' }"
+            class="text-base font-medium text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-500"
+          >
+            Login
+            <span aria-hidden="true"> &rarr;</span>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>

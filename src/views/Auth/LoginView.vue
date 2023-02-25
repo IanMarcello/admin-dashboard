@@ -1,10 +1,13 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import AuthLocaleComponent from "@/components/AuthLocaleComponent.vue";
+import LocaleComponent from "@/components/LocaleComponent.vue";
+import { useDark, useToggle } from "@vueuse/core";
 
 const router = useRouter();
+const isDark = useDark();
 const authStore = useAuthStore();
+const toggleDark = useToggle(isDark);
 
 const login = async () => {
   const response = await authStore.login();
@@ -16,21 +19,29 @@ const login = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col justify-center min-h-full py-12 sm:px-6 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <!-- <router-link :to="{ name: 'home' }"
-        ><img
-          class="w-auto h-12 mx-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          alt="Your Company"
-        />
-      </router-link> -->
-      <h2
-        class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900"
-      >
+  <div
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
+  >
+    <div class="flex items-center justify-end gap-3">
+      <LocaleComponent />
+
+      <div class="pr-2">
+        <span
+          @click="toggleDark()"
+          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
+        >
+          light_mode
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
+    >
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("login_account") }}
       </h2>
-      <p class="mt-2 text-sm text-center text-gray-600">
+      <p class="mt-2 text-sm text-center text-slate-600 dark:text-slate-400">
         {{ $t("no_account") }},
         {{ " " }}
         <router-link
@@ -42,14 +53,14 @@ const login = async () => {
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+      <div
+        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 rounded-md bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+      >
         <form class="space-y-6" @submit.prevent="login">
           <div>
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-700"
-              >{{ $t("email_address") }}</label
-            >
+            <label for="email" class="block text-sm font-medium">{{
+              $t("email_address")
+            }}</label>
             <div class="mt-1">
               <input
                 id="email"
@@ -58,17 +69,15 @@ const login = async () => {
                 autocomplete="email"
                 required
                 v-model="authStore.email"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
 
           <div>
-            <label
-              for="password"
-              class="block text-sm font-medium text-gray-700"
-              >{{ $t("password") }}</label
-            >
+            <label for="password" class="block text-sm font-medium">{{
+              $t("password")
+            }}</label>
             <div class="mt-1">
               <input
                 id="password"
@@ -77,7 +86,7 @@ const login = async () => {
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
-                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               />
             </div>
           </div>
@@ -90,16 +99,14 @@ const login = async () => {
                 type="checkbox"
                 class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
               />
-              <label
-                for="remember-me"
-                class="block ml-2 text-sm text-gray-900"
-                >{{ $t("remember_me") }}</label
-              >
+              <label for="remember-me" class="block ml-2 text-sm">{{
+                $t("remember_me")
+              }}</label>
             </div>
 
             <div class="text-sm">
               <router-link
-                :to="{}"
+                :to="{ name: 'forgot' }"
                 class="font-medium text-indigo-600 hover:text-indigo-500"
                 >{{ $t("forgot_password") }}?</router-link
               >
@@ -119,10 +126,12 @@ const login = async () => {
         <div class="mt-6">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-gray-300" />
+              <div
+                class="w-full border-t border-slate-300 dark:border-slate-700"
+              />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 text-gray-500 bg-white">{{
+              <span class="px-2 rounded bg-slate-100 dark:bg-slate-700">{{
                 $t("continue_with")
               }}</span>
             </div>
@@ -132,7 +141,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign in with Facebook</span>
                 <svg
@@ -153,7 +162,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign in with Twitter</span>
                 <svg
@@ -172,7 +181,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign in with GitHub</span>
                 <svg
@@ -190,21 +199,6 @@ const login = async () => {
               </router-link>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="fixed bottom-0 w-screen">
-      <div class="flex items-center justify-center">
-        <AuthLocaleComponent />
-
-        <div class="pr-2">
-          <span
-            @click="toggleDark()"
-            class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-          >
-            light_mode
-          </span>
         </div>
       </div>
     </div>
