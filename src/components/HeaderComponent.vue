@@ -1,14 +1,25 @@
 <script setup>
 import { useToggleStore } from "@/stores/state";
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
 import LocaleComponent from "@/components/LocaleComponent.vue";
 import ProfileComponent from "@/components/ProfileComponent.vue";
-
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
-const toggleDark = useToggle(isDark);
+const router = useRouter();
+const authStore = useAuthStore();
 
+const toggleDark = useToggle(isDark);
 const toggleStore = useToggleStore();
+
+const user = JSON.parse(sessionStorage.getItem("user"));
+
+const logout = async () => {
+  await authStore.logout();
+
+  router.push({ name: "login" });
+};
 </script>
 
 <template>
@@ -48,26 +59,32 @@ const toggleStore = useToggleStore();
             </span>
           </div>
           <div>
-            <ProfileComponent />
+            <ProfileComponent
+              v-if="!(typeof user === undefined || user === null)"
+            />
           </div>
           <div>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'login' }"
+              v-if="typeof user === undefined || user === null"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Dummy Link #10</router-link
+              >Login</router-link
             >
           </div>
           <div>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'register' }"
+              v-if="typeof user === undefined || user === null"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Dummy Link #11</router-link
+              >Register</router-link
             >
           </div>
           <div>
             <a
+              v-if="!(typeof user === undefined || user === null)"
+              @click="logout"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Dummy Link #12</a
+              >Logout</a
             >
           </div>
         </div>

@@ -1,8 +1,20 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
 import { useToggleStore } from "@/stores/state";
 
 const toggleStore = useToggleStore();
+const router = useRouter();
+const authStore = useAuthStore();
+
+const user = JSON.parse(sessionStorage.getItem("user"));
+
+const logout = async () => {
+  await authStore.logout();
+
+  router.push({ name: "login" });
+};
 </script>
 
 <template>
@@ -117,29 +129,33 @@ const toggleStore = useToggleStore();
           <hr class="mb-2 border-1" />
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'login' }"
+              v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #7</span>
+              <span class="material-symbols-outlined"> login </span>
+              <span class="ml-3">Login</span>
             </router-link>
           </li>
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'register' }"
+              v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #8</span>
+              <span class="material-symbols-outlined"> app_registration </span>
+              <span class="ml-3">Register</span>
             </router-link>
           </li>
 
           <li>
             <a
+              v-if="!(typeof user === undefined || user === null)"
+              @click="logout"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #9</span>
+              <span class="material-symbols-outlined"> logout </span>
+              <span class="ml-3">Logout</span>
             </a>
           </li>
         </ul>
