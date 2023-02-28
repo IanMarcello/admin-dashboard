@@ -38,10 +38,9 @@ const logout = async () => {
             </span>
           </a>
           <router-link class="" :to="{ name: '' }">
-            <span class="sr-only">Your Company</span>
             <span
               class="text-base font-medium cursor-pointer text-slate-900 dark:text-slate-200 sm:inline-block sm:px-4"
-              >Logo</span
+              >{{ $t("header.logo") }}</span
             >
           </router-link>
         </div>
@@ -68,7 +67,7 @@ const logout = async () => {
               :to="{ name: 'login' }"
               v-if="typeof user === undefined || user === null"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Login</router-link
+              >{{ $t("header.login") }}</router-link
             >
           </div>
           <div>
@@ -76,7 +75,7 @@ const logout = async () => {
               :to="{ name: 'register' }"
               v-if="typeof user === undefined || user === null"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Register</router-link
+              >{{ $t("header.register") }}</router-link
             >
           </div>
           <div>
@@ -84,7 +83,7 @@ const logout = async () => {
               v-if="!(typeof user === undefined || user === null)"
               @click="logout"
               class="hidden px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >Logout</a
+              >{{ $t("header.logout") }}</a
             >
           </div>
         </div>

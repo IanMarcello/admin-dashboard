@@ -34,7 +34,7 @@
             <button
               class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              Dummy Link #12
+              {{ $t("profile.link") }}#12
             </button>
           </MenuItem>
         </div>
@@ -43,7 +43,7 @@
             <button
               class="flex items-center w-full px-2 py-2 text-sm rounded-lg group hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              Dummy Link #13
+              {{ $t("profile.link") }}#13
             </button>
           </MenuItem>
         </div>

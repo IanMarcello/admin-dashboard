@@ -33,7 +33,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #1</span>
+              <span class="ml-3">{{ $t("sidenav.link") }}#1</span>
             </router-link>
           </li>
           <li>
@@ -42,7 +42,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #2</span>
+              <span class="ml-3">{{ $t("sidenav.link") }}#2</span>
             </router-link>
           </li>
           <li>
@@ -51,7 +51,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #3</span>
+              <span class="ml-3">{{ $t("sidenav.link") }}#3</span>
             </router-link>
           </li>
           <li>
@@ -60,7 +60,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg white hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #4</span>
+              <span class="ml-3">{{ $t("sidenav.link") }}#4</span>
             </router-link>
           </li>
           <li>
@@ -69,7 +69,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Dummy Link #5</span>
+              <span class="ml-3">{{ $t("sidenav.link") }}#5</span>
             </router-link>
           </li>
           <li>
@@ -78,7 +78,7 @@ const logout = async () => {
                 class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
               >
                 <span class="material-symbols-outlined"> fast_forward </span>
-                <span class="ml-3">Dummy Link #6</span>
+                <span class="ml-3">{{ $t("sidenav.link") }}#6</span>
                 <span
                   :class="
                     open
@@ -98,25 +98,25 @@ const logout = async () => {
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #6-1</span>
+                  <span class="ml-3">{{ $t("sidenav.link") }}#6-1</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #6-2</span>
+                  <span class="ml-3">{{ $t("sidenav.link") }}#6-2</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #6-3</span>
+                  <span class="ml-3">{{ $t("sidenav.link") }}#6-3</span>
                 </router-link>
                 <router-link
                   :to="{ name: '' }"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">Dummy Link #6-4</span>
+                  <span class="ml-3">{{ $t("sidenav.link") }}#6-4</span>
                 </router-link>
               </DisclosurePanel>
             </Disclosure>
@@ -134,7 +134,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> login </span>
-              <span class="ml-3">Login</span>
+              <span class="ml-3">{{ $t("sidenav.login") }}</span>
             </router-link>
           </li>
           <li>
@@ -144,7 +144,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> app_registration </span>
-              <span class="ml-3">Register</span>
+              <span class="ml-3">{{ $t("sidenav.register") }}</span>
             </router-link>
           </li>
 
@@ -155,7 +155,7 @@ const logout = async () => {
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span class="material-symbols-outlined"> logout </span>
-              <span class="ml-3">Logout</span>
+              <span class="ml-3">{{ $t("sidenav.logout") }}</span>
             </a>
           </li>
         </ul>
