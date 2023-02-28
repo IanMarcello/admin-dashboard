@@ -12,7 +12,7 @@ const toggleStore = useToggleStore();
   <div class="flex flex-col flex-1 sm:flex-row">
     <main
       :onclick="toggleStore.show ? toggleStore.toggleShow : ''"
-      class="flex-1 mt-20 bg-slate-100 sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-slate-900"
+      class="flex-1 mt-20 bg-slate-100 sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-slate-900 md:filter-none"
       :class="toggleStore.show ? 'brightness-50 select-none' : 'filter-none'"
     >
       <RouterView />
