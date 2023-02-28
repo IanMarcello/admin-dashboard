@@ -1,16 +1,97 @@
 {
+  "header": {
+    "login": "Ingia",
+    "register": "Jiandikishe",
+    "logout":"Toka",
+    "logo": "Nembo"
+  },
+
+  "sidenav":{
+    "link":"Kiungo cha Njia ",
+    "login": "Ingia",
+    "register": "Jiandikishe",
+    "dashboard": "Dashibodi",
+    "logout":"Toka"
+  },
+
+  "footer":{
+    "footer": "Kijachini"
+  },
+
+  "locale":{
+    "english":"Kiingereza",
+    "swahili":"Kiswahili"
+  },
+
+  "profile":{
+    "link":"Kiungo cha Njia "
+  },
+
+  "guest":{
+    "content":"Mtazamo wa Mgeni"
+  },
+
+  "user":{
+    "welcome":"Karibu",
+    "see_tasks":"Tazama Kazi Zako"
+  },
+
+  "dashboard":{
+    "grid":"Gridi ya ",
+    "number":{
+      "one":"Kwanza",
+      "two":"Pili",
+      "three":"Tatu",
+      "four":"Nne",
+      "five":"Tano",
+      "six":"Sita",
+      "seven":"Saba",
+      "eight":"Nane",
+      "nine":"Tisa",
+      "ten":"Kumi",
+      "eleven":"Kumi na moja"
+    }
+  },
+
+  "login": {
+    "login_account": "Ingia kwenye akaunti yako",
+    "no_account": "Au kama huna akaunti",
+    "register": "Jiandikishe",
+    "email_address": "Barua pepe",
+    "password": "Nenosiri",
+    "remember_me": "Nikumbuke",
+    "forgot_password": "Umesahau nenosiri yako",
+    "login": "Ingia",
+    "continue_with": "Au endelea na"
+  },
+
+  "register": {
+    "register": "Jiandikishe",
+    "have_account": "Au ikiwa tayari unayo akaunti",
+    "login": "Ingia",
+    "full_name": "Jina kamili",
+    "email_address": "Barua pepe",
+    "password": "Nenosiri",
+    "confirm_password": "Thibitisha nenosiri",
+    "register_with": "Au jiandikishe na"
+  },
+
+  "forgot": {
+    "reset": "Weka upya nenosiri",
+    "email_address": "Barua pepe",
+    "register": "Jiandikishe",
+    "login": "Ingia"
+  },
+
   "email_address": "Barua pepe",
   "password": "Nenosiri",
   "english": "Kiingereza",
   "swahili": "Kiswahili",
   "full_name": "Jina kamili",
   "confirm_password": "Thibitisha nenosiri",
-  "login": "Ingia",
   "log_in": "Ingia",
   "logout": "Toka",
-  "register": "Jiandikishe",
   "home": "Nyumbani",
-  "dashboard": "Dashibodi",
   "tasks": "Kazi",
   "completed_tasks": "Kazi zilizokamilika",
   "completed_task": "kazi zilizokamilika",
