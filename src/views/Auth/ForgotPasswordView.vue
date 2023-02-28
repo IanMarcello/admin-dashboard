@@ -1,20 +1,11 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
-// import { useRouter } from "vue-router";
 import LocaleComponent from "@/components/LocaleComponent.vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
-// const router = useRouter();
 const authStore = useAuthStore();
 const toggleDark = useToggle(isDark);
-
-// const register = async () => {
-//   const response = await authStore.register();
-//   if (response.status == 201 || response.status == 200) {
-//     router.push({ name: "login" });
-//   }
-// };
 </script>
 
 <template>
@@ -38,7 +29,7 @@ const toggleDark = useToggle(isDark);
       class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
     >
       <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
-        {{ $t("") }} Reset Password
+        {{ $t("forgot.reset") }}
       </h2>
     </div>
 
@@ -49,7 +40,7 @@ const toggleDark = useToggle(isDark);
         <form class="space-y-6" @submit.prevent="password_reset">
           <div>
             <label for="email" class="block text-sm font-medium">{{
-              $t("email_address")
+              $t("forgot.email_address")
             }}</label>
             <div class="mt-1">
               <input
@@ -68,7 +59,7 @@ const toggleDark = useToggle(isDark);
               type="submit"
               class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              {{ $t("") }} Reset Password
+              {{ $t("forgot.reset") }}
             </button>
           </div>
         </form>
@@ -85,7 +76,7 @@ const toggleDark = useToggle(isDark);
             class="text-base font-medium text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-500"
           >
             <span aria-hidden="true"> &larr;</span>
-            Register
+            {{ $t("forgot.register") }}
           </router-link>
         </div>
       </div>
@@ -96,7 +87,7 @@ const toggleDark = useToggle(isDark);
             :to="{ name: 'login' }"
             class="text-base font-medium text-indigo-600 hover:text-indigo-900 dark:hover:text-indigo-500"
           >
-            Login
+            {{ $t("forgot.login") }}
             <span aria-hidden="true"> &rarr;</span>
           </router-link>
         </div>
