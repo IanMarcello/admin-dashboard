@@ -13,20 +13,26 @@ export const useAuthStore = defineStore("auth", {
 
   actions: {
     async login() {
-      const response = await http.post("/api/AuthAccount/Login", {
-        email: this.email,
-        password: this.password,
-      });
-
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({
-          id: response.data.data.Id,
-          name: response.data.data.Name,
+      const response = await http.post(
+        "/auth/login/create",
+        {
           email: this.email,
-          token: response.data.data.Token,
-        })
+          password: this.password,
+        },
+        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
+
+      // sessionStorage.setItem(
+      //   "user",
+      //   JSON.stringify({
+      //     id: response.data.data.Id,
+      //     name: response.data.data.Name,
+      //     email: this.email,
+      //     token: response.data.data.Token,
+      //   })
+      // );
+
+      console.log(response);
 
       this.email = "";
       this.password = "";
