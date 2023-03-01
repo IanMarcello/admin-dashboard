@@ -28,21 +28,21 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      name: "home",
+      component: GuestView,
+    },
+    {
+      path: "/trial",
       component: BaseView,
       children: [
         {
-          path: "/",
-          name: "home",
-          component: GuestView,
-        },
-        {
-          path: "/dashboard",
+          path: "dashboard",
           name: "dashboard",
           component: DashboardView,
-          beforeEnter: guardRoute,
+          // beforeEnter: guardRoute,
         },
         {
-          path: "/user",
+          path: "user",
           name: "user",
           component: UserView,
           beforeEnter: guardRoute,
