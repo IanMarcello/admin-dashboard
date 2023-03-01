@@ -1,33 +1,25 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
-import LocaleComponent from "@/components/LocaleComponent.vue";
-import { useDark, useToggle } from "@vueuse/core";
+import themeIcon from "@/icons/themeIcon.vue";
+import localeIcon from "@/icons/localeIcon.vue";
+import logoIcon from "@/icons/logoIcon.vue";
 
-const isDark = useDark();
 const authStore = useAuthStore();
-const toggleDark = useToggle(isDark);
 </script>
 
 <template>
   <div
     class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
   >
-    <div class="flex items-center justify-center gap-3">
-      <LocaleComponent />
-
-      <div class="pr-2">
-        <span
-          @click="toggleDark()"
-          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
-        >
-          light_mode
-        </span>
-      </div>
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <localeIcon />
+      <themeIcon />
     </div>
 
     <div
       class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
     >
+      <logoIcon />
       <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("forgot.reset") }}
       </h2>

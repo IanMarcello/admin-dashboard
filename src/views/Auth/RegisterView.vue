@@ -1,11 +1,9 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import LocaleComponent from "@/components/LocaleComponent.vue";
-import { useDark, useToggle } from "@vueuse/core";
-
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+import themeIcon from "@/icons/themeIcon.vue";
+import localeIcon from "@/icons/localeIcon.vue";
+import logoIcon from "@/icons/logoIcon.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -23,22 +21,15 @@ const register = async () => {
     class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
   >
     <div class="flex items-center justify-end gap-3">
-      <LocaleComponent />
-
-      <div class="pr-2">
-        <span
-          @click="toggleDark()"
-          class="inline-block px-4 py-2 font-medium rounded-lg cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 material-symbols-outlined dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-40"
-        >
-          light_mode
-        </span>
-      </div>
+      <localeIcon />
+      <themeIcon />
     </div>
 
     <div
       class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
     >
-      <h2 class="text-3xl font-bold tracking-tight text-center">
+      <logoIcon />
+      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("register.register") }}
       </h2>
       <p class="mt-2 text-sm text-center text-slate-600 dark:text-slate-400">
