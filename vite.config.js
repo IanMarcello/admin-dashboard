@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
 import { resolve, dirname } from "node:path";
+import Icons from "unplugin-icons/vite";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -15,6 +16,10 @@ export default defineConfig({
         "./src/locales/**"
       ),
     }),
+    Icons({
+      autoInstall: true,
+      compiler: "vue3",
+    }),
   ],
   server: {
     proxy: {
@@ -23,6 +28,12 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+      "/auth": {
+        target: "http://mothercode.com/",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/auth/, ""),
       },
     },
   },
