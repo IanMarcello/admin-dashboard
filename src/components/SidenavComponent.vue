@@ -3,6 +3,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
 import { useToggleStore } from "@/stores/state";
+import IcOutlineKeyboardDoubleArrowRight from "~icons/ic/outline-keyboard-double-arrow-right";
+import IcRoundExpandMore from "~icons/ic/round-expand-more";
+import IcRoundLogIn from "~icons/ic/round-log-in";
+import IcRoundAppRegistration from "~icons/ic/round-app-registration";
+import IcRoundLogout from "~icons/ic/round-logout";
 
 const toggleStore = useToggleStore();
 const router = useRouter();
@@ -32,7 +37,9 @@ const logout = async () => {
               :to="{ name: '' }"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="material-symbols-outlined">
+                <IcOutlineKeyboardDoubleArrowRight />
+              </span>
               <span class="ml-3">{{ $t("sidenav.link") }}#1</span>
             </router-link>
           </li>
@@ -41,7 +48,9 @@ const logout = async () => {
               :to="{ name: '' }"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="material-symbols-outlined">
+                <IcOutlineKeyboardDoubleArrowRight />
+              </span>
               <span class="ml-3">{{ $t("sidenav.link") }}#2</span>
             </router-link>
           </li>
@@ -50,7 +59,9 @@ const logout = async () => {
               :to="{ name: '' }"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="material-symbols-outlined">
+                <IcOutlineKeyboardDoubleArrowRight />
+              </span>
               <span class="ml-3">{{ $t("sidenav.link") }}#3</span>
             </router-link>
           </li>
@@ -59,7 +70,9 @@ const logout = async () => {
               :to="{ name: '' }"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg white hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="material-symbols-outlined">
+                <IcOutlineKeyboardDoubleArrowRight />
+              </span>
               <span class="ml-3">{{ $t("sidenav.link") }}#4</span>
             </router-link>
           </li>
@@ -68,7 +81,9 @@ const logout = async () => {
               :to="{ name: '' }"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> fast_forward </span>
+              <span class="material-symbols-outlined">
+                <IcOutlineKeyboardDoubleArrowRight />
+              </span>
               <span class="ml-3">{{ $t("sidenav.link") }}#5</span>
             </router-link>
           </li>
@@ -77,7 +92,9 @@ const logout = async () => {
               <DisclosureButton
                 class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
               >
-                <span class="material-symbols-outlined"> fast_forward </span>
+                <span class="material-symbols-outlined">
+                  <IcOutlineKeyboardDoubleArrowRight />
+                </span>
                 <span class="ml-3">{{ $t("sidenav.link") }}#6</span>
                 <span
                   :class="
@@ -87,7 +104,7 @@ const logout = async () => {
                   "
                   class="material-symbols-outlined"
                 >
-                  expand_more
+                  <IcRoundExpandMore />
                 </span>
               </DisclosureButton>
 
@@ -133,7 +150,7 @@ const logout = async () => {
               v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> login </span>
+              <span> <IcRoundLogIn class="w-6 h-6" /> </span>
               <span class="ml-3">{{ $t("sidenav.login") }}</span>
             </router-link>
           </li>
@@ -143,7 +160,7 @@ const logout = async () => {
               v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> app_registration </span>
+              <span> <IcRoundAppRegistration class="w-6 h-6" /> </span>
               <span class="ml-3">{{ $t("sidenav.register") }}</span>
             </router-link>
           </li>
@@ -154,7 +171,7 @@ const logout = async () => {
               @click="logout"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span class="material-symbols-outlined"> logout </span>
+              <span> <IcRoundLogout class="w-6 h-6" /> </span>
               <span class="ml-3">{{ $t("sidenav.logout") }}</span>
             </a>
           </li>
