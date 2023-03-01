@@ -14,7 +14,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         {{ user }}
       </h1>
 
-      <div class="mt-6">
+      <!-- <div class="mt-6">
         <router-link
           :to="{ name: 'todo' }"
           class="text-base font-medium text-indigo-600 uppercase hover:text-indigo-500"
@@ -22,7 +22,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
           {{ $t("user.see_tasks") }}
           <span aria-hidden="true"> &rarr;</span>
         </router-link>
-      </div>
+      </div> -->
     </div>
   </main>
 </template>
