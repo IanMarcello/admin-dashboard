@@ -19,7 +19,7 @@ function guardRoute(to, from, next) {
   if (isAuthenticated) {
     next();
   } else {
-    next({ name: "login" });
+    next({ name: "home" });
   }
 }
 
@@ -27,23 +27,23 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
+      path: "/landing",
       name: "home",
       component: GuestView,
     },
     {
-      path: "/trial",
+      path: "/",
       component: BaseView,
       children: [
         {
           path: "dashboard",
           name: "dashboard",
           component: DashboardView,
-          // beforeEnter: guardRoute,
+          beforeEnter: guardRoute,
         },
         {
-          path: "user",
-          name: "user",
+          path: "profile",
+          name: "profile",
           component: UserView,
           beforeEnter: guardRoute,
         },
