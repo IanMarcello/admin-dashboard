@@ -11,10 +11,12 @@ const authStore = useAuthStore();
 const login = async () => {
   const response = await authStore.login();
 
+  console.log(response.status);
+
   if (response.status == 200) {
-    router.push({ name: "user" });
+    router.push({ name: "profile" });
   } else {
-    router.push({ name: "home" });
+    router.push({ name: "login" });
   }
 };
 </script>
