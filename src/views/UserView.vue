@@ -9,7 +9,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         {{ $t("user.welcome") }},
       </p>
       <h1
-        class="text-4xl font-bold tracking-tight text-gray-900 capitalize sm:text-5xl"
+        class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-200 capitalize sm:text-5xl"
       >
         {{ user }}
       </h1>
