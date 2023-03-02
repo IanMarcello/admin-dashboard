@@ -50,7 +50,7 @@ const register = async () => {
         <form class="space-y-6" @submit.prevent="register">
           <div>
             <label for="name" class="block text-sm font-medium">{{
-              $t("register.full_name")
+              $t("register.first_name")
             }}</label>
             <div class="mt-1">
               <input
@@ -58,7 +58,22 @@ const register = async () => {
                 name="name"
                 type="text"
                 class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                v-model="authStore.name"
+                v-model="authStore.first_name"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="name" class="block text-sm font-medium">{{
+              $t("register.last_name")
+            }}</label>
+            <div class="mt-1">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                v-model="authStore.last_name"
               />
             </div>
           </div>
