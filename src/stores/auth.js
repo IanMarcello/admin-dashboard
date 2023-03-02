@@ -22,17 +22,13 @@ export const useAuthStore = defineStore("auth", {
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
 
-      // sessionStorage.setItem(
-      //   "user",
-      //   JSON.stringify({
-      //     id: response.data.data.Id,
-      //     name: response.data.data.Name,
-      //     email: this.email,
-      //     token: response.data.data.Token,
-      //   })
-      // );
-
-      console.log(response);
+      sessionStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: response.data.name,
+          email: response.data.email,
+        })
+      );
 
       this.email = "";
       this.password = "";
@@ -43,10 +39,12 @@ export const useAuthStore = defineStore("auth", {
     async register() {
       if (this.password !== this.confirm_password) return false;
 
-      const response = await http.post("/api/AuthAccount/Register", {
-        name: this.name,
+      const response = await http.post("/auth/signup/create", {
+        first_name: this.first_name,
+        last_name: this.last_name,
         email: this.email,
         password: this.password,
+        confirm_password: this.confirm_password,
       });
 
       this.name = "";
