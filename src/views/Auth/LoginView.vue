@@ -1,9 +1,9 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import themeIcon from "@/icons/themeIcon.vue";
-import localeIcon from "@/icons/localeIcon.vue";
-import logoIcon from "@/icons/logoIcon.vue";
+import themeIcon from "@/components/icons/themeIcon.vue";
+import localeIcon from "@/components/icons/localeIcon.vue";
+import authLogoIcon from "@/components/icons/authLogoIcon.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -11,10 +11,8 @@ const authStore = useAuthStore();
 const login = async () => {
   const response = await authStore.login();
 
-  console.log(response.status);
-
   if (response.status == 200) {
-    router.push({ name: "profile" });
+    router.push({ name: "dashboard" });
   } else {
     router.push({ name: "login" });
   }
@@ -33,7 +31,7 @@ const login = async () => {
     <div
       class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
     >
-      <logoIcon />
+      <authLogoIcon />
       <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("login.login_account") }}
       </h2>
@@ -112,7 +110,7 @@ const login = async () => {
           <div>
             <button
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:outline-none dark:focus:outline-indigo-900 dark:focus:ring-2 dark:focus:ring-indigo-900 dark:focus:ring-offset-2"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
             >
               {{ $t("login.login") }}
             </button>
