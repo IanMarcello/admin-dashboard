@@ -1,22 +1,11 @@
 <script setup>
-import { useAuthStore } from "@/stores/auth";
-import { useRouter } from "vue-router";
-import themeIcon from "@/icons/themeIcon.vue";
-import menuIcon from "@/icons/menuIcon.vue";
-import localeIcon from "@/icons/localeIcon.vue";
-import logoIcon from "@/icons/logoIcon.vue";
-import profileIcon from "@/icons/profileIcon.vue";
-
-const router = useRouter();
-const authStore = useAuthStore();
+import themeIcon from "@/components/icons/themeIcon.vue";
+import menuIcon from "@/components/icons/menuIcon.vue";
+import localeIcon from "@/components/icons/localeIcon.vue";
+import logoIcon from "@/components/icons/logoIcon.vue";
+import profileIcon from "@/components/icons/profileIcon.vue";
 
 const user = JSON.parse(sessionStorage.getItem("user"));
-
-const logout = async () => {
-  await authStore.logout();
-
-  router.push({ name: "login" });
-};
 </script>
 
 <template>
@@ -51,14 +40,6 @@ const logout = async () => {
               v-if="typeof user === undefined || user === null"
               class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
               >{{ $t("header.register") }}</router-link
-            >
-          </div>
-          <div>
-            <a
-              v-if="!(typeof user === undefined || user === null)"
-              @click="logout"
-              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
-              >{{ $t("header.logout") }}</a
             >
           </div>
         </div>
