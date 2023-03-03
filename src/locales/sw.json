@@ -39,6 +39,7 @@
   "dashboard":{
     "grid":"Gridi ya ",
     "number":{
+      "zero":"",
       "one":"Kwanza",
       "two":"Pili",
       "three":"Tatu",
@@ -71,6 +72,7 @@
     "login": "Ingia",
     "first_name": "Jina la kwanza",
     "last_name": "Jina la familia",
+    "name": "Jina",
     "email_address": "Barua pepe",
     "password": "Nenosiri",
     "confirm_password": "Thibitisha nenosiri",
@@ -84,28 +86,15 @@
     "login": "Ingia"
   },
 
-  "email_address": "Barua pepe",
-  "password": "Nenosiri",
-  "english": "Kiingereza",
-  "swahili": "Kiswahili",
-  "full_name": "Jina kamili",
-  "confirm_password": "Thibitisha nenosiri",
-  "log_in": "Ingia",
-  "logout": "Toka",
-  "home": "Nyumbani",
-  "tasks": "Kazi",
-  "completed_tasks": "Kazi zilizokamilika",
-  "completed_task": "kazi zilizokamilika",
-  "ongoing_tasks": "Kazi zinazoendelea",
-  "remember_me": "Nikumbuke",
-  "continue_with": "Au endelea na",
-  "forgot_password": "Umesahau nenosiri yako",
-  "login_account": "Ingia kwenye akaunti yako",
-  "no_account": "Au kama huna akaunti",
-  "have_account": "Au ikiwa tayari unayo akaunti",
-  "register_with": "Au jiandikishe na",
-  "to_do_list": "Orodha ya Mambo ya Kufanya",
-  "rights_reserved": "Haki zote zimehifadhiwa",
-  "you_have": "",
-  "guest_view":""
+  "content":{
+    "dummyOne":"",
+    "dummyTwo":"",
+    "dummyThree":"",
+    "dummyFour":"",
+    "dummyFive":"",
+    "dummySix1":"",
+    "dummySix2":"",
+    "dummySix3":"",
+    "dummySix4":""
+  }
 }
