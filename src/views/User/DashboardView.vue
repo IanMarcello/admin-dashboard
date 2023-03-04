@@ -1,75 +1,26 @@
 <script setup>
-import { use } from "echarts/core";
-import { CanvasRenderer } from "echarts/renderers";
-import { PieChart } from "echarts/charts";
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-} from "echarts/components";
-import VChart, { THEME_KEY } from "vue-echarts";
-import { ref, provide } from "vue";
+import { ref } from "vue";
 
 const user = JSON.parse(sessionStorage.getItem("user")).name;
 
-use([
-  CanvasRenderer,
-  PieChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-]);
-
-provide(THEME_KEY, "dark");
-
-const option = ref({
-  title: {
-    text: "Dummy Info",
-    left: "center",
-    top: "20",
+const options = ref({
+  chart: {
+    id: "vuechart-example",
   },
-  tooltip: {
-    trigger: "item",
-    formatter: "{a} <br/>{b} : {c} ({d}%)",
+  xaxis: {
+    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
   },
-  legend: {
-    orient: "vertical",
-    bottom: "bottom",
-    data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"],
+  theme: {
+    mode: "dark",
   },
-  series: [
-    {
-      name: "Traffic Sources",
-      type: "pie",
-      radius: "55%",
-      center: ["50%", "60%"],
-      data: [
-        { value: 335, name: "Direct" },
-        { value: 310, name: "Email" },
-        { value: 234, name: "Ad Networks" },
-        { value: 135, name: "Video Ads" },
-        { value: 1548, name: "Search Engines" },
-      ],
-      emphasis: {
-        itemStyle: {
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowColor: "rgba(0, 0, 0, 0.5)",
-        },
-      },
-    },
-  ],
 });
 
-// document.body.addEventListener("click", function (e) {
-//   if (e.target.nodeName === "BUTTON") {
-//     e.preventDefault();
-//     // myChart.dispose();
-//     // myChart = echarts.init(document.getElementById("chart"), e.target.id);
-//     // myChart.setOption(initOption);
-//     // myChart.setOption(chartData);
-//   }
-// });
+const series = ref([
+  {
+    name: "series-1",
+    data: [30, 40, 45, 50, 49, 60, 70, 91],
+  },
+]);
 </script>
 
 <template>
@@ -88,12 +39,18 @@ const option = ref({
       </div>
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
-      <div id="chartOne" class="overflow-auto sm:col-span-8 rounded-lg">
-        <v-chart
-          :option="option"
-          class="chart h-96 w-full bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200"
-          autoresize
-        />
+      <div
+        class="p-3 overflow-auto border rounded-lg sm:col-span-8 h-96 border-slate-400 dark:border-slate-500 bg-slate-200 dark:bg-slate-800"
+      >
+        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.one") }} -->
+        <apexchart
+          class="text-slate-900 dark:text-slate-200"
+          width="100%"
+          height="100%"
+          type="bar"
+          :options="options"
+          :series="series"
+        ></apexchart>
       </div>
       <div
         class="p-3 overflow-auto border rounded-lg sm:col-span-4 h-44 border-slate-400 dark:border-slate-500 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200"
