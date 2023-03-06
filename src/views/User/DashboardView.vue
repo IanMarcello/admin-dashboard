@@ -1,7 +1,17 @@
 <script setup>
 import { ref } from "vue";
+import { notify } from "notiwind";
 
-const user = JSON.parse(sessionStorage.getItem("user")).name;
+const user = JSON.parse(sessionStorage.getItem("session")).name;
+
+notify(
+  {
+    group: "foo",
+    title: "Success",
+    text: "Your account was registered!",
+  },
+  4000
+); // 4s
 
 const options = ref({
   chart: {
@@ -21,6 +31,8 @@ const series = ref([
     data: [30, 40, 45, 50, 49, 60, 70, 91],
   },
 ]);
+
+// const user = JSON.parse(sessionStorage.getItem("user")).name;
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-const user = JSON.parse(sessionStorage.getItem("user")).name;
+const user = JSON.parse(sessionStorage.getItem("session")).name;
 </script>
 
 <template>

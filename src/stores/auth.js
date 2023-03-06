@@ -85,11 +85,13 @@ export const useAuthStore = defineStore("auth", {
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
 
+      // console.log(response.data.message);
+
       sessionStorage.setItem(
-        "user",
+        "session",
         JSON.stringify({
-          name: response.data.name,
-          email: response.data.email,
+          name: response.data.user.name,
+          message: response.data.message,
         })
       );
 

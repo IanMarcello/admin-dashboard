@@ -14,7 +14,7 @@ const toggleStore = useToggleStore();
 const router = useRouter();
 const authStore = useAuthStore();
 
-const user = JSON.parse(sessionStorage.getItem("user"));
+const session = JSON.parse(sessionStorage.getItem("session"));
 
 const logout = async () => {
   await authStore.logout();
@@ -147,7 +147,7 @@ const logout = async () => {
           <li>
             <router-link
               :to="{ name: 'login' }"
-              v-if="typeof user === undefined || user === null"
+              v-if="typeof session === undefined || session === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span> <IcRoundLogIn class="w-6 h-6" /> </span>
@@ -157,7 +157,7 @@ const logout = async () => {
           <li>
             <router-link
               :to="{ name: 'register' }"
-              v-if="typeof user === undefined || user === null"
+              v-if="typeof session === undefined || session === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span> <IcRoundAppRegistration class="w-6 h-6" /> </span>
@@ -167,7 +167,7 @@ const logout = async () => {
 
           <li>
             <a
-              v-if="!(typeof user === undefined || user === null)"
+              v-if="!(typeof session === undefined || session === null)"
               @click="logout"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
