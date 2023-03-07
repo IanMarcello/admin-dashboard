@@ -19,7 +19,7 @@ import DummyView6_4 from "@/views/User/DummyView6_4.vue";
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
 
-  if (sessionStorage.getItem("session")) {
+  if (sessionStorage.getItem("user")) {
     isAuthenticated = true;
   } else {
     isAuthenticated = false;

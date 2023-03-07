@@ -5,7 +5,7 @@ import localeIcon from "@/components/icons/localeIcon.vue";
 import logoIcon from "@/components/icons/logoIcon.vue";
 import profileIcon from "@/components/icons/profileIcon.vue";
 
-const session = JSON.parse(sessionStorage.getItem("session"));
+const user = JSON.parse(sessionStorage.getItem("user"));
 </script>
 
 <template>
@@ -15,9 +15,7 @@ const session = JSON.parse(sessionStorage.getItem("session"));
     <nav class="w-full px-3 sm:px-6 lg:px-8" aria-label="Top">
       <div class="flex flex-row justify-between w-full h-full py-3">
         <div class="flex flex-row items-center justify-center">
-          <menuIcon
-            v-if="!(typeof session === undefined || session === null)"
-          />
+          <menuIcon v-if="!(typeof user === undefined || user === null)" />
           <logoIcon class="w-10" />
         </div>
         <div
@@ -26,14 +24,12 @@ const session = JSON.parse(sessionStorage.getItem("session"));
           <localeIcon />
           <themeIcon />
           <div>
-            <profileIcon
-              v-if="!(typeof session === undefined || session === null)"
-            />
+            <profileIcon v-if="!(typeof user === undefined || user === null)" />
           </div>
           <div>
             <router-link
               :to="{ name: 'login' }"
-              v-if="typeof session === undefined || session === null"
+              v-if="typeof user === undefined || user === null"
               class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
               >{{ $t("header.login") }}</router-link
             >
@@ -41,7 +37,7 @@ const session = JSON.parse(sessionStorage.getItem("session"));
           <div>
             <router-link
               :to="{ name: 'register' }"
-              v-if="typeof session === undefined || session === null"
+              v-if="typeof user === undefined || user === null"
               class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
               >{{ $t("header.register") }}</router-link
             >
