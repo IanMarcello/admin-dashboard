@@ -85,15 +85,19 @@ export const useAuthStore = defineStore("auth", {
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
 
-      // console.log(response.data.message);
+      if (response.data.code == 200) {
+        sessionStorage.setItem(
+          "user",
+          JSON.stringify({
+            name: response.data.user.name,
+          })
+        );
 
-      sessionStorage.setItem(
-        "session",
-        JSON.stringify({
-          name: response.data.user.name,
-          message: response.data.message,
-        })
-      );
+        this.email = "";
+        this.password = "";
+
+        return response;
+      }
 
       this.email = "";
       this.password = "";
@@ -126,7 +130,8 @@ export const useAuthStore = defineStore("auth", {
     },
 
     async logout() {
-      sessionStorage.clear();
+      sessionStorage.removeItem("user");
+      sessionStorage.setItem("session", false);
     },
   },
 });
