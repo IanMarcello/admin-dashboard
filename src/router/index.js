@@ -8,13 +8,10 @@ import UserView from "@/views/User/UserView.vue";
 import DashboardView from "@/views/User/DashboardView.vue";
 import ProfileView from "@/views/User/ProfileView.vue";
 import DummyView2 from "@/views/User/DummyView2.vue";
-import DummyView3 from "@/views/User/DummyView3.vue";
-import DummyView4 from "@/views/User/DummyView4.vue";
-import DummyView5 from "@/views/User/DummyView5.vue";
-import DummyView6_1 from "@/views/User/DummyView6_1.vue";
-import DummyView6_2 from "@/views/User/DummyView6_2.vue";
-import DummyView6_3 from "@/views/User/DummyView6_3.vue";
-import DummyView6_4 from "@/views/User/DummyView6_4.vue";
+import DummyView3_1 from "@/views/User/DummyView3_1.vue";
+import DummyView3_2 from "@/views/User/DummyView3_2.vue";
+import DummyView3_3 from "@/views/User/DummyView3_3.vue";
+import DummyView3_4 from "@/views/User/DummyView3_4.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -61,39 +58,24 @@ const router = createRouter({
           component: DummyView2,
         },
         {
-          path: "dummy3",
-          name: "dummy3",
-          component: DummyView3,
+          path: "dummy3_1",
+          name: "dummy3_1",
+          component: DummyView3_1,
         },
         {
-          path: "dummy4",
-          name: "dummy4",
-          component: DummyView4,
+          path: "dummy3_2",
+          name: "dummy3_2",
+          component: DummyView3_2,
         },
         {
-          path: "dummy5",
-          name: "dummy5",
-          component: DummyView5,
+          path: "dummy3_3",
+          name: "dummy3_3",
+          component: DummyView3_3,
         },
         {
-          path: "dummy6_1",
-          name: "dummy6_1",
-          component: DummyView6_1,
-        },
-        {
-          path: "dummy6_2",
-          name: "dummy6_2",
-          component: DummyView6_2,
-        },
-        {
-          path: "dummy6_3",
-          name: "dummy6_3",
-          component: DummyView6_3,
-        },
-        {
-          path: "dummy6_4",
-          name: "dummy6_4",
-          component: DummyView6_4,
+          path: "dummy3_4",
+          name: "dummy3_4",
+          component: DummyView3_4,
         },
         {
           path: "profile",
