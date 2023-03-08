@@ -17,6 +17,7 @@ const authStore = useAuthStore();
 const register = async () => {
   const response = await authStore.register();
   if (response.data.code == 201) {
+    sessionStorage.setItem("register", true);
     router.push({ name: "login" });
   } else {
     notify(

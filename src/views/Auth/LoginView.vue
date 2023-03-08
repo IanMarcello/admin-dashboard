@@ -9,6 +9,7 @@ import authLogoIcon from "@/components/icons/authLogoIcon.vue";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
+  const register = sessionStorage.getItem("register");
 
   if (!(typeof session === "undefined" || session === null)) {
     notify(
@@ -24,7 +25,21 @@ onMounted(() => {
     );
   }
 
-  sessionStorage.removeItem("session");
+  if (register) {
+    notify(
+      {
+        bg: "bg-green-500",
+        type: "success",
+        color: "text-green-500",
+        group: "foo",
+        title: "Success",
+        text: "Registered successfully!",
+      },
+      2000
+    );
+  }
+
+  sessionStorage.clear();
   authStore.email = "";
 });
 
@@ -33,8 +48,6 @@ const authStore = useAuthStore();
 
 const login = async () => {
   const response = await authStore.login();
-
-  console.log(response);
 
   if (response.data.code == 200) {
     router.push({ name: "dashboard" });
