@@ -23,12 +23,15 @@
     "swahili":"Kiswahili"
   },
 
-  "profile":{
-    "link":"Kiungo cha Njia "
+  "profile": {
+    "profile":"Wasifu",
+    "logout":"Toka"
   },
 
   "guest":{
-    "content":"Mtazamo wa Mgeni"
+    "content":"Mtazamo wa Mgeni",
+    "installement":"Awamu ya nne ya",
+    "characters":"Wahusika"
   },
 
   "user":{
@@ -90,11 +93,9 @@
     "dummyOne":"Mtazamo Namba #1",
     "dummyTwo":"Mtazamo Namba #2",
     "dummyThree":"Mtazamo Namba #3",
-    "dummyFour":"Mtazamo Namba #4",
-    "dummyFive":"Mtazamo Namba #5",
-    "dummySix1":"Mtazamo Namba #6-1",
-    "dummySix2":"Mtazamo Namba #6-2",
-    "dummySix3":"Mtazamo Namba #6-3",
-    "dummySix4":"Mtazamo Namba #6-4"
+    "dummyThree1":"Mtazamo Namba #3-1",
+    "dummyThree2":"Mtazamo Namba #3-2",
+    "dummyThree3":"Mtazamo Namba #3-3",
+    "dummyThree4":"Mtazamo Namba #3-4"
   }
 }
