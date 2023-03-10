@@ -4,6 +4,7 @@ import RegisterView from "@/views/Auth/RegisterView.vue";
 import ForgotPasswordView from "@/views/Auth/ForgotPasswordView.vue";
 import GuestView from "@/views/GuestView.vue";
 import BaseView from "@/views/BaseView.vue";
+import AuthView from "@/views/AuthView.vue";
 import UserView from "@/views/User/UserView.vue";
 import DashboardView from "@/views/User/DashboardView.vue";
 import ProfileView from "@/views/User/ProfileView.vue";
@@ -85,19 +86,25 @@ const router = createRouter({
       ],
     },
     {
-      path: "/login",
-      name: "login",
-      component: LoginView,
-    },
-    {
-      path: "/register",
-      name: "register",
-      component: RegisterView,
-    },
-    {
-      path: "/password_reset",
-      name: "forgot",
-      component: ForgotPasswordView,
+      path: "/auth",
+      component: AuthView,
+      children: [
+        {
+          path: "login",
+          name: "login",
+          component: LoginView,
+        },
+        {
+          path: "register",
+          name: "register",
+          component: RegisterView,
+        },
+        {
+          path: "password_reset",
+          name: "forgot",
+          component: ForgotPasswordView,
+        },
+      ],
     },
   ],
 });

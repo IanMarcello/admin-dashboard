@@ -15,7 +15,21 @@
   },
 
   "footer": {
-    "footer": "Footer"
+    "links": "Links",
+    "faq": "FAQ",
+    "help": "Help",
+    "support": "Support",
+    "legal": "Legal",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "social": "Social",
+    "facebook": "Facebook",
+    "linkedin": "Linkedin",
+    "twitter": "Twitter",
+    "company": "Company",
+    "blog": "Official Blog",
+    "aboutus": "About Us",
+    "Contact": "Contact"
   },
 
   "locale": {

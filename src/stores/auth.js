@@ -14,7 +14,7 @@ export const useAuthStore = defineStore("auth", {
   actions: {
     async login() {
       const response = await http.post(
-        "/auth/login/create",
+        "/api/login/create",
         {
           email: this.email,
           password: this.password,
@@ -46,7 +46,7 @@ export const useAuthStore = defineStore("auth", {
       if (this.password !== this.confirm_password) return false;
 
       const response = await http.post(
-        "/auth/signup/create",
+        "/api/signup/create",
         {
           name: this.name,
           email: this.email,
