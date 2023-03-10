@@ -23,17 +23,17 @@ export default defineConfig({
   ],
   server: {
     proxy: {
+      // "/api": {
+      //   target: "http://restapi.adequateshop.com/api/",
+      //   changeOrigin: true,
+      //   secure: false,
+      //   rewrite: (path) => path.replace(/^\/api/, ""),
+      // },
       "/api": {
-        target: "http://restapi.adequateshop.com/api/",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-      "/auth": {
         target: "http://mothercode.com/",
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/auth/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
