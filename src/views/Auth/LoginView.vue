@@ -70,7 +70,7 @@ const login = async () => {
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-contain bg-no-repeat bg-left bg-[url('@/assets/images/dante1.png')] dark:bg-slate-900"
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-contain bg-no-repeat bg-left bg-[url('@/assets/images/bg/bg-dante.png')] dark:bg-slate-900"
   >
     <div class="flex items-center justify-end gap-3">
       <localeIcon />

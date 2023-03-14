@@ -60,13 +60,13 @@ const toggleStore = useToggleStore();
               </p>
             </div>
             <div class="w-full md:w-1/2">
-              <img src="@/assets/images/nero.png" alt="Nero" />
+              <img src="@/assets/images/content/nero.png" alt="Nero" />
             </div>
           </div>
 
           <div class="flex items-center flex-wrap mb-20">
             <div class="w-full md:w-1/2">
-              <img src="@/assets/images/dante.png" alt="Dante" />
+              <img src="@/assets/images/content/dante.png" alt="Dante" />
             </div>
             <div class="w-full md:w-1/2 pl-10">
               <h4 class="text-3xl font-bold mb-3">Dante</h4>
@@ -99,7 +99,7 @@ const toggleStore = useToggleStore();
               </p>
             </div>
             <div class="w-full md:w-1/2">
-              <img src="@/assets/images/vergil.png" alt="Vergil" />
+              <img src="@/assets/images/content/vergil.png" alt="Vergil" />
             </div>
           </div>
         </section>
