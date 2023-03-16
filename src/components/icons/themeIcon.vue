@@ -15,9 +15,7 @@ const toggleDark = useToggle(isDark);
 
 const setTheme = () => {
   toggleDark();
-  themeStore.theme_key = isDark.value ? "light" : "dark";
-
-  this.options = {};
+  themeStore.theme_key = isDark.value ? "dark" : "light";
 };
 </script>
 
