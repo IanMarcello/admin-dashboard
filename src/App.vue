@@ -5,9 +5,5 @@ import NotificationComponent from "@/components/NotificationComponent.vue";
 
 <template>
   <NotificationComponent />
-  <RouterView v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </RouterView>
+  <RouterView />
 </template>
