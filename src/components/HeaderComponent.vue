@@ -10,7 +10,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 <template>
   <header
-    class="fixed z-50 w-full bg-white border-b sm:items-center sm:flex sm:relative border-slate-300 dark:border-slate-500 drop-shadow-md sm:h-20 text-slate-900 dark:bg-slate-800 dark:text-slate-200"
+    class="fixed z-50 w-full sm:items-center sm:flex sm:relative shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a] sm:h-16 text-slate-900 bg-[#ffffff] dark:bg-[#003049] dark:text-slate-200"
   >
     <nav class="w-full px-3 sm:px-6 lg:px-8" aria-label="Top">
       <div class="flex flex-row justify-between w-full h-full py-3">
