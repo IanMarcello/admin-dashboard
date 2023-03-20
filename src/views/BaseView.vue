@@ -15,9 +15,11 @@ const toggleStore = useToggleStore();
       class="flex-1 mt-16 bg-[#f8f9fa] sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-[#002b42] md:filter-none"
       :class="toggleStore.show ? 'brightness-50 select-none' : 'filter-none'"
     >
-      <RouterView v-slot="{ Component }">
+      <RouterView v-slot="{ Component, route }">
         <transition name="fade" mode="out-in">
-          <component :is="Component" />
+          <div :key="route.name">
+            <component :is="Component" />
+          </div>
         </transition>
       </RouterView>
       <FooterComponent />

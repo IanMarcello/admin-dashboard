@@ -134,5 +134,5 @@ const option = ref({
 </script>
 
 <template>
-  <v-chart class="chart" :option="option" autoresize :key="key" />
+  <v-chart class="chart" :option="option" autoresize />
 </template>

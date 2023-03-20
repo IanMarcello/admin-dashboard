@@ -139,6 +139,7 @@ const register = async () => {
                 id="confirm_password"
                 name="confirm_password"
                 type="password"
+                autocomplete="new-password"
                 class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.confirm_password"
               />
