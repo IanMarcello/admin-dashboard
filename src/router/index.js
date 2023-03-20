@@ -13,6 +13,7 @@ import DummyView3_1 from "@/views/User/DummyView3_1.vue";
 import DummyView3_2 from "@/views/User/DummyView3_2.vue";
 import DummyView3_3 from "@/views/User/DummyView3_3.vue";
 import DummyView3_4 from "@/views/User/DummyView3_4.vue";
+import HeroView from "@/views/User/HeroView.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -77,6 +78,11 @@ const router = createRouter({
           path: "dummy3_4",
           name: "dummy3_4",
           component: DummyView3_4,
+        },
+        {
+          path: "herosection",
+          name: "herosection",
+          component: HeroView,
         },
         {
           path: "profile",
