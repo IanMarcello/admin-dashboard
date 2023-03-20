@@ -67,8 +67,8 @@ const logout = async () => {
                 <span
                   :class="
                     open
-                      ? '-rotate-180 duration-200 transform-transition'
-                      : 'rotate-0 duration-200 transform-transition'
+                      ? '-rotate-180 duration-300 transition'
+                      : 'rotate-0 duration-300 transition'
                   "
                 >
                   <IcRoundExpandMore class="w-6 h-6" />
@@ -104,6 +104,17 @@ const logout = async () => {
                 </router-link>
               </DisclosurePanel>
             </Disclosure>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'herosection' }"
+              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+            >
+              <span>
+                <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
+              </span>
+              <span class="ml-3">Hero Section</span>
+            </router-link>
           </li>
         </ul>
       </div>

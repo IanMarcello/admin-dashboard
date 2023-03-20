@@ -16,7 +16,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
       <div class="flex flex-row justify-between w-full h-full py-3">
         <div class="flex flex-row items-center justify-center">
           <menuIcon v-if="!(typeof user === undefined || user === null)" />
-          <logoIcon class="w-10" />
+          <logoIcon class="w-10 hidden md:inline" />
         </div>
         <div
           class="flex flex-row items-center justify-center gap-x-1 md:gap-x-2"
