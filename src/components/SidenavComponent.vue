@@ -52,7 +52,7 @@ const logout = async () => {
               <span>
                 <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
               </span>
-              <span class="ml-3">{{ $t("sidenav.link") }}#2</span>
+              <span class="ml-3">{{ $t("sidenav.button") }}</span>
             </router-link>
           </li>
           <li>
