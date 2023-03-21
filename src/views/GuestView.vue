@@ -1,6 +1,6 @@
 <script setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+// import FooterComponent from "@/components/FooterComponent.vue";
 import { useToggleStore } from "@/stores/state";
 
 const toggleStore = useToggleStore();
@@ -15,7 +15,7 @@ const toggleStore = useToggleStore();
       :class="toggleStore.show ? 'brightness-50 select-none' : 'filter-none'"
     >
       <div
-        class="m-4 rounded-md text-white"
+        class="h-full text-white"
         style="
           background: linear-gradient(
             90deg,
@@ -56,7 +56,7 @@ const toggleStore = useToggleStore();
           </div>
         </div>
       </div>
-      <FooterComponent />
+      <!-- <FooterComponent /> -->
     </main>
   </div>
 </template>
