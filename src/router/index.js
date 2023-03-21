@@ -8,7 +8,7 @@ import AuthView from "@/views/AuthView.vue";
 import UserView from "@/views/User/UserView.vue";
 import DashboardView from "@/views/User/DashboardView.vue";
 import ProfileView from "@/views/User/ProfileView.vue";
-import DummyView2 from "@/views/User/DummyView2.vue";
+import ButtonView from "@/views/User/ButtonView.vue";
 import DummyView3_1 from "@/views/User/DummyView3_1.vue";
 import DummyView3_2 from "@/views/User/DummyView3_2.vue";
 import DummyView3_3 from "@/views/User/DummyView3_3.vue";
@@ -57,7 +57,7 @@ const router = createRouter({
         {
           path: "dummy2",
           name: "dummy2",
-          component: DummyView2,
+          component: ButtonView,
         },
         {
           path: "dummy3_1",
