@@ -8,6 +8,7 @@
 
   "sidenav": {
     "link":"Dummy Link ",
+    "button":"Buttons",
     "login": "Login",
     "register": "Register",
     "dashboard": "Dashboard",
@@ -112,6 +113,7 @@
   },
 
   "content":{
+    "button":"Buttons",
     "dummyOne":"Dummy View #1",
     "dummyTwo":"Dummy View #2",
     "dummyThree":"Dummy View #3",

@@ -8,6 +8,7 @@
 
   "sidenav":{
     "link":"Kiungo cha Njia ",
+    "button":"",
     "login": "Ingia",
     "register": "Jiandikishe",
     "dashboard": "Dashibodi",
@@ -90,6 +91,7 @@
   },
 
   "content":{
+    "button":"Vitufe",
     "dummyOne":"Mtazamo Namba #1",
     "dummyTwo":"Mtazamo Namba #2",
     "dummyThree":"Mtazamo Namba #3",
