@@ -1,19 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "@/views/Auth/LoginView.vue";
-import RegisterView from "@/views/Auth/RegisterView.vue";
-import ForgotPasswordView from "@/views/Auth/ForgotPasswordView.vue";
 import GuestView from "@/views/GuestView.vue";
-import BaseView from "@/views/BaseView.vue";
-import AuthView from "@/views/AuthView.vue";
-import UserView from "@/views/User/UserView.vue";
-import DashboardView from "@/views/User/DashboardView.vue";
-import ProfileView from "@/views/User/ProfileView.vue";
-import ButtonView from "@/views/User/ButtonView.vue";
-import DummyView3_1 from "@/views/User/DummyView3_1.vue";
-import DummyView3_2 from "@/views/User/DummyView3_2.vue";
-import DummyView3_3 from "@/views/User/DummyView3_3.vue";
-import DummyView3_4 from "@/views/User/DummyView3_4.vue";
-import HeroView from "@/views/User/HeroView.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -41,74 +27,69 @@ const router = createRouter({
     },
     {
       path: "/",
-      component: BaseView,
+      component: () => import("@/views/BaseView.vue"),
       beforeEnter: guardRoute,
       children: [
         {
           path: "dashboard",
           name: "dashboard",
-          component: DashboardView,
+          component: () => import("@/views/User/DashboardView.vue"),
         },
         {
           path: "profile",
           name: "profile",
-          component: UserView,
+          component: () => import("@/views/User/ProfileView.vue"),
         },
         {
           path: "dummy2",
           name: "dummy2",
-          component: ButtonView,
+          component: () => import("@/views/User/ButtonView.vue"),
         },
         {
           path: "dummy3_1",
           name: "dummy3_1",
-          component: DummyView3_1,
+          component: () => import("@/views/User/DummyView3_1.vue"),
         },
         {
           path: "dummy3_2",
           name: "dummy3_2",
-          component: DummyView3_2,
+          component: () => import("@/views/User/DummyView3_2.vue"),
         },
         {
           path: "dummy3_3",
           name: "dummy3_3",
-          component: DummyView3_3,
+          component: () => import("@/views/User/DummyView3_3.vue"),
         },
         {
           path: "dummy3_4",
           name: "dummy3_4",
-          component: DummyView3_4,
+          component: () => import("@/views/User/DummyView3_4.vue"),
         },
         {
           path: "herosection",
           name: "herosection",
-          component: HeroView,
-        },
-        {
-          path: "profile",
-          name: "profile",
-          component: ProfileView,
+          component: () => import("@/views/User/HeroView.vue"),
         },
       ],
     },
     {
       path: "/auth",
-      component: AuthView,
+      component: () => import("@/views/AuthView.vue"),
       children: [
         {
           path: "login",
           name: "login",
-          component: LoginView,
+          component: () => import("@/views/Auth/LoginView.vue"),
         },
         {
           path: "register",
           name: "register",
-          component: RegisterView,
+          component: () => import("@/views/Auth/RegisterView.vue"),
         },
         {
           path: "password_reset",
           name: "forgot",
-          component: ForgotPasswordView,
+          component: () => import("@/views/Auth/ForgotPasswordView.vue"),
         },
       ],
     },
