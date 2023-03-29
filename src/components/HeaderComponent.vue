@@ -14,9 +14,9 @@ const user = JSON.parse(sessionStorage.getItem("user"));
   >
     <nav class="w-full px-3 sm:px-6 lg:px-8" aria-label="Top">
       <div class="flex flex-row justify-between w-full h-full py-3">
-        <div class="flex flex-row items-center justify-center">
-          <menuIcon v-if="!(typeof user === undefined || user === null)" />
+        <div class="flex flex-row gap-x-2 items-center justify-center">
           <logoIcon class="w-10 hidden md:inline" />
+          <menuIcon v-if="!(typeof user === undefined || user === null)" />
         </div>
         <div
           class="flex flex-row items-center justify-center gap-x-1 md:gap-x-2"
@@ -30,7 +30,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
             <router-link
               :to="{ name: 'login' }"
               v-if="typeof user === undefined || user === null"
-              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
+              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-[#f8f9fa] hover:dark:bg-opacity-30"
               >{{ $t("header.login") }}</router-link
             >
           </div>
@@ -38,7 +38,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
             <router-link
               :to="{ name: 'register' }"
               v-if="typeof user === undefined || user === null"
-              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-slate-200 hover:dark:bg-opacity-30"
+              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-[#f8f9fa] hover:dark:bg-opacity-30"
               >{{ $t("header.register") }}</router-link
             >
           </div>

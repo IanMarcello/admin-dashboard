@@ -7,7 +7,7 @@ const toggleStore = useToggleStore();
 
 <template>
   <a
-    class="flex items-start justify-center order-first p-2 rounded-lg md:hidden dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-900"
+    class="flex items-start justify-center order-last p-2 rounded-lg dark:bg-[#002b42] hover:bg-[#f8f9fa] dark:hover:bg-[#002b42]"
   >
     <span
       @click="toggleStore.toggleShow"

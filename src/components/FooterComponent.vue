@@ -1,12 +1,12 @@
 <template>
   <!-- <footer
-    class="flex items-center h-12 px-4 m-4 bg-white rounded-md shadow-lg dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+    class="flex items-center h-12 px-4 m-4 bg-white rounded-md shadow-lg dark:bg-[#002b42] text-slate-800 dark:text-slate-200"
   >
     {{ $t("footer.footer") }}
   </footer> -->
 
   <footer
-    class="px-4 m-4 bg-white rounded-md shadow-lg dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+    class="px-4 m-4 bg-white rounded-md shadow-lg dark:bg-[#002b42] text-slate-800 dark:text-slate-200"
   >
     <div class="container mx-auto px-6 pt-10 pb-6">
       <div class="flex flex-wrap">

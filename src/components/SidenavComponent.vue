@@ -25,7 +25,7 @@ const logout = async () => {
 
 <template>
   <nav
-    class="fixed w-full px-2 transition-transform -translate-x-full max-h-fit top-16 sm:top-0 sm:relative sm:order-first sm:w-64 sm:flex text-slate-900 bg-[#ffffff] dark:bg-[#003049] dark:text-slate-200 md:translate-x-0 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
+    class="fixed w-full px-2 transition-transform -translate-x-full min-h-full top-16 sm:top-0 sm:relative sm:order-first sm:w-64 sm:flex text-slate-900 bg-[#ffffff] dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
     :class="toggleStore.show ? 'translate-x-0 shadow-lg' : '-translate-x-full'"
   >
     <div class="flex flex-col justify-between h-full px-3 py-4">
@@ -33,9 +33,11 @@ const logout = async () => {
         class="mb-2 overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
       >
         <ul>
-          <li>
+          <li class="mb-1">
             <router-link
               :to="{ name: 'dashboard' }"
+              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
+              exact-active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span>
@@ -44,9 +46,10 @@ const logout = async () => {
               <span class="ml-3">{{ $t("sidenav.dashboard") }}</span>
             </router-link>
           </li>
-          <li>
+          <li class="mb-1">
             <router-link
               :to="{ name: 'dummy2' }"
+              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span>
@@ -55,7 +58,7 @@ const logout = async () => {
               <span class="ml-3">{{ $t("sidenav.button") }}</span>
             </router-link>
           </li>
-          <li>
+          <li class="mb-1">
             <Disclosure v-slot="{ open }">
               <DisclosureButton
                 class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
@@ -80,24 +83,28 @@ const logout = async () => {
               >
                 <router-link
                   :to="{ name: 'dummy3_1' }"
+                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
                   <span class="ml-3">{{ $t("sidenav.link") }}#3-1</span>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_2' }"
+                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
                   <span class="ml-3">{{ $t("sidenav.link") }}#3-2</span>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_3' }"
+                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
                   <span class="ml-3">{{ $t("sidenav.link") }}#3-3</span>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_4' }"
+                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
                   <span class="ml-3">{{ $t("sidenav.link") }}#3-4</span>
@@ -105,9 +112,10 @@ const logout = async () => {
               </DisclosurePanel>
             </Disclosure>
           </li>
-          <li>
+          <li class="mb-1">
             <router-link
               :to="{ name: 'herosection' }"
+              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
               <span>
@@ -125,6 +133,7 @@ const logout = async () => {
           <li>
             <router-link
               :to="{ name: 'login' }"
+              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
@@ -135,6 +144,7 @@ const logout = async () => {
           <li>
             <router-link
               :to="{ name: 'register' }"
+              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               v-if="typeof user === undefined || user === null"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
