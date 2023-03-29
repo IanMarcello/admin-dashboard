@@ -47,12 +47,12 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         class="overflow-auto rounded-lg md:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
         <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.one") }} -->
-        <StackedAreaChart />
+        <StackedAreaChart class="p-2" />
       </div>
       <div
         class="overflow-auto rounded-lg md:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <PieChart />
+        <PieChart class="p-2" />
       </div>
     </section>
     <section class="grid grid-rows-3 gap-4 sm:grid-cols-12 sm:grid-rows-none">

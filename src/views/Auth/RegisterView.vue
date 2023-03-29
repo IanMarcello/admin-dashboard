@@ -38,8 +38,11 @@ const register = async () => {
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-contain bg-no-repeat bg-left bg-[url('@/assets/images/bg/bg-vergil.png')] dark:bg-slate-900"
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 dark:bg-[#002b42]"
   >
+    <!-- <div
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-contain bg-no-repeat bg-left bg-[url('@/assets/images/bg/bg-vergil.png')] dark:bg-[#002b42]"
+  > -->
     <div class="flex items-center justify-end gap-3">
       <localeIcon />
       <themeIcon />
@@ -65,7 +68,7 @@ const register = async () => {
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
-        class="px-4 py-8 rounded-md shadow-lg text-slate-900 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+        class="px-4 py-8 rounded-md shadow-lg text-slate-900 dark:text-slate-200 bg-slate-50 dark:bg-[#002b42] sm:rounded-lg sm:px-10"
       >
         <form class="space-y-6" @submit.prevent="register">
           <div>
@@ -77,7 +80,7 @@ const register = async () => {
                 id="name"
                 name="name"
                 type="text"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.name"
               />
             </div>
@@ -92,7 +95,7 @@ const register = async () => {
                 id="name"
                 name="name"
                 type="text"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.name"
               />
             </div>
@@ -108,7 +111,7 @@ const register = async () => {
                 name="email"
                 type="email"
                 autocomplete="email"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.email"
               />
             </div>
@@ -124,7 +127,7 @@ const register = async () => {
                 name="password"
                 type="password"
                 autocomplete="current-password"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.password"
               />
             </div>
@@ -140,7 +143,7 @@ const register = async () => {
                 name="confirm_password"
                 type="password"
                 autocomplete="new-password"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.confirm_password"
               />
             </div>
@@ -164,7 +167,7 @@ const register = async () => {
               />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 rounded bg-slate-100 dark:bg-slate-700">{{
+              <span class="px-2 rounded bg-[#f8f9fa] dark:bg-[#002b42]">{{
                 $t("register.register_with")
               }}</span>
             </div>
@@ -174,7 +177,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with Facebook</span>
                 <svg
@@ -195,7 +198,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with Twitter</span>
                 <svg
@@ -214,7 +217,7 @@ const register = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-slate-900 dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-slate-200 hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
               >
                 <span class="sr-only">Sign up with GitHub</span>
                 <svg

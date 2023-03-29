@@ -9,7 +9,7 @@ const authStore = useAuthStore();
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-slate-100 dark:bg-slate-900"
+    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-[#f8f9fa] dark:bg-[#002b42]"
   >
     <div class="flex items-center justify-center gap-3 mb-6">
       <localeIcon />
@@ -27,7 +27,7 @@ const authStore = useAuthStore();
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
-        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 rounded-md bg-slate-50 dark:bg-slate-800 sm:rounded-lg sm:px-10"
+        class="px-4 py-8 shadow-lg text-slate-900 dark:text-slate-200 rounded-md bg-slate-50 dark:bg-[#002b42] sm:rounded-lg sm:px-10"
       >
         <form class="space-y-6" @submit.prevent="password_reset">
           <div>
@@ -40,7 +40,7 @@ const authStore = useAuthStore();
                 name="email"
                 type="email"
                 autocomplete="email"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                 v-model="authStore.email"
               />
             </div>

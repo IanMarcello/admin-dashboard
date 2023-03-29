@@ -11,7 +11,7 @@ const toggleStore = useToggleStore();
   <div class="flex flex-col flex-1 sm:flex-row">
     <main
       :onclick="toggleStore.show ? toggleStore.toggleShow : ''"
-      class="flex-1 mt-16 bg-slate-100 sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-slate-900 md:filter-none text-slate-900 dark:text-slate-200"
+      class="flex-1 mt-16 bg-[#f8f9fa] sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-[#002b42] md:filter-none text-slate-900 dark:text-slate-200"
       :class="toggleStore.show ? 'brightness-50 select-none' : 'filter-none'"
     >
       <div
@@ -34,21 +34,23 @@ const toggleStore = useToggleStore();
             src="@/assets/images/content/hero_icon2.png"
           />
           <div class="text-center lg:w-5/12 w-full">
-            <h1 class="my-4 text-5xl font-bold leading-tight">
+            <h1
+              class="my-4 text-5xl font-bold leading-tight text-slate-900 dark:text-slate-200"
+            >
               Lorem ipsum dolor sit amet.
             </h1>
-            <p class="text-2xl mb-8">
+            <p class="text-2xl mb-8 text-slate-900 dark:text-slate-200">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Blanditiis, voluptas.
             </p>
             <div class="flex justify-center mx-auto">
               <button
-                class="py-4 px-8 bg-white text-gray-800 font-semibold border rounded-full hover:bg-slate-100 hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+                class="py-4 px-8 dark:bg-[#002b42] bg-white text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-[#f8f9fa] hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
               >
                 Lorem, ipsum.
               </button>
               <button
-                class="ml-4 py-4 px-8 bg-white text-gray-800 font-semibold border rounded-full hover:bg-slate-100 hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
+                class="ml-4 py-4 px-8 dark:bg-[#002b42] bg-white text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-[#f8f9fa] hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
               >
                 Lorem
               </button>
