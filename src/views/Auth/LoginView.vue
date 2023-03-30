@@ -70,29 +70,30 @@ const login = async () => {
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 dark:bg-[#002b42]"
+    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-200 to-light-600 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
-    <!-- <div
-    class="flex flex-col justify-center min-h-screen py-6 sm:px-6 lg:px-8 bg-contain bg-no-repeat bg-right bg-[url('@/assets/images/bg/bg-dante.png')] dark:bg-[#002b42]"
-  > -->
-    <div class="flex items-center justify-start gap-3">
-      <localeIcon />
-      <themeIcon />
+    <div class="flex items-center justify-center sm:justify-start gap-3">
+      <localeIcon
+        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+      />
+      <themeIcon
+        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+      />
     </div>
 
     <div
-      class="sm:mx-auto sm:w-full sm:max-w-md text-slate-900 dark:text-slate-200"
+      class="sm:mx-auto sm:w-full sm:max-w-md text-dark-900 dark:text-light-200"
     >
       <authLogoIcon />
       <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
         {{ $t("login.login_account") }}
       </h2>
-      <p class="mt-2 text-sm text-center text-slate-600 dark:text-slate-400">
+      <p class="mt-2 text-sm text-center text-light-700 dark:text-light-500">
         {{ $t("login.no_account") }},
         {{ " " }}
         <router-link
           :to="{ name: 'register' }"
-          class="font-medium text-indigo-600 hover:text-indigo-500"
+          class="font-medium dark:text-indigo-500 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-500"
           >{{ $t("login.register") }}</router-link
         >
       </p>
@@ -100,7 +101,7 @@ const login = async () => {
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
-        class="px-4 py-8 rounded-md shadow-lg text-slate-900 dark:text-slate-200 bg-slate-50 dark:bg-[#002b42] sm:rounded-lg sm:px-10"
+        class="px-4 py-8 rounded-md shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600 sm:rounded-lg sm:px-10"
       >
         <form class="space-y-6" @submit.prevent="login">
           <div>
@@ -112,10 +113,10 @@ const login = async () => {
                 id="email"
                 name="email"
                 type="email"
-                autocomplete="email"
+                autocomplete="off"
                 required
                 v-model="authStore.email"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
             </div>
           </div>
@@ -132,7 +133,7 @@ const login = async () => {
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
-                class="block w-full px-3 py-2 bg-white border rounded-md shadow-sm appearance-none border-slate-300 dark:border-slate-500 dark:bg-[#002b42] focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                class="block w-full px-3 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
             </div>
           </div>
@@ -143,7 +144,7 @@ const login = async () => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
               />
               <label for="remember-me" class="block ml-2 text-sm">{{
                 $t("login.remember_me")
@@ -153,7 +154,7 @@ const login = async () => {
             <div class="text-sm">
               <router-link
                 :to="{ name: 'forgot' }"
-                class="font-medium text-indigo-600 hover:text-indigo-500"
+                class="font-medium dark:text-indigo-500 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-500"
                 >{{ $t("login.forgot_password") }}?</router-link
               >
             </div>
@@ -162,7 +163,7 @@ const login = async () => {
           <div>
             <button
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
             >
               {{ $t("login.login") }}
             </button>
@@ -173,11 +174,11 @@ const login = async () => {
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
               <div
-                class="w-full border-t border-slate-300 dark:border-slate-700"
+                class="w-full border-t border-light-400 dark:border-dark-400"
               />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 rounded bg-[#f8f9fa] dark:bg-[#002b42]">{{
+              <span class="px-2 rounded bg-light-100 dark:bg-dark-400">{{
                 $t("login.continue_with")
               }}</span>
             </div>
@@ -187,8 +188,9 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
+                <span class="sr-only">Login with Facebook</span>
                 <svg
                   class="w-5 h-5"
                   aria-hidden="true"
@@ -207,8 +209,9 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
+                <span class="sr-only">Login with Twitter</span>
                 <svg
                   class="w-5 h-5"
                   aria-hidden="true"
@@ -225,8 +228,9 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium bg-white border rounded-md shadow-sm dark:bg-[#002b42] dark:border-slate-700 border-slate-300 text-slate-700 dark:text-slate-50 hover:bg-[#f8f9fa] hover:dark:bg-opacity-50"
+                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
+                <span class="sr-only">Login with GitHub</span>
                 <svg
                   class="w-5 h-5"
                   aria-hidden="true"

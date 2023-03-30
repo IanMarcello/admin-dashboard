@@ -45,12 +45,12 @@ const toggleStore = useToggleStore();
             </p>
             <div class="flex justify-center mx-auto">
               <button
-                class="py-4 px-8 dark:bg-[#002b42] bg-white text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-[#f8f9fa] hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
+                class="py-4 px-8 dark:bg-dark-600 bg-light-50 text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-light-100 hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
               >
                 Lorem, ipsum.
               </button>
               <button
-                class="ml-4 py-4 px-8 dark:bg-[#002b42] bg-white text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-[#f8f9fa] hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
+                class="ml-4 py-4 px-8 dark:bg-dark-600 bg-light-50 text-gray-800 font-semibold border dark:border-transparent rounded-full hover:bg-light-100 hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 dark:text-slate-200"
               >
                 Lorem
               </button>

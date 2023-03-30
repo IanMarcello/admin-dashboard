@@ -11,10 +11,12 @@ const toggleStore = useToggleStore();
   <HeaderComponent />
   <div class="flex flex-col flex-1 sm:flex-row">
     <main
-      class="flex-1 mt-16 bg-[#f8f9fa] sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-[#002b42] md:filter-none"
-      :class="
-        toggleStore.show ? 'brightness-50 select-none' : 'filter-none md:-ml-64'
-      "
+      :onclick="toggleStore.show ? toggleStore.toggleShow : ''"
+      class="flex-1 mt-16 bg-light-100 sm:-ml-64 sm:mt-0 dark:bg-dark-600 md:filter-none"
+      :class="[
+        toggleStore.show ? 'brightness-50 select-none' : 'filter-none',
+        toggleStore.openSidebar ? 'md:ml-0' : 'md:-ml-64',
+      ]"
     >
       <RouterView v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
