@@ -1,3 +1,4 @@
+/* Disable select for span, anchor and image tags */
 span,
 a,
 img {
@@ -7,14 +8,16 @@ img {
   -ms-user-select: none;
 }
 
+/* Remove textarea autoresize */
 textarea {
   resize: none;
   overflow-y: scroll;
 }
 
+/* Fade transition between pages */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.25s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
@@ -22,6 +25,7 @@ textarea {
   opacity: 0;
 }
 
+/* Color transition when switching to dark/light mode */
 body * {
-  @apply transition-colors duration-75;
+  @apply transition-colors duration-100;
 }
