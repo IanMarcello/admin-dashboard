@@ -7,7 +7,7 @@ import IcOutlineLanguage from "~icons/ic/round-language";
   <Menu as="div" class="relative inline-block text-left">
     <div>
       <MenuButton
-        class="inline-flex justify-center w-full px-4 py-2 text-sm font-light rounded-lg dark:bg-black text-slate-900 dark:text-slate-200 dark:bg-opacity-20 hover:bg-[#f8f9fa] hover:dark:bg-opacity-30"
+        class="inline-flex justify-center w-full px-4 py-2 text-sm font-light text-slate-900 dark:text-slate-200"
       >
         <span>
           <IcOutlineLanguage class="w-6 h-6" />
@@ -24,7 +24,7 @@ import IcOutlineLanguage from "~icons/ic/round-language";
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute right-0 z-20 mt-2 origin-top-right bg-white divide-y rounded-md shadow-lg divide-slate-400 dark:divide-slate-200 dark:bg-[#002b42] w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute left-0 z-20 mt-2 origin-top-right bg-white divide-y rounded-md shadow-lg divide-slate-400 dark:divide-slate-200 dark:bg-[#002b42] w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <div class="px-1 py-1">
           <MenuItem>
