@@ -10,7 +10,9 @@ import {
 import VChart, { THEME_KEY } from "vue-echarts";
 import { ref, provide, computed } from "vue";
 import { useThemeStore } from "@/stores/theme";
+import { useToggleStore } from "@/stores/state";
 
+const toggleStore = useToggleStore();
 const themeStore = useThemeStore();
 
 use([
@@ -38,7 +40,7 @@ const option = ref({
   legend: {
     orient: "horizontal",
     left: "center",
-    bottom: "bottom",
+    bottom: "0",
     data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"],
   },
   series: [
@@ -63,9 +65,15 @@ const option = ref({
       },
     },
   ],
+  // backgroundColor: "transparent",
 });
 </script>
 
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <v-chart
+    class="chart"
+    :option="option"
+    :key="toggleStore.show"
+    :autoresize="true"
+  />
 </template>

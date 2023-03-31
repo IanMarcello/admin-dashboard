@@ -3,6 +3,7 @@ import { notify } from "notiwind";
 import { onMounted } from "vue";
 import PieChart from "@/views/User/Charts/PieChart.vue";
 import StackedAreaChart from "@/views/User/Charts/StackedAreaChart.vue";
+import IcSharpAccountCircle from "~icons/ic/sharp-account-circle";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -31,7 +32,6 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
   <div class="grid gap-2 m-5">
     <section class="grid">
       <div class="p-3 h-fit overflow-auto text-slate-900 dark:text-slate-200">
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.zero") }} -->
         <p class="text-base font-semibold text-indigo-600">
           {{ $t("user.welcome") }},
         </p>
@@ -42,15 +42,14 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         </h1>
       </div>
     </section>
-    <section class="grid grid-rows-2 gap-4 md:grid-cols-12 md:grid-rows-none">
+    <section class="grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none">
       <div
-        class="overflow-auto rounded-lg md:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.one") }} -->
         <StackedAreaChart class="p-2" />
       </div>
       <div
-        class="overflow-auto rounded-lg md:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
         <PieChart class="p-2" />
       </div>
@@ -59,7 +58,6 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       <div
         class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.three") }} -->
         <div
           class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
         >
@@ -76,8 +74,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
           <div
             class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
           >
-            <img
-              src="https://api.iconify.design/ic:baseline-account-circle.svg"
+            <IcSharpAccountCircle
               class="w-12 h-12 bg-white dark:bg-[#003049]"
             />
           </div>
@@ -103,8 +100,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
           <div
             class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
           >
-            <img
-              src="https://api.iconify.design/ic:baseline-account-circle.svg"
+            <IcSharpAccountCircle
               class="w-12 h-12 bg-white dark:bg-[#003049]"
             />
           </div>
@@ -130,8 +126,7 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
           <div
             class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
           >
-            <img
-              src="https://api.iconify.design/ic:baseline-account-circle.svg"
+            <IcSharpAccountCircle
               class="w-12 h-12 bg-white dark:bg-[#003049]"
             />
           </div>

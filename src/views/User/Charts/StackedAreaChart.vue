@@ -13,7 +13,9 @@ import VChart, { THEME_KEY } from "vue-echarts";
 import { UniversalTransition } from "echarts/features";
 import { ref, provide, computed } from "vue";
 import { useThemeStore } from "@/stores/theme";
+import { useToggleStore } from "@/stores/state";
 
+const toggleStore = useToggleStore();
 const themeStore = useThemeStore();
 
 use([
@@ -48,13 +50,14 @@ const option = ref({
   legend: {
     orient: "horizontal",
     left: "center",
-    bottom: "bottom",
+    bottom: "0",
+    animation: true,
     data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"],
   },
   grid: {
-    left: "3%",
+    left: "4%",
     right: "4%",
-    bottom: "5%",
+    bottom: "13%",
     containLabel: true,
   },
   xAxis: [
@@ -130,9 +133,15 @@ const option = ref({
       data: [820, 932, 901, 934, 1290, 1330, 1320],
     },
   ],
+  // backgroundColor: "transparent",
 });
 </script>
 
 <template>
-  <v-chart class="chart" :option="option" autoresize />
+  <v-chart
+    class="chart"
+    :option="option"
+    :key="toggleStore.show"
+    :autoresize="true"
+  />
 </template>
