@@ -2,12 +2,12 @@ import { defineStore } from "pinia";
 
 export const useToggleStore = defineStore("toggle", {
   state: () => ({
-    show: true,
+    // showSidebar: false,
     openSidebar: true,
   }),
   actions: {
     toggleShow() {
-      this.show = !this.show;
+      // this.showSidebar = !this.showSidebar;
       this.openSidebar = !this.openSidebar;
     },
   },
