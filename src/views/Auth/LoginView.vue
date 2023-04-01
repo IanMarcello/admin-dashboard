@@ -21,7 +21,7 @@ onMounted(() => {
         title: "Success",
         text: "Logged out successfully!",
       },
-      2000
+      5000
     );
   }
 
@@ -48,6 +48,8 @@ const authStore = useAuthStore();
 
 const login = async () => {
   const response = await authStore.login();
+
+  console.log(response);
 
   if (response.data.code == 200) {
     router.push({ name: "dashboard" });

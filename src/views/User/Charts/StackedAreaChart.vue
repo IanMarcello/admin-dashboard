@@ -37,6 +37,7 @@ provide(
 const option = ref({
   title: {
     text: "Stacked Area Chart",
+    left: "center",
   },
   tooltip: {
     trigger: "axis",

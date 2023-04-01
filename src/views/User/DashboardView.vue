@@ -46,12 +46,12 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       <div
         class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <StackedAreaChart class="p-2" />
+        <StackedAreaChart />
       </div>
       <div
         class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <PieChart class="p-2" />
+        <PieChart />
       </div>
     </section>
     <section class="grid grid-rows-3 gap-4 sm:grid-cols-12 sm:grid-rows-none">

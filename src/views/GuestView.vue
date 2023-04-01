@@ -1,19 +1,26 @@
 <script setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
-// import FooterComponent from "@/components/FooterComponent.vue";
-import { useToggleStore } from "@/stores/state";
 
-const toggleStore = useToggleStore();
+import { onMounted, onBeforeUnmount, ref } from "vue";
+
+var isMounted = ref(true);
+
+onMounted(() => {
+  isMounted.value = true;
+});
+
+onBeforeUnmount(() => {
+  isMounted.value = false;
+});
 </script>
 
 <template>
   <HeaderComponent />
-  <div class="flex flex-col flex-1 sm:flex-row">
-    <main
-      :onclick="toggleStore.show ? toggleStore.toggleShow : ''"
-      class="flex-1 mt-16 bg-[#f8f9fa] sm:-ml-64 sm:mt-0 md:ml-0 dark:bg-[#002b42] md:filter-none text-slate-900 dark:text-slate-200"
-      :class="toggleStore.show ? 'brightness-50 select-none' : 'filter-none'"
-    >
+  <div
+    class="flex flex-col flex-1 sm:flex-row"
+    :class="isMounted ? 'fade-in' : 'fade-out'"
+  >
+    <main class="flex-1 text-slate-900 dark:text-slate-200">
       <div
         class="h-full text-white"
         style="
@@ -58,7 +65,47 @@ const toggleStore = useToggleStore();
           </div>
         </div>
       </div>
-      <!-- <FooterComponent /> -->
     </main>
   </div>
 </template>
+
+<style>
+.fade-in {
+  -webkit-animation: fade-in ease 1s;
+  -moz-animation: fade-in ease 1s;
+  -o-animation: fade-in ease 1s;
+  -ms-animation: fade-in ease 1s;
+  animation: fade-in ease-in 1s;
+  animation-fill-mode: forwards;
+}
+
+.fade-out {
+  -webkit-animation: fade-out ease 5s;
+  -moz-animation: fade-out ease 5s;
+  -o-animation: fade-out ease 5s;
+  -ms-animation: fade-out ease 5s;
+  animation: fade-out ease 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+</style>
