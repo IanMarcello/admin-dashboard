@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute leading-[100vh] h-screen w-screen flex items-center z-50 text-center justify-center fade-in-out bg-gradient-to-br from-light-200 to-light-600 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
+    class="absolute leading-[100vh] h-screen w-screen flex items-center z-50 text-center justify-center fade-in-out bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
     <fingerprint-spinner
       :animation-duration="1250"
