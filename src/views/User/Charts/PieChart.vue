@@ -65,7 +65,7 @@ const option = ref({
       },
     },
   ],
-  // backgroundColor: "transparent",
+  backgroundColor: "transparent",
 });
 </script>
 

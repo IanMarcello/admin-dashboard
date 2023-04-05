@@ -1,5 +1,5 @@
 <script setup>
-import { use } from "echarts/core";
+import { registerTheme, use } from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 import { LineChart } from "echarts/charts";
 import {
@@ -14,9 +14,12 @@ import { UniversalTransition } from "echarts/features";
 import { ref, provide, computed } from "vue";
 import { useThemeStore } from "@/stores/theme";
 import { useToggleStore } from "@/stores/state";
+import essos from "@/components/chartThemes/essos.json";
 
 const toggleStore = useToggleStore();
 const themeStore = useThemeStore();
+
+registerTheme("essos", essos);
 
 use([
   TitleComponent,
@@ -78,7 +81,6 @@ const option = ref({
       name: "Email",
       type: "line",
       stack: "Total",
-      smooth: true,
       areaStyle: {},
       emphasis: {
         focus: "series",
@@ -88,7 +90,6 @@ const option = ref({
     {
       name: "Union Ads",
       type: "line",
-      smooth: true,
       stack: "Total",
       areaStyle: {},
       emphasis: {
@@ -99,7 +100,6 @@ const option = ref({
     {
       name: "Video Ads",
       type: "line",
-      smooth: true,
       stack: "Total",
       areaStyle: {},
       emphasis: {
@@ -110,7 +110,6 @@ const option = ref({
     {
       name: "Direct",
       type: "line",
-      smooth: true,
       stack: "Total",
       areaStyle: {},
       emphasis: {
@@ -121,7 +120,6 @@ const option = ref({
     {
       name: "Search Engine",
       type: "line",
-      smooth: true,
       stack: "Total",
       label: {
         show: true,
@@ -134,7 +132,7 @@ const option = ref({
       data: [820, 932, 901, 934, 1290, 1330, 1320],
     },
   ],
-  // backgroundColor: "transparent",
+  backgroundColor: "transparent",
 });
 </script>
 

@@ -9,7 +9,7 @@ const authStore = useAuthStore();
 
 <template>
   <div
-    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-200 to-light-600 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
+    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
     <div class="flex items-center justify-center gap-3 mb-6">
       <localeIcon
