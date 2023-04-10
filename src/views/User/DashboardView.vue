@@ -3,7 +3,7 @@ import { notify } from "notiwind";
 import { onMounted } from "vue";
 import PieChart from "@/views/User/Charts/PieChart.vue";
 import StackedAreaChart from "@/views/User/Charts/StackedAreaChart.vue";
-import IcSharpAccountCircle from "~icons/ic/sharp-account-circle";
+// import IcSharpAccountCircle from "~icons/ic/sharp-account-circle";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -26,6 +26,12 @@ onMounted(() => {
 });
 
 const user = JSON.parse(sessionStorage.getItem("user")).name;
+
+const stats = [
+  { name: "Total Users", stat: "71,897" },
+  { name: "Active Users", stat: "58.16%" },
+  { name: "Inactive Users", stat: "41.84%" },
+];
 </script>
 
 <template>
@@ -54,83 +60,24 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         <PieChart />
       </div>
     </section>
-    <section class="grid grid-rows-3 gap-4 sm:grid-cols-12 sm:grid-rows-none">
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 1</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
+    <section class="grid">
+      <div>
+        <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
           <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
+            v-for="item in stats"
+            :key="item.name"
+            class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
           >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
+            <dt class="truncate text-sm font-medium text-gray-500">
+              {{ item.name }}
+            </dt>
+            <dd
+              class="mt-1 text-3xl font-semibold tracking-tight text-gray-900"
+            >
+              {{ item.stat }}
+            </dd>
           </div>
-        </div>
-      </div>
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.four") }} -->
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 2</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
-          >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.five") }} -->
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 3</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
-          >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
-          </div>
-        </div>
+        </dl>
       </div>
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
