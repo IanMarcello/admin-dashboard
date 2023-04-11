@@ -4,10 +4,10 @@ import http from "@/services/http";
 export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
-      id: null,
       name: "",
       email: "",
-      token: null,
+      password: "",
+      confirm_password: "",
     };
   },
 
@@ -30,14 +30,12 @@ export const useAuthStore = defineStore("auth", {
           })
         );
 
-        this.email = "";
-        this.password = "";
+        this.$reset();
 
         return response;
       }
 
-      this.email = "";
-      this.password = "";
+      this.$reset();
 
       return response;
     },
@@ -56,12 +54,7 @@ export const useAuthStore = defineStore("auth", {
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
 
-      console.log(response);
-
-      this.name = "";
-      this.email = "";
-      this.password = "";
-      this.confirm_password = "";
+      this.$reset();
 
       return response;
     },
