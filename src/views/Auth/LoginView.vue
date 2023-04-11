@@ -119,7 +119,7 @@ const login = async () => {
                 autocomplete="off"
                 required
                 v-model="authStore.email"
-                class="block w-full px-3 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
+                class="block w-full pl-3 pr-10 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
             </div>
           </div>
@@ -136,20 +136,22 @@ const login = async () => {
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
-                class="block w-full px-3 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
+                class="block w-full pl-3 pr-10 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
               <div
-                class="pointer-events-auto cursor-pointer absolute inset-y-0 right-0 flex items-center pr-3"
+                class="cursor-pointer absolute inset-y-0 right-0 flex items-center pr-3"
               >
                 <IcBaselineVisibility
                   @click="visibility = !visibility"
                   v-if="visibility"
-                  class="h-6 w-6"
+                  class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
+                  aria-hidden="true"
                 />
                 <IcBaselineVisibilityOff
                   @click="visibility = !visibility"
                   v-else
-                  class="h-6 w-6"
+                  class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
+                  aria-hidden="true"
                 />
               </div>
             </div>
@@ -161,7 +163,7 @@ const login = async () => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
+                class="w-4 h-4 rounded-md text-indigo-600 border-gray-300 focus:ring-indigo-500"
               />
               <label for="remember-me" class="block ml-2 text-sm">{{
                 $t("login.remember_me")

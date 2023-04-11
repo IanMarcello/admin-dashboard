@@ -30,7 +30,7 @@ provide(
 
 const option = ref({
   title: {
-    text: "Traffic Sources",
+    text: "Users Categorized by Gender",
     left: "center",
   },
   tooltip: {
@@ -41,20 +41,18 @@ const option = ref({
     orient: "horizontal",
     left: "center",
     bottom: "0",
-    data: ["Direct", "Email", "Ad Networks", "Video Ads", "Search Engines"],
+    data: ["Male", "Female", "Others"],
   },
   series: [
     {
-      name: "Traffic Sources",
+      name: "Users Categorized by Gender",
       type: "pie",
       radius: "70%",
       center: ["50%", "50%"],
       data: [
-        { value: 335, name: "Direct" },
-        { value: 310, name: "Email" },
-        { value: 234, name: "Ad Networks" },
-        { value: 135, name: "Video Ads" },
-        { value: 1548, name: "Search Engines" },
+        { value: 50328, name: "Male" },
+        { value: 14379, name: "Female" },
+        { value: 7191, name: "Others" },
       ],
       emphasis: {
         itemStyle: {
