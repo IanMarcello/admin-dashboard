@@ -1,11 +1,13 @@
 <script setup>
 import { notify } from "notiwind";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
 import themeIcon from "@/components/icons/themeIcon.vue";
 import localeIcon from "@/components/icons/localeIcon.vue";
 import authLogoIcon from "@/components/icons/authLogoIcon.vue";
+import IcBaselineVisibility from "~icons/ic/baseline-visibility";
+import IcBaselineVisibilityOff from "~icons/ic/baseline-visibility-off";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -40,16 +42,15 @@ onMounted(() => {
   }
 
   sessionStorage.clear();
-  authStore.email = "";
+  authStore.$reset();
 });
 
 const router = useRouter();
 const authStore = useAuthStore();
+const visibility = ref(true);
 
 const login = async () => {
   const response = await authStore.login();
-
-  console.log(response);
 
   if (response.data.code == 200) {
     router.push({ name: "dashboard" });
@@ -127,16 +128,30 @@ const login = async () => {
             <label for="password" class="block text-sm font-medium">{{
               $t("login.password")
             }}</label>
-            <div class="mt-1">
+            <div class="relative mt-1">
               <input
                 id="password"
                 name="password"
-                type="password"
+                :type="visibility ? 'password' : 'text'"
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
                 class="block w-full px-3 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
+              <div
+                class="pointer-events-auto cursor-pointer absolute inset-y-0 right-0 flex items-center pr-3"
+              >
+                <IcBaselineVisibility
+                  @click="visibility = !visibility"
+                  v-if="visibility"
+                  class="h-6 w-6"
+                />
+                <IcBaselineVisibilityOff
+                  @click="visibility = !visibility"
+                  v-else
+                  class="h-6 w-6"
+                />
+              </div>
             </div>
           </div>
 
