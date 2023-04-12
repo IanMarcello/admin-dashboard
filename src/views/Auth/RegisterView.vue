@@ -8,7 +8,7 @@ import localeIcon from "@/components/icons/localeIcon.vue";
 import logoIcon from "@/components/icons/logoIcon.vue";
 
 onMounted(() => {
-  authStore.email = "";
+  authStore.$reset();
 });
 
 const router = useRouter();

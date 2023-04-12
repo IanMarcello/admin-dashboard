@@ -31,6 +31,7 @@ provide(
 const option = ref({
   title: {
     text: "Users Categorized by Gender",
+    top: 10,
     left: "center",
   },
   tooltip: {
@@ -45,13 +46,13 @@ const option = ref({
   },
   series: [
     {
-      name: "Traffic Sources",
+      name: "Users Categorized by Gender",
       type: "pie",
       radius: "70%",
       center: ["50%", "50%"],
       data: [
         { value: 50328, name: "Male" },
-        { value: 14378, name: "Female" },
+        { value: 14379, name: "Female" },
         { value: 7191, name: "Others" },
       ],
       emphasis: {
