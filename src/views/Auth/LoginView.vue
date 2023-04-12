@@ -142,13 +142,13 @@ const login = async () => {
                 class="cursor-pointer absolute inset-y-0 right-0 flex items-center pr-3"
               >
                 <IcBaselineVisibility
-                  @click="visibility = !visibility"
+                  @click.prevent="visibility = !visibility"
                   v-if="visibility"
                   class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
                   aria-hidden="true"
                 />
                 <IcBaselineVisibilityOff
-                  @click="visibility = !visibility"
+                  @click.prevent="visibility = !visibility"
                   v-else
                   class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
                   aria-hidden="true"

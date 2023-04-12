@@ -3,6 +3,7 @@ import { notify } from "notiwind";
 import { onMounted } from "vue";
 import PieChart from "@/views/User/Charts/PieChart.vue";
 import StackedAreaChart from "@/views/User/Charts/StackedAreaChart.vue";
+import StatsView from "@/views/User/Dashboard/StatsView.vue";
 // import IcSharpAccountCircle from "~icons/ic/sharp-account-circle";
 
 onMounted(() => {
@@ -26,12 +27,6 @@ onMounted(() => {
 });
 
 const user = JSON.parse(sessionStorage.getItem("user")).name;
-
-const stats = [
-  { name: "Total Users", stat: "71,897" },
-  { name: "Active Users", stat: "58.16%" },
-  { name: "Inactive Users", stat: "41.84%" },
-];
 </script>
 
 <template>
@@ -49,35 +44,16 @@ const stats = [
       </div>
     </section>
     <section>
-      <div>
-        <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          <div
-            v-for="item in stats"
-            :key="item.name"
-            class="overflow-hidden rounded-lg bg-white dark:bg-[#003049] px-4 py-5 shadow sm:p-6"
-          >
-            <dt
-              class="truncate text-sm font-medium text-slate-500 dark:text-slate-400"
-            >
-              {{ item.name }}
-            </dt>
-            <dd
-              class="mt-1 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-200"
-            >
-              {{ item.stat }}
-            </dd>
-          </div>
-        </dl>
-      </div>
+      <StatsView />
     </section>
     <section class="grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none">
       <div
-        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200 shadow"
       >
         <StackedAreaChart />
       </div>
       <div
-        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200 shadow"
       >
         <PieChart />
       </div>

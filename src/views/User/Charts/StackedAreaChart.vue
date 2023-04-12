@@ -1,5 +1,5 @@
 <script setup>
-import { registerTheme, use } from "echarts/core";
+import { use } from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
 import { LineChart } from "echarts/charts";
 import {
@@ -14,7 +14,6 @@ import { UniversalTransition } from "echarts/features";
 import { ref, provide, computed } from "vue";
 import { useThemeStore } from "@/stores/theme";
 import { useToggleStore } from "@/stores/state";
-import essos from "@/components/chartThemes/essos.json";
 
 const toggleStore = useToggleStore();
 const themeStore = useThemeStore();
@@ -25,8 +24,6 @@ for (let i = 0; i < 12; i++) {
   let d = Math.random() * 200;
   lineData.push(d + b);
 }
-
-registerTheme("essos", essos);
 
 use([
   TitleComponent,
@@ -46,7 +43,8 @@ provide(
 
 const option = ref({
   title: {
-    text: "Total Number of Transactions",
+    text: "Number of Transactions (Per Month)",
+    top: 10,
     left: "center",
   },
   tooltip: {
@@ -62,13 +60,12 @@ const option = ref({
     orient: "horizontal",
     left: "center",
     bottom: "0",
-    animation: true,
     data: ["Transactions", "Transactions (Last Month)"],
   },
   grid: {
-    left: "4%",
-    right: "4%",
-    bottom: "13%",
+    left: "5%",
+    right: "5%",
+    bottom: "10%",
     containLabel: true,
   },
   xAxis: [

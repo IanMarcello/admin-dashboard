@@ -31,6 +31,7 @@ provide(
 const option = ref({
   title: {
     text: "Users Categorized by Gender",
+    top: 10,
     left: "center",
   },
   tooltip: {
