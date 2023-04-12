@@ -10,12 +10,12 @@ const toggleDark = useToggle(isDark);
 
 const setTheme = () => {
   toggleDark();
-  themeStore.theme_key = isDark.value ? "dark" : "essos";
+  themeStore.theme_key = isDark.value ? "dark" : "light";
 };
 </script>
 
 <template>
-  <div @click="setTheme">
+  <div @click.prevent="setTheme">
     <span
       class="inline-flex justify-center px-4 py-2 font-medium cursor-pointer text-slate-900 dark:text-slate-200"
     >

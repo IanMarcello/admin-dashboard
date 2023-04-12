@@ -25,7 +25,7 @@ const logout = async () => {
 
 <template>
   <nav
-    class="fixed w-full px-2 transition-transform -translate-x-full max-h-fit top-16 sm:top-0 sm:relative sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
+    class="fixed h-full w-3/4 px-2 transition-transform top-16 sm:top-0 sm:h-[100vh] sm:relative sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
     :class="[
       toggleStore.openSidebar ? 'translate-x-0 shadow-lg' : '-translate-x-full',
     ]"
