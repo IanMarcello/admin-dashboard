@@ -1,31 +1,16 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { useAuthStore } from "@/stores/auth";
-import { useRouter } from "vue-router";
 import { useToggleStore } from "@/stores/state";
 import IcOutlineKeyboardDoubleArrowRight from "~icons/ic/outline-keyboard-double-arrow-right";
 import IcRoundDashboard from "~icons/ic/round-dashboard";
 import IcRoundExpandMore from "~icons/ic/round-expand-more";
-import IcRoundLogIn from "~icons/ic/round-log-in";
-import IcRoundAppRegistration from "~icons/ic/round-app-registration";
-import IcRoundLogout from "~icons/ic/round-logout";
 
 const toggleStore = useToggleStore();
-const router = useRouter();
-const authStore = useAuthStore();
-
-const user = JSON.parse(sessionStorage.getItem("user"));
-
-const logout = async () => {
-  await authStore.logout();
-
-  router.push({ name: "login" });
-};
 </script>
 
 <template>
   <nav
-    class="fixed h-full w-3/4 px-2 transition-transform top-16 sm:top-0 sm:h-[100vh] sm:relative sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
+    class="fixed min-h-screen w-2/4 px-2 transition-transform top-16 sm:top-0 sm:sticky sm:h-fit sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
     :class="[
       toggleStore.openSidebar ? 'translate-x-0 shadow-lg' : '-translate-x-full',
     ]"
@@ -34,7 +19,7 @@ const logout = async () => {
       <div
         class="mb-2 overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
       >
-        <ul>
+        <ul class="h-[100vh]">
           <li class="mb-1">
             <router-link
               :to="{ name: 'dashboard' }"
@@ -125,45 +110,6 @@ const logout = async () => {
               </span>
               <span class="ml-3">Hero Section</span>
             </router-link>
-          </li>
-        </ul>
-      </div>
-
-      <div class="md:hidden">
-        <ul>
-          <hr class="mb-2 border-1" />
-          <li>
-            <router-link
-              :to="{ name: 'login' }"
-              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              v-if="typeof user === undefined || user === null"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
-            >
-              <span> <IcRoundLogIn class="w-6 h-6" /> </span>
-              <span class="ml-3">{{ $t("sidenav.login") }}</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              :to="{ name: 'register' }"
-              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              v-if="typeof user === undefined || user === null"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
-            >
-              <span> <IcRoundAppRegistration class="w-6 h-6" /> </span>
-              <span class="ml-3">{{ $t("sidenav.register") }}</span>
-            </router-link>
-          </li>
-
-          <li>
-            <a
-              v-if="!(typeof user === undefined || user === null)"
-              @click="logout"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
-            >
-              <span> <IcRoundLogout class="w-6 h-6" /> </span>
-              <span class="ml-3">{{ $t("sidenav.logout") }}</span>
-            </a>
           </li>
         </ul>
       </div>

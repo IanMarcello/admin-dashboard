@@ -86,7 +86,6 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       <div
         class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.four") }} -->
         <div
           class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
         >
@@ -112,7 +111,6 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       <div
         class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        <!-- {{ $t("dashboard.grid") }}{{ $t("dashboard.number.five") }} -->
         <div
           class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
         >
