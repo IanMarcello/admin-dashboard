@@ -3,7 +3,9 @@ import { notify } from "notiwind";
 import { onMounted } from "vue";
 import PieChart from "@/views/User/Charts/PieChart.vue";
 import StackedAreaChart from "@/views/User/Charts/StackedAreaChart.vue";
+import TableView from "@/views/User/Dashboard/TableView.vue";
 import StatsView from "@/views/User/Dashboard/StatsView.vue";
+import TransactionStatsView from "@/views/User/Dashboard/TransactionStatsView.vue";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -45,7 +47,9 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     <section>
       <StatsView />
     </section>
-    <section class="grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none">
+    <section
+      class="mt-3 grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none"
+    >
       <div
         class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200 shadow"
       >
@@ -57,84 +61,10 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
         <PieChart />
       </div>
     </section>
-    <section class="grid grid-rows-3 gap-4 sm:grid-cols-12 sm:grid-rows-none">
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 1</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
-          >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 2</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
-          >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="overflow-auto rounded-lg sm:col-span-4 h-fit bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
-      >
-        <div
-          class="flex divide-x-2 divide-slate-400 dark:divide-slate-200 h-full w-full"
-        >
-          <div class="flex flex-col items-start px-5 w-3/4 py-6">
-            <div class="mb-3">
-              <span>Title 3</span>
-            </div>
-
-            <div class="text-2xl">
-              <span>12435454</span>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center w-1/4 px-5 py-6"
-          >
-            <IcSharpAccountCircle
-              class="w-12 h-12 bg-white dark:bg-[#003049]"
-            />
-          </div>
-        </div>
-      </div>
+    <section class="mt-3">
+      <TransactionStatsView />
     </section>
-    <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
+    <!-- <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
         class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
@@ -166,12 +96,12 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.ten") }}
       </div>
-    </section>
+    </section> -->
     <section class="grid">
       <div
-        class="p-3 overflow-auto shadow-md rounded-lg h-44 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto shadow rounded-lg bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
       >
-        {{ $t("dashboard.grid") }}{{ $t("dashboard.number.eleven") }}
+        <TableView />
       </div>
     </section>
   </div>

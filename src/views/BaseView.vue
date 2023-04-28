@@ -18,8 +18,9 @@ const toggleStore = useToggleStore();
       "
       class="flex-1 mt-16 bg-light-100 sm:-ml-64 sm:mt-0 dark:bg-dark-600 md:filter-none"
       :class="[
-        // toggleStore.showSidebar ? 'brightness-50 select-none' : 'filter-none',
-        toggleStore.openSidebar ? 'md:ml-0' : 'md:-ml-64',
+        toggleStore.openSidebar
+          ? 'md:ml-0 brightness-[0.35] select-none'
+          : 'md:-ml-64 filter-none',
       ]"
     >
       <RouterView v-slot="{ Component }">

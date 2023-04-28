@@ -1,14 +1,14 @@
 <script setup>
 const stats = [
-  { name: "Total Users", stat: "71,897" },
-  { name: "Active Users", stat: "58.16%" },
-  { name: "Inactive Users", stat: "41.84%" },
+  { name: "Total Transactions", stat: "87" },
+  { name: "Transactions (This Month)", stat: "3" },
+  { name: "Completed Transactions (This Month)", stat: "1" },
 ];
 </script>
 
 <template>
   <div>
-    <dl class="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-3">
+    <dl class="grid grid-cols-1 gap-5 sm:grid-cols-3">
       <div
         v-for="item in stats"
         :key="item.name"
