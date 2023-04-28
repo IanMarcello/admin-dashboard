@@ -7,8 +7,14 @@
   },
 
   "sidenav": {
-    "link":"Dummy Link ",
-    "button":"Buttons",
+    "transaction":{
+      "index": "Transactions",
+      "completed": "Completed Transactions",
+      "pending": "Pending Transactions",
+      "reversed": "Reversed Transactions",
+      "failed": "Failed Transactions"
+    },
+    "button":"Users",
     "login": "Login",
     "register": "Register",
     "dashboard": "Dashboard",
@@ -121,5 +127,20 @@
     "dummyThree2":"Dummy View #3-2",
     "dummyThree3":"Dummy View #3-3",
     "dummyThree4":"Dummy View #3-4"
+  },
+
+  "short": {
+    "year": "numeric",
+    "month": "short",
+    "day": "numeric"
+  },
+
+  "long": {
+    "year": "numeric",
+    "month": "short",
+    "day": "numeric",
+    "weekday": "short",
+    "hour": "numeric",
+    "minute": "numeric"
   }
 }
