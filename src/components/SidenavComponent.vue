@@ -10,16 +10,16 @@ const toggleStore = useToggleStore();
 
 <template>
   <nav
-    class="fixed min-h-screen w-2/4 px-2 transition-transform top-16 sm:top-0 sm:sticky sm:h-fit sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
+    class="fixed min-h-screen w-64 px-1 transition-transform top-16 sm:top-0 sm:sticky sm:h-[100vh] sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-[#003049] dark:text-slate-200 shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a]"
     :class="[
       toggleStore.openSidebar ? 'translate-x-0 shadow-lg' : '-translate-x-full',
     ]"
   >
-    <div class="flex flex-col justify-between h-full px-3 py-4">
+    <div class="flex flex-col justify-between w-full h-full px-3 py-4">
       <div
         class="mb-2 overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
       >
-        <ul class="h-[100vh]">
+        <ul class="w-full">
           <li class="mb-1">
             <router-link
               :to="{ name: 'dashboard' }"
@@ -27,22 +27,26 @@ const toggleStore = useToggleStore();
               exact-active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span>
+              <div>
                 <IcRoundDashboard class="w-6 h-6" />
-              </span>
-              <span class="ml-3">{{ $t("sidenav.dashboard") }}</span>
+              </div>
+              <div class="ml-3 text-left flex-1">
+                {{ $t("sidenav.dashboard") }}
+              </div>
             </router-link>
           </li>
           <li class="mb-1">
             <router-link
-              :to="{ name: 'dummy2' }"
+              :to="{ name: 'users' }"
               active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
               class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
             >
-              <span>
+              <div>
                 <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
-              </span>
-              <span class="ml-3">{{ $t("sidenav.button") }}</span>
+              </div>
+              <div class="ml-3 text-left flex-1">
+                {{ $t("sidenav.button") }}
+              </div>
             </router-link>
           </li>
           <li class="mb-1">
@@ -50,11 +54,13 @@ const toggleStore = useToggleStore();
               <DisclosureButton
                 class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
               >
-                <span>
+                <div>
                   <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
-                </span>
-                <span class="ml-3">{{ $t("sidenav.link") }}#3</span>
-                <span
+                </div>
+                <div class="ml-3 text-left flex-1">
+                  {{ $t("sidenav.transaction.index") }}
+                </div>
+                <div
                   :class="
                     open
                       ? '-rotate-180 duration-300 transition'
@@ -62,7 +68,7 @@ const toggleStore = useToggleStore();
                   "
                 >
                   <IcRoundExpandMore class="w-6 h-6" />
-                </span>
+                </div>
               </DisclosureButton>
 
               <DisclosurePanel
@@ -71,30 +77,38 @@ const toggleStore = useToggleStore();
                 <router-link
                   :to="{ name: 'dummy3_1' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">{{ $t("sidenav.link") }}#3-1</span>
+                  <div class="ml-3 text-left flex-1">
+                    {{ $t("sidenav.transaction.completed") }}
+                  </div>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_2' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">{{ $t("sidenav.link") }}#3-2</span>
+                  <div class="ml-3 text-left flex-1">
+                    {{ $t("sidenav.transaction.pending") }}
+                  </div>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_3' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">{{ $t("sidenav.link") }}#3-3</span>
+                  <div class="ml-3 text-left flex-1">
+                    {{ $t("sidenav.transaction.reversed") }}
+                  </div>
                 </router-link>
                 <router-link
                   :to="{ name: 'dummy3_4' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row p-2 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
-                  <span class="ml-3">{{ $t("sidenav.link") }}#3-4</span>
+                  <div class="ml-3 text-left flex-1">
+                    {{ $t("sidenav.transaction.failed") }}
+                  </div>
                 </router-link>
               </DisclosurePanel>
             </Disclosure>
