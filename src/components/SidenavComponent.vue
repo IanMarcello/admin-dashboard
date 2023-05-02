@@ -75,6 +75,15 @@ const toggleStore = useToggleStore();
                 class="pb-2 pl-10 mr-5 text-sm text-slate-900 dark:text-slate-200 sm:mr-0 l-3"
               >
                 <router-link
+                  :to="{ name: 'transactions' }"
+                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                >
+                  <div class="ml-3 text-left flex-1">
+                    {{ $t("sidenav.transaction.all") }}
+                  </div>
+                </router-link>
+                <router-link
                   :to="{ name: 'dummy3_1' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
