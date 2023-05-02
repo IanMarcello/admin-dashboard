@@ -9,6 +9,7 @@
   "sidenav": {
     "transaction":{
       "index": "Transactions",
+      "all": "All Transactions",
       "completed": "Completed Transactions",
       "pending": "Pending Transactions",
       "reversed": "Reversed Transactions",
@@ -127,20 +128,5 @@
     "dummyThree2":"Dummy View #3-2",
     "dummyThree3":"Dummy View #3-3",
     "dummyThree4":"Dummy View #3-4"
-  },
-
-  "short": {
-    "year": "numeric",
-    "month": "short",
-    "day": "numeric"
-  },
-
-  "long": {
-    "year": "numeric",
-    "month": "short",
-    "day": "numeric",
-    "weekday": "short",
-    "hour": "numeric",
-    "minute": "numeric"
   }
 }
