@@ -51,12 +51,12 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       class="mt-3 grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none"
     >
       <div
-        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200 shadow"
+        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
       >
         <StackedAreaChart />
       </div>
       <div
-        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200 shadow"
+        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
       >
         <PieChart />
       </div>
@@ -66,20 +66,20 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     </section>
     <!-- <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.six") }}
       </div>
       <div
-        class="grid grid-rows-2 p-3 overflow-auto rounded-lg sm:col-span-6 gap-y-4 h-96 bg-white dark:bg-[#003049]"
+        class="grid grid-rows-2 p-3 overflow-auto rounded-lg sm:col-span-6 gap-y-4 h-96 bg-light-50 dark:bg-dark-450"
       >
         <div
-          class="p-3 overflow-auto rounded-lg bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.seven") }}
         </div>
         <div
-          class="p-3 overflow-auto rounded-lg bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.eight") }}
         </div>
@@ -87,19 +87,19 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.nine") }}
       </div>
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.ten") }}
       </div>
     </section> -->
     <section class="grid">
       <div
-        class="p-3 overflow-auto shadow rounded-lg bg-white dark:bg-[#003049] text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto shadow rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         <TableView />
       </div>

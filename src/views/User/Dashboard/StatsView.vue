@@ -12,7 +12,7 @@ const stats = [
       <div
         v-for="item in stats"
         :key="item.name"
-        class="overflow-hidden rounded-lg bg-white dark:bg-[#003049] px-4 py-5 shadow sm:p-6"
+        class="overflow-hidden rounded-lg bg-light-50 dark:bg-dark-450 px-4 py-5 shadow sm:p-6"
       >
         <dt
           class="truncate text-sm font-medium text-slate-500 dark:text-slate-400"

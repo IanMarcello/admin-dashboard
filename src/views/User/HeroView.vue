@@ -7,10 +7,10 @@
       >
         <div class="container mx-auto px-6">
           <h2 class="text-4xl font-bold mb-2">
-            Devil May Cry 4 Special Edition
+            Devil May Cry 5 Special Edition
           </h2>
           <h3 class="text-2xl mb-8">
-            The fourth installment of Devil May Cry game series.
+            The fifth installment of Devil May Cry game series.
           </h3>
 
           <button
@@ -25,10 +25,10 @@
     <div>
       <section class="container mx-auto px-6 p-10">
         <h2 class="text-4xl font-bold text-center mb-8">Characters</h2>
-        <div class="flex items-center flex-wrap mb-20">
+        <div class="flex items-center flex-wrap mb-5">
           <div class="w-full md:w-1/2">
             <h4 class="text-3xl font-bold mb-3">Nero</h4>
-            <p class="mb-8">
+            <p class="mb-8 dark:text-light-500">
               One of the main protagonists of the Devil May Cry franchise. He
               first appeared as a playable character in Devil May Cry 4, and
               later in Devil May Cry 5. He was raised in Fortuna and served as a
@@ -43,13 +43,13 @@
           </div>
         </div>
 
-        <div class="flex items-center flex-wrap mb-20">
+        <div class="flex items-center flex-wrap mb-5">
           <div class="w-full md:w-1/2">
             <img src="@/assets/images/content/dante.png" alt="Dante" />
           </div>
           <div class="w-full md:w-1/2 pl-10">
             <h4 class="text-3xl font-bold mb-3">Dante</h4>
-            <p class="mb-8">
+            <p class="mb-8 dark:text-light-500">
               One of the main protagonists of the Devil May Cry franchise, and
               the main playable character for the majority of the games in the
               series. He is the second son of the demon Sparda and the human
@@ -62,10 +62,10 @@
           </div>
         </div>
 
-        <div class="flex items-center flex-wrap mb-20">
+        <div class="flex items-center flex-wrap mb-5">
           <div class="w-full md:w-1/2">
             <h4 class="text-3xl font-bold mb-3">Vergil</h4>
-            <p class="mb-8">
+            <p class="mb-8 dark:text-light-500">
               The older twin brother of Dante and one of the main antagonists of
               the Devil May Cry franchise. Following the death of their mother
               as children, Vergil and Dante went their separate ways, with
@@ -89,19 +89,19 @@
           <h2 class="text-4xl font-bold text-center mb-8">Review Scores</h2>
           <div class="flex flex-wrap md:flex-nowrap md:justify-between">
             <div class="w-full md:w-1/3 rounded shadow-lg py-4 px-4 mb-4">
-              <p class="text-center font-bold text-2xl mb-5">9.0/10</p>
+              <p class="text-center font-bold text-2xl mb-5">8.5/10</p>
               <p class="text-center font-bold text-4xl">GameZone</p>
             </div>
 
             <div
               class="w-full md:w-1/3 md:mx-10 rounded shadow-lg py-4 px-2 mb-4 mx-0"
             >
-              <p class="text-center font-bold text-2xl mb-5">8.0/10</p>
+              <p class="text-center font-bold text-2xl mb-5">9.0/10</p>
               <p class="text-center font-bold text-4xl">GameSpot</p>
             </div>
 
             <div class="w-full md:w-1/3 rounded shadow-lg py-4 px-2 mb-4">
-              <p class="text-center font-bold text-2xl mb-5">8.7/10</p>
+              <p class="text-center font-bold text-2xl mb-5">9.5/10</p>
               <p class="text-center font-bold text-4xl">IGN</p>
             </div>
           </div>
@@ -114,9 +114,9 @@
         <div class="container mx-auto px-6 text-center py-20">
           <h2 class="mb-6 text-4xl font-bold text-center">Limited in Stock</h2>
           <h3 class="my-4 text-2xl">
-            Get yourself the Devil May Cry 4 Special Edition!
+            Get yourself the Devil May Cry 5 Special Edition!
             <br />
-            To Play as Vergil, Lady & Trish
+            To Play as Vergil (The Alpha and the Omega)
           </h3>
           <button
             class="font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider"
