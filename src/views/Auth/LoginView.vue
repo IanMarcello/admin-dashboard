@@ -8,6 +8,7 @@ import localeIcon from "@/components/icons/localeIcon.vue";
 import authLogoIcon from "@/components/icons/authLogoIcon.vue";
 import IcBaselineVisibility from "~icons/ic/baseline-visibility";
 import IcBaselineVisibilityOff from "~icons/ic/baseline-visibility-off";
+import { LoopingRhombusesSpinner } from "epic-spinners";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -181,10 +182,19 @@ const login = async () => {
 
           <div>
             <button
+              v-if="authStore.loading"
               type="submit"
               class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
             >
               {{ $t("login.login") }}
+            </button>
+            <button
+              v-if="!authStore.loading"
+              type="submit"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+            >
+              <looping-rhombuses-spinner :rhombus-size="15" color="#ff1d5e" />
+              <!-- {{ $t("login.login") }} -->
             </button>
           </div>
         </form>
