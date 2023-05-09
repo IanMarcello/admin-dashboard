@@ -8,11 +8,14 @@ export const useAuthStore = defineStore("auth", {
       email: "",
       password: "",
       confirm_password: "",
+      loading: false,
     };
   },
 
   actions: {
     async login() {
+      this.loading = true;
+
       const response = await http.post(
         "/api/login/create",
         {
@@ -32,10 +35,14 @@ export const useAuthStore = defineStore("auth", {
 
         this.$reset();
 
+        this.loading = false;
+
         return response;
       }
 
       this.$reset();
+
+      this.loading = false;
 
       return response;
     },
