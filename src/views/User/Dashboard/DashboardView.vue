@@ -1,11 +1,11 @@
 <script setup>
 import { notify } from "notiwind";
 import { onMounted } from "vue";
-import PieChart from "@/views/User/Charts/PieChart.vue";
-import StackedAreaChart from "@/views/User/Charts/StackedAreaChart.vue";
-import TableView from "@/views/User/Dashboard/TableView.vue";
-import StatsView from "@/views/User/Dashboard/StatsView.vue";
-import TransactionStatsView from "@/views/User/Dashboard/TransactionStatsView.vue";
+import PieChart from "@/views/User/Dashboard/Chart/PieChart.vue";
+import StackedAreaChart from "@/views/User/Dashboard/Chart/StackedAreaChart.vue";
+import TableView from "@/views/User/Dashboard/Table/TableView.vue";
+import StatsView from "@/views/User/Dashboard/StatsCard/StatsView.vue";
+import TransactionStatsView from "@/views/User/Dashboard/StatsCard/TransactionStatsView.vue";
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
