@@ -11,11 +11,6 @@ const toggleStore = useToggleStore();
   <HeaderComponent />
   <div class="flex flex-col flex-1 sm:flex-row">
     <main
-      :onclick="
-        toggleStore.showSidebar && toggleStore.openSidebar
-          ? toggleStore.toggleShow
-          : ''
-      "
       class="flex-1 mt-16 bg-light-100 sm:-ml-64 sm:mt-0 dark:bg-dark-600 md:filter-none"
       :class="[
         toggleStore.openSidebar
