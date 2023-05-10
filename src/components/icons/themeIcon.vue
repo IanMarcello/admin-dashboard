@@ -17,7 +17,7 @@ const setTheme = () => {
 <template>
   <div @click.prevent="setTheme">
     <span
-      class="inline-flex justify-center px-4 py-2 font-medium cursor-pointer text-slate-900 dark:text-slate-200"
+      class="inline-flex justify-center px-4 py-2 font-medium cursor-pointer text-slate-900 dark:text-slate-200 transition"
     >
       <IcOutlineLightMode class="w-6 h-6" />
     </span>

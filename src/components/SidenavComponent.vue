@@ -84,7 +84,7 @@ const toggleStore = useToggleStore();
                   </div>
                 </router-link>
                 <router-link
-                  :to="{ name: 'dummy3_1' }"
+                  :to="{ name: 'completed_transactions' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
@@ -93,7 +93,7 @@ const toggleStore = useToggleStore();
                   </div>
                 </router-link>
                 <router-link
-                  :to="{ name: 'dummy3_2' }"
+                  :to="{ name: 'pending_transactions' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
@@ -102,7 +102,7 @@ const toggleStore = useToggleStore();
                   </div>
                 </router-link>
                 <router-link
-                  :to="{ name: 'dummy3_3' }"
+                  :to="{ name: 'reverse_transactions' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
@@ -111,7 +111,7 @@ const toggleStore = useToggleStore();
                   </div>
                 </router-link>
                 <router-link
-                  :to="{ name: 'dummy3_4' }"
+                  :to="{ name: 'failed_transactions' }"
                   active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
                   class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
                 >
