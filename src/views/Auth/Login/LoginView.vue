@@ -9,7 +9,8 @@ import authLogoIcon from "@/components/icons/authLogoIcon.vue";
 import IcBaselineVisibility from "~icons/ic/baseline-visibility";
 import IcBaselineVisibilityOff from "~icons/ic/baseline-visibility-off";
 import { LoopingRhombusesSpinner } from "epic-spinners";
-
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 onMounted(() => {
   const session = sessionStorage.getItem("session");
   const register = sessionStorage.getItem("register");
@@ -21,8 +22,8 @@ onMounted(() => {
         type: "success",
         color: "text-green-500",
         group: "foo",
-        title: "Success",
-        text: "Logged out successfully!",
+        title: t("notification.success.title"),
+        text: t("notification.success.logout"),
       },
       4000
     );
@@ -35,8 +36,8 @@ onMounted(() => {
         type: "success",
         color: "text-green-500",
         group: "foo",
-        title: "Success",
-        text: "Registered successfully!",
+        title: t("notification.success.title"),
+        text: t("notification.success.register"),
       },
       2000
     );
@@ -62,12 +63,13 @@ const login = async () => {
         type: "error",
         color: "text-red-500",
         group: "foo",
-        title: "Failed",
-        text: "Login Failed!",
+        title: t("notification.failed.title"),
+        text: t("notification.failed.login"),
       },
       2000
     );
-    authStore.email = response.data.email;
+
+    authStore.password = null;
   }
 };
 </script>
@@ -182,19 +184,18 @@ const login = async () => {
 
           <div>
             <button
-              v-if="authStore.loading"
+              v-if="!authStore.loading"
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex justify-center items-center h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
             >
               {{ $t("login.login") }}
             </button>
             <button
-              v-if="!authStore.loading"
+              v-if="authStore.loading"
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex justify-center items-center h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
             >
               <looping-rhombuses-spinner :rhombus-size="15" color="#ff1d5e" />
-              <!-- {{ $t("login.login") }} -->
             </button>
           </div>
         </form>

@@ -3,9 +3,12 @@ import { notify } from "notiwind";
 import { onMounted } from "vue";
 import PieChart from "@/views/User/Dashboard/Chart/PieChart.vue";
 import StackedAreaChart from "@/views/User/Dashboard/Chart/StackedAreaChart.vue";
-import TableView from "@/views/User/Dashboard/Table/TableView.vue";
-import StatsView from "@/views/User/Dashboard/StatsCard/StatsView.vue";
+import TableView from "@/views/User/Dashboard/Table/TransactionTableView.vue";
+import StatsView from "@/views/User/Dashboard/StatsCard/UserStatsView.vue";
 import TransactionStatsView from "@/views/User/Dashboard/StatsCard/TransactionStatsView.vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 onMounted(() => {
   const session = sessionStorage.getItem("session");
@@ -17,8 +20,8 @@ onMounted(() => {
         type: "success",
         color: "text-green-500",
         group: "foo",
-        title: "Success",
-        text: "Login successful!",
+        title: t("notification.success.title"),
+        text: t("notification.success.login"),
       },
       2000
     );
@@ -64,22 +67,22 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     <section class="mt-3">
       <TransactionStatsView />
     </section>
-    <!-- <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
+    <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.six") }}
       </div>
       <div
-        class="grid grid-rows-2 p-3 overflow-auto rounded-lg sm:col-span-6 gap-y-4 h-96 bg-light-50 dark:bg-dark-450"
+        class="grid grid-rows-2 p-3 overflow-auto rounded-lg sm:col-span-6 gap-y-4 h-96 bg-light-50 dark:bg-dark-450 shadow"
       >
         <div
-          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow-sm"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.seven") }}
         </div>
         <div
-          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow-sm"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.eight") }}
         </div>
@@ -87,16 +90,16 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.nine") }}
       </div>
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.ten") }}
       </div>
-    </section> -->
+    </section>
     <section class="grid">
       <div
         class="p-3 overflow-auto shadow rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"

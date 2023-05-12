@@ -17,12 +17,16 @@ import { useToggleStore } from "@/stores/state";
 
 const toggleStore = useToggleStore();
 const themeStore = useThemeStore();
-let lineData = [];
+let line1Data = [];
+let line2Data = [];
 
 for (let i = 0; i < 12; i++) {
-  let b = Math.random() * 200;
-  let d = Math.random() * 200;
-  lineData.push(d + b);
+  let a = Math.round(Math.random() * 200);
+  let b = Math.round(Math.random() * 200);
+  let c = Math.round(Math.random() * 200);
+  let d = Math.round(Math.random() * 200);
+  line1Data.push(a + c);
+  line2Data.push(d + b);
 }
 
 use([
@@ -103,7 +107,7 @@ const option = ref({
       emphasis: {
         focus: "series",
       },
-      data: lineData,
+      data: line1Data,
     },
     {
       name: "Transactions (Last Month)",
@@ -114,7 +118,7 @@ const option = ref({
       emphasis: {
         focus: "series",
       },
-      data: lineData,
+      data: line2Data,
     },
   ],
   backgroundColor: "transparent",
