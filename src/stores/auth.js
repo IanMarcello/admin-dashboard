@@ -4,10 +4,11 @@ import http from "@/services/http";
 export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
-      name: "",
-      email: "",
-      password: "",
-      confirm_password: "",
+      name: null,
+      email: null,
+      password: null,
+      confirm_password: null,
+      token: null,
       loading: false,
     };
   },
@@ -33,14 +34,10 @@ export const useAuthStore = defineStore("auth", {
           })
         );
 
-        this.$reset();
-
         this.loading = false;
 
         return response;
       }
-
-      this.$reset();
 
       this.loading = false;
 
