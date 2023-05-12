@@ -24,7 +24,7 @@ import IcOutlineLanguage from "~icons/ic/round-language";
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute left-0 z-20 mt-2 origin-top-right bg-light-50 divide-y rounded-md shadow-lg divide-slate-400 dark:divide-slate-200 dark:bg-[#002b42] w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="absolute left-0 z-20 mt-2 origin-top-right bg-light-50 divide-y rounded-md shadow-lg divide-slate-400 dark:divide-slate-200 dark:bg-dark-600 w-28 ring-1 ring-black ring-opacity-5 focus:outline-none"
       >
         <div class="px-1 py-1">
           <MenuItem>

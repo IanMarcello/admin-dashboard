@@ -10,7 +10,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 <template>
   <header
-    class="fixed z-50 w-full sm:items-center sm:flex sm:relative shadow-sm shadow-[#dee2e6] dark:shadow-[#00263a] sm:h-16 text-slate-900 bg-light-50 dark:bg-dark-500 dark:text-slate-200"
+    class="fixed z-50 w-full sm:items-center sm:flex sm:relative shadow-sm shadow-light-300 dark:shadow-light-800 sm:h-16 text-slate-900 bg-light-50 dark:bg-dark-500 dark:text-slate-200"
   >
     <nav class="w-full px-3 sm:px-6 lg:px-8" aria-label="Top">
       <div class="flex flex-row justify-between w-full h-full py-3">
@@ -21,8 +21,12 @@ const user = JSON.parse(sessionStorage.getItem("user"));
         <div
           class="flex flex-row items-center justify-center gap-x-1 md:gap-x-2"
         >
-          <localeIcon />
-          <themeIcon />
+          <localeIcon
+            class="rounded-lg transition-all duration-200 hover:bg-light-100 dark:hover:bg-dark-700"
+          />
+          <themeIcon
+            class="rounded-lg transition-all duration-200 hover:bg-light-100 dark:hover:bg-dark-700"
+          />
           <div>
             <profileIcon v-if="!(typeof user === undefined || user === null)" />
           </div>
@@ -30,7 +34,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
             <router-link
               :to="{ name: 'login' }"
               v-if="typeof user === undefined || user === null"
-              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-[#f8f9fa] hover:dark:bg-opacity-30"
+              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-light-100 hover:dark:bg-opacity-30"
               >{{ $t("header.login") }}</router-link
             >
           </div>
@@ -38,7 +42,7 @@ const user = JSON.parse(sessionStorage.getItem("user"));
             <router-link
               :to="{ name: 'register' }"
               v-if="typeof user === undefined || user === null"
-              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-[#f8f9fa] hover:dark:bg-opacity-30"
+              class="px-3 py-2 text-base font-medium border border-transparent rounded-md cursor-pointer dark:bg-black text-slate-900 dark:text-slate-200 md:inline-block sm:px-4 dark:bg-opacity-20 hover:bg-light-100 hover:dark:bg-opacity-30"
               >{{ $t("header.register") }}</router-link
             >
           </div>

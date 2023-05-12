@@ -21,7 +21,7 @@ import IcSharpCheckCircle from "~icons/ic/sharp-check-circle";
           move-delay="delay-300"
         >
           <div
-            class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-[#f8f9fa] dark:bg-[#002b42] rounded-lg shadow-md"
+            class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-light-100 dark:bg-dark-600 rounded-lg shadow-md"
             v-for="notification in notifications"
             :key="notification.id"
           >

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="px-4 m-4 bg-light-50 rounded-md shadow-lg dark:bg-[#002b42] text-slate-800 dark:text-slate-200"
+    class="px-4 m-4 bg-light-50 rounded-md shadow-lg dark:bg-dark-600 text-slate-800 dark:text-slate-200"
   >
     <div
       class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
