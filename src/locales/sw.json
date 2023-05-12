@@ -2,62 +2,100 @@
   "header": {
     "login": "Ingia",
     "register": "Jiandikishe",
-    "logout":"Toka",
+    "logout": "Toka",
     "logo": "Nembo"
   },
-
-  "sidenav":{
-    "link":"Kiungo cha Njia ",
-    "button":"",
+  "sidenav": {
+    "transaction": {
+      "index": "Shughuli za kibenki",
+      "all": "Shughuli Zote",
+      "completed": "Shughuli Zilizokamilika",
+      "pending": "Shughuli Zinazoendelea",
+      "reversed": "Shughuli Zilizorejeshwa",
+      "failed": "Shughuli Zilizoshindwa"
+    },
+    "button": "Watumiaji",
     "login": "Ingia",
-    "register": "Jiandikishe",
+    "register": "Jisajili",
     "dashboard": "Dashibodi",
-    "logout":"Toka"
+    "logout": "Toka"
   },
-
-  "footer":{
-    "footer": "Kijachini"
+  "footer": {
+    "content": "Jina la Kampuni, Inc. Haki Zote Zimehifadhiwa."
   },
-
-  "locale":{
-    "english":"Kiingereza",
-    "swahili":"Kiswahili"
+  "locale": {
+    "english": "Kiingereza",
+    "swahili": "Kiswahili"
   },
-
   "profile": {
-    "profile":"Wasifu",
-    "logout":"Toka"
+    "profile": "Wasifu",
+    "logout": "Toka"
   },
-
-  "guest":{
-    "content":"Mtazamo wa Mgeni",
-    "installement":"Awamu ya nne ya",
-    "characters":"Wahusika"
+  "user": {
+    "welcome": "Karibu"
   },
-
-  "user":{
-    "welcome":"Karibu",
-    "see_tasks":"Tazama Kazi Zako"
-  },
-
-  "dashboard":{
-    "grid":"Gridi ya ",
-    "number":{
-      "zero":"",
-      "one":"Kwanza",
-      "two":"Pili",
-      "three":"Tatu",
-      "four":"Nne",
-      "five":"Tano",
-      "six":"Sita",
-      "seven":"Saba",
-      "eight":"Nane",
-      "nine":"Tisa",
-      "ten":"Kumi",
-      "eleven":"Kumi na moja"
+  "dashboard": {
+    "chart": {
+      "number_of_transactions": "",
+      "users_by_gender": "",
+      "transactions": "",
+      "last_month": "",
+      "per_month": "",
+      "male": "",
+      "female": "",
+      "others": ""
+    },
+    "user_stats": {
+      "total_users": "",
+      "active_users": "",
+      "inactive_users": ""
+    },
+    "transaction_stats": {
+      "total_transactions": "",
+      "transactions_per_month": "",
+      "completed_transactions": ""
+    },
+    "transactions_table": {
+      "title": "",
+      "title_description": "",
+      "transaction_description": "",
+      "transaction_date": "",
+      "amount": "",
+      "reference_number": "",
+      "payment_method": "",
+      "status": ""
+    },
+    "welcome": "Karibu",
+    "grid": "Gridi ya ",
+    "number": {
+      "zero": "",
+      "one": "Kwanza",
+      "two": "Pili",
+      "three": "Tatu",
+      "four": "Nne",
+      "five": "Tano",
+      "six": "Sita",
+      "seven": "Saba",
+      "eight": "Nane",
+      "nine": "Tisa",
+      "ten": "Kumi",
+      "eleven": "Kumi na moja"
     }
   },
-
+  "notification": {
+    "success": {
+      "title": "Mafanikio",
+      "login": "Umefanikiwa kuingia!",
+      "register": "Umesajiliwa kwa mafanikio!",
+      "logout": "Umetoka kwa mafanikio!"
+    },
+    "failed": {
+      "title": "Imeshindwa",
+      "login": "Kuingia kumeshindikana!",
+      "register": "Usajili kumeshindikana!",
+      "logout": "Kutoka kumeshindikana!"
+    }
+  },
   "login": {
     "login_account": "Ingia kwenye akaunti yako",
     "no_account": "Au kama huna akaunti",
@@ -69,7 +107,6 @@
     "login": "Ingia",
     "continue_with": "Au endelea na"
   },
-
   "register": {
     "register": "Jiandikishe",
     "have_account": "Au ikiwa tayari unayo akaunti",
@@ -82,22 +119,15 @@
     "confirm_password": "Thibitisha nenosiri",
     "register_with": "Au jiandikishe na"
   },
-
   "forgot": {
     "reset": "Weka upya nenosiri",
     "email_address": "Barua pepe",
     "register": "Jiandikishe",
     "login": "Ingia"
   },
-
-  "content":{
-    "button":"Vitufe",
-    "dummyOne":"Mtazamo Namba #1",
-    "dummyTwo":"Mtazamo Namba #2",
-    "dummyThree":"Mtazamo Namba #3",
-    "dummyThree1":"Mtazamo Namba #3-1",
-    "dummyThree2":"Mtazamo Namba #3-2",
-    "dummyThree3":"Mtazamo Namba #3-3",
-    "dummyThree4":"Mtazamo Namba #3-4"
+  "404": {
+    "page_not_found": "Ukurasa haujapatikana.",
+    "content": "Samahani, hatukupata ukurasa unaoonekana kutafuta.",
+    "back_home": "Rudi nyumbani"
   }
 }
