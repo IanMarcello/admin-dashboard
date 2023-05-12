@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import GuestView from "@/views/GuestView.vue";
 
-function guardRoute(to, from, next) {
+function checkAuthentication() {
   var isAuthenticated = false;
 
   if (sessionStorage.getItem("user")) {
@@ -9,6 +9,22 @@ function guardRoute(to, from, next) {
   } else {
     isAuthenticated = false;
   }
+
+  return isAuthenticated;
+}
+
+function AuthGuardRoutes(to, from, next) {
+  var isAuthenticated = checkAuthentication();
+
+  if (isAuthenticated) {
+    next({ name: "dashboard" });
+  } else {
+    next();
+  }
+}
+
+function UserGuardRoutes(to, from, next) {
+  var isAuthenticated = checkAuthentication();
 
   if (isAuthenticated) {
     next();
@@ -23,12 +39,13 @@ const router = createRouter({
     {
       path: "/landing",
       name: "home",
+      beforeEnter: AuthGuardRoutes,
       component: GuestView,
     },
     {
       path: "/",
       component: () => import("@/views/User/BaseView.vue"),
-      beforeEnter: guardRoute,
+      beforeEnter: UserGuardRoutes,
       children: [
         {
           path: "dashboard",
@@ -52,24 +69,28 @@ const router = createRouter({
             import("@/views/User/Transactions/TransactionsView.vue"),
         },
         {
-          path: "dummy3_1",
-          name: "dummy3_1",
-          component: () => import("@/views/User/Transactions/DummyView3_1.vue"),
+          path: "completed_transactions",
+          name: "completed_transactions",
+          component: () =>
+            import("@/views/User/Transactions/CompletedTransactionsView.vue"),
         },
         {
-          path: "dummy3_2",
-          name: "dummy3_2",
-          component: () => import("@/views/User/Transactions/DummyView3_2.vue"),
+          path: "failed_transactions",
+          name: "failed_transactions",
+          component: () =>
+            import("@/views/User/Transactions/FailedTransactionsView.vue"),
         },
         {
-          path: "dummy3_3",
-          name: "dummy3_3",
-          component: () => import("@/views/User/Transactions/DummyView3_3.vue"),
+          path: "pending_transactions",
+          name: "pending_transactions",
+          component: () =>
+            import("@/views/User/Transactions/PendingTransactionsView.vue"),
         },
         {
-          path: "dummy3_4",
-          name: "dummy3_4",
-          component: () => import("@/views/User/Transactions/DummyView3_4.vue"),
+          path: "reverse_transactions",
+          name: "reverse_transactions",
+          component: () =>
+            import("@/views/User/Transactions/ReverseTransactionsView.vue"),
         },
         {
           path: "herosection",
@@ -81,6 +102,7 @@ const router = createRouter({
     {
       path: "/auth",
       component: () => import("@/views/Auth/AuthView.vue"),
+      beforeEnter: AuthGuardRoutes,
       children: [
         {
           path: "login",

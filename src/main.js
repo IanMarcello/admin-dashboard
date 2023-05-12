@@ -23,4 +23,4 @@ app.use(i18n);
 app.use(router);
 app.use(Notifications);
 
-app.mount("#app");
+router.isReady().then(() => app.mount("#app"));
