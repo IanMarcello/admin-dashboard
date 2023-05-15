@@ -23,9 +23,9 @@ const toggleStore = useToggleStore();
           <li class="mb-1">
             <router-link
               :to="{ name: 'dashboard' }"
-              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              exact-active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+              active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+              exact-active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
             >
               <div>
                 <IcRoundDashboard class="w-6 h-6" />
@@ -38,8 +38,8 @@ const toggleStore = useToggleStore();
           <li class="mb-1">
             <router-link
               :to="{ name: 'users' }"
-              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+              active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
             >
               <div>
                 <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
@@ -52,7 +52,7 @@ const toggleStore = useToggleStore();
           <li class="mb-1">
             <Disclosure v-slot="{ open }">
               <DisclosureButton
-                class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                class="flex flex-row w-full gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
               >
                 <div>
                   <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
@@ -76,8 +76,8 @@ const toggleStore = useToggleStore();
               >
                 <router-link
                   :to="{ name: 'transactions' }"
-                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
                 >
                   <div class="ml-3 text-left flex-1">
                     {{ $t("sidenav.transaction.all") }}
@@ -85,8 +85,8 @@ const toggleStore = useToggleStore();
                 </router-link>
                 <router-link
                   :to="{ name: 'completed_transactions' }"
-                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
                 >
                   <div class="ml-3 text-left flex-1">
                     {{ $t("sidenav.transaction.completed") }}
@@ -94,8 +94,8 @@ const toggleStore = useToggleStore();
                 </router-link>
                 <router-link
                   :to="{ name: 'pending_transactions' }"
-                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
                 >
                   <div class="ml-3 text-left flex-1">
                     {{ $t("sidenav.transaction.pending") }}
@@ -103,8 +103,8 @@ const toggleStore = useToggleStore();
                 </router-link>
                 <router-link
                   :to="{ name: 'reverse_transactions' }"
-                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
                 >
                   <div class="ml-3 text-left flex-1">
                     {{ $t("sidenav.transaction.reversed") }}
@@ -112,8 +112,8 @@ const toggleStore = useToggleStore();
                 </router-link>
                 <router-link
                   :to="{ name: 'failed_transactions' }"
-                  active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+                  active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+                  class="flex flex-row px-1 py-2 mt-1 font-normal rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
                 >
                   <div class="ml-3 text-left flex-1">
                     {{ $t("sidenav.transaction.failed") }}
@@ -125,8 +125,8 @@ const toggleStore = useToggleStore();
           <li class="mb-1">
             <router-link
               :to="{ name: 'herosection' }"
-              active-class="active bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-800"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-slate-100 hover:dark:from-slate-600 hover:dark:to-slate-800"
+              active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
+              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
             >
               <span>
                 <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
