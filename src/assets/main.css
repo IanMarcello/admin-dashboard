@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: DMC5Font;
+  src: url("fonts/DMC5Font.otf") format("opentype");
+}
