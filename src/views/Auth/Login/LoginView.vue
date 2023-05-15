@@ -11,6 +11,7 @@ import IcBaselineVisibilityOff from "~icons/ic/baseline-visibility-off";
 import { LoopingRhombusesSpinner } from "epic-spinners";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
+
 onMounted(() => {
   const session = sessionStorage.getItem("session");
   const register = sessionStorage.getItem("register");

@@ -23,80 +23,151 @@
     </div>
 
     <div>
-      <section class="container mx-auto px-6 p-10">
+      <section class="container mt-10 mx-auto px-6 p-10">
         <h2 class="text-4xl font-bold text-center mb-8">Characters</h2>
-        <div class="flex items-center flex-wrap mb-5">
-          <div class="w-full md:w-1/2">
-            <h4
-              class="glitch-noise text-3xl font-bold mb-3"
-              data-glitch-noise="Nero"
-            >
-              Nero
-            </h4>
-            <p class="mb-8 dark:text-light-500">
-              One of the main protagonists of the Devil May Cry franchise. He
-              first appeared as a playable character in Devil May Cry 4, and
-              later in Devil May Cry 5. He was raised in Fortuna and served as a
-              Holy Knight in the Order of the Sword, a religious group that
-              worships Sparda and fights to protect the world from demons. It is
-              later revealed that he is the son of Vergil, nephew of Legendary
-              Devil Hunter Dante, and grandson of Legendary Dark Knight Sparda.
-            </p>
-          </div>
-          <div class="w-full md:w-1/2">
-            <img
-              src="@/assets/images/content/nero.png"
-              class="block mx-auto md:mr-auto md:ml-0"
-              alt="Nero"
-            />
-          </div>
-        </div>
 
-        <div class="flex items-center flex-wrap mb-5">
-          <div class="w-full md:w-1/2 md:px-8">
-            <img
-              src="@/assets/images/content/dante.png"
-              class="block mx-auto md:mr-0 md:ml-auto"
-              alt="Dante"
-            />
+        <div
+          class="flex gap-y-16 justify-between items-center pt-16 flex-none flex-col md:flex-row md:flex-wrap"
+        >
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/dante/dante_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/dante/dante.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Dante</span>
+            </a>
           </div>
-          <div class="w-full md:w-1/2">
-            <h4 class="glitch-transform text-3xl font-bold mb-3">Dante</h4>
-            <p class="mb-8 dark:text-light-500">
-              One of the main protagonists of the Devil May Cry franchise, and
-              the main playable character for the majority of the games in the
-              series. He is the second son of the demon Sparda and the human
-              Eva, the younger twin brother of Vergil, and the uncle of Nero.
-              Dante is a paranormal mercenary, private investigator and
-              vigilante Devil Hunter dedicated to exterminating evil demons and
-              other malevolent supernatural forces; a mission he follows in
-              pursuit of those that killed his mother and corrupted his brother.
-            </p>
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/vergil/vergil_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/vergil/vergil.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Vergil</span>
+            </a>
           </div>
-        </div>
-
-        <div class="flex items-center flex-wrap mb-5">
-          <div class="w-full md:w-1/2">
-            <h4 class="glitch text-3xl font-bold mb-3" data-glitch="Vergil">
-              Vergil
-            </h4>
-            <p class="mb-8 dark:text-light-500">
-              The older twin brother of Dante and one of the main antagonists of
-              the Devil May Cry franchise. Following the death of their mother
-              as children, Vergil and Dante went their separate ways, with
-              Vergil rejecting his humanity and embracing his demonic heritage,
-              in contrast with his younger brother's embrace of humanity and
-              initial rejection of the demonic. Stoic and reserved, Vergil
-              displays a willingness to do anything in his quest to obtain the
-              power of his father, Sparda.
-            </p>
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/nero/nero_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/nero/nero.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Nero</span>
+            </a>
           </div>
-          <div class="w-full md:w-1/2">
-            <img
-              src="@/assets/images/content/vergil.png"
-              class="mx-auto md:mr-auto md:ml-0"
-              alt="Vergil"
-            />
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/v/v_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/v/v.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">V</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/trish/trish_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/trish/trish.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Trish</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/lady/lady_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/lady/lady.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Lady</span>
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <div class="card h-full flex justify-center relative items-end">
+                <div
+                  class="wrapper absolute w-full transition-all duration-500 -z-[1]"
+                >
+                  <img
+                    src="@/assets/images/characters/nico/nico_potrait.jpg"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+                <img src="@/assets/images/dmc_title.png" class="title" />
+                <img
+                  src="@/assets/images/characters/nico/nico.png"
+                  class="character"
+                />
+              </div>
+              <span class="font-dmc text-2xl">Nico</span>
+            </a>
           </div>
         </div>
       </section>
@@ -149,306 +220,82 @@
 </template>
 
 <style>
-.glitch {
-  position: relative;
-  z-index: 1;
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
 }
 
-.glitch:before,
-.glitch:after {
-  display: block;
-  content: attr(data-glitch);
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 0 36px;
+  perspective: 250000px;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
   position: absolute;
-  top: 0;
   left: 0;
-  opacity: 0.8;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
 }
 
-.glitch:before {
-  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
-    infinite;
-  color: #00ffff;
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
   z-index: -1;
 }
 
-.glitch:after {
-  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
-    infinite;
-  color: #5900ff;
-  z-index: -2;
-}
-
-@keyframes glitch-color {
-  0% {
-    transform: translate(0);
-  }
-
-  20% {
-    transform: translate(-3px, 3px);
-  }
-
-  40% {
-    transform: translate(-3px, -3px);
-  }
-
-  60% {
-    transform: translate(3px, 3px);
-  }
-
-  80% {
-    transform: translate(3px, -3px);
-  }
-
-  to {
-    transform: translate(0);
-  }
-}
-
-.glitch-noise {
-  position: relative;
-  z-index: 1;
-}
-
-.glitch-noise:before {
-  content: attr(data-glitch-noise);
-  position: absolute;
-  top: 0;
-  left: -2px;
-  width: 100%;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-before 3s infinite linear alternate-reverse;
-}
-
-.glitch-noise:after {
-  content: attr(data-glitch-noise);
-  position: absolute;
-  top: 0;
-  left: 2px;
-  width: 100%;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-after 2s infinite linear alternate-reverse;
-}
-
-@keyframes noise-before {
-  0% {
-    clip: rect(61px, 9999px, 52px, 0);
-  }
-
-  5% {
-    clip: rect(33px, 9999px, 144px, 0);
-  }
-
-  10% {
-    clip: rect(121px, 9999px, 115px, 0);
-  }
-
-  15% {
-    clip: rect(144px, 9999px, 162px, 0);
-  }
-
-  20% {
-    clip: rect(62px, 9999px, 180px, 0);
-  }
-
-  25% {
-    clip: rect(34px, 9999px, 42px, 0);
-  }
-
-  30% {
-    clip: rect(147px, 9999px, 179px, 0);
-  }
-
-  35% {
-    clip: rect(99px, 9999px, 63px, 0);
-  }
-
-  40% {
-    clip: rect(188px, 9999px, 122px, 0);
-  }
-
-  45% {
-    clip: rect(154px, 9999px, 14px, 0);
-  }
-
-  50% {
-    clip: rect(63px, 9999px, 37px, 0);
-  }
-
-  55% {
-    clip: rect(161px, 9999px, 147px, 0);
-  }
-
-  60% {
-    clip: rect(109px, 9999px, 175px, 0);
-  }
-
-  65% {
-    clip: rect(157px, 9999px, 88px, 0);
-  }
-
-  70% {
-    clip: rect(173px, 9999px, 131px, 0);
-  }
-
-  75% {
-    clip: rect(62px, 9999px, 70px, 0);
-  }
-
-  80% {
-    clip: rect(24px, 9999px, 153px, 0);
-  }
-
-  85% {
-    clip: rect(138px, 9999px, 40px, 0);
-  }
-
-  90% {
-    clip: rect(79px, 9999px, 136px, 0);
-  }
-
-  95% {
-    clip: rect(25px, 9999px, 34px, 0);
-  }
-
-  100% {
-    clip: rect(173px, 9999px, 166px, 0);
-  }
-}
-
-@keyframes noise-after {
-  0% {
-    clip: rect(26px, 9999px, 33px, 0);
-  }
-
-  5% {
-    clip: rect(140px, 9999px, 198px, 0);
-  }
-
-  10% {
-    clip: rect(184px, 9999px, 89px, 0);
-  }
-
-  15% {
-    clip: rect(121px, 9999px, 6px, 0);
-  }
-
-  20% {
-    clip: rect(181px, 9999px, 99px, 0);
-  }
-
-  25% {
-    clip: rect(154px, 9999px, 133px, 0);
-  }
-
-  30% {
-    clip: rect(134px, 9999px, 169px, 0);
-  }
-
-  35% {
-    clip: rect(26px, 9999px, 187px, 0);
-  }
-
-  40% {
-    clip: rect(147px, 9999px, 137px, 0);
-  }
-
-  45% {
-    clip: rect(31px, 9999px, 52px, 0);
-  }
-
-  50% {
-    clip: rect(191px, 9999px, 109px, 0);
-  }
-
-  55% {
-    clip: rect(74px, 9999px, 54px, 0);
-  }
-
-  60% {
-    clip: rect(145px, 9999px, 75px, 0);
-  }
-
-  65% {
-    clip: rect(153px, 9999px, 198px, 0);
-  }
-
-  70% {
-    clip: rect(99px, 9999px, 136px, 0);
-  }
-
-  75% {
-    clip: rect(118px, 9999px, 192px, 0);
-  }
-
-  80% {
-    clip: rect(1px, 9999px, 83px, 0);
-  }
-
-  85% {
-    clip: rect(145px, 9999px, 98px, 0);
-  }
-
-  90% {
-    clip: rect(121px, 9999px, 154px, 0);
-  }
-
-  95% {
-    clip: rect(156px, 9999px, 44px, 0);
-  }
-
-  100% {
-    clip: rect(67px, 9999px, 122px, 0);
-  }
-}
-
-.glitch-transform {
-  position: relative;
-  animation: shift 4s ease-in-out infinite alternate;
-  transform: skewX(0deg);
-  z-index: 1;
-}
-
-@keyframes shift {
-  0%,
-  40%,
-  44%,
-  58%,
-  61%,
-  65%,
-  69%,
-  73%,
-  100% {
-    transform: skewX(0deg);
-  }
-
-  41% {
-    transform: skewX(10deg);
-  }
-
-  42% {
-    transform: skewX(-10deg);
-  }
-
-  59% {
-    transform: skewX(40deg);
-  }
-
-  60% {
-    transform: skewX(-40deg);
-  }
-
-  63% {
-    transform: skewX(10deg);
-  }
-
-  70% {
-    transform: skewX(-50deg);
-  }
-
-  71% {
-    transform: skewX(10deg);
-  }
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -8%, 100px);
 }
 </style>

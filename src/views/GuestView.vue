@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
           <img
             class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center"
             alt="hero"
-            src="@/assets/images/content/hero_icon2.png"
+            src="@/assets/images/content/dmc_heroicon.png"
           />
           <div class="text-center lg:w-5/12 w-full">
             <h1
