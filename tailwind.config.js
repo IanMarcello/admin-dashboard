@@ -31,6 +31,9 @@ module.exports = {
           900: "#000000",
         },
       },
+      fontFamily: {
+        dmc: ["DMC5Font"],
+      },
     },
   },
   plugins: [
