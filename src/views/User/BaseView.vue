@@ -3,6 +3,7 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import SidenavComponent from "@/components/SidenavComponent.vue";
 import { useToggleStore } from "@/stores/state";
+import ScrollToTopIcon from "@/components/icons/ScrollToTopIcon.vue";
 
 const toggleStore = useToggleStore();
 </script>
@@ -14,7 +15,7 @@ const toggleStore = useToggleStore();
       class="flex-1 mt-16 bg-light-100 sm:-ml-64 sm:mt-0 dark:bg-dark-600 md:filter-none"
       :class="[
         toggleStore.openSidebar
-          ? 'md:ml-0 brightness-[0.35] select-none'
+          ? 'md:ml-0 pointer-events-none sm:pointer-events-auto select-none'
           : 'md:-ml-64 filter-none',
       ]"
     >
@@ -23,6 +24,7 @@ const toggleStore = useToggleStore();
           <Component :is="Component" />
         </Transition>
       </RouterView>
+      <ScrollToTopIcon />
       <FooterComponent />
     </main>
     <SidenavComponent />

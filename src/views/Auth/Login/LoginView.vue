@@ -8,7 +8,6 @@ import localeIcon from "@/components/icons/localeIcon.vue";
 import authLogoIcon from "@/components/icons/authLogoIcon.vue";
 import IcBaselineVisibility from "~icons/ic/baseline-visibility";
 import IcBaselineVisibilityOff from "~icons/ic/baseline-visibility-off";
-import { LoopingRhombusesSpinner } from "epic-spinners";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
@@ -194,9 +193,11 @@ const login = async () => {
             <button
               v-if="authStore.loading"
               type="submit"
-              class="flex justify-center items-center h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex justify-start items-start h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
             >
-              <looping-rhombuses-spinner :rhombus-size="15" color="#ff1d5e" />
+              <div
+                class="w-[10px] h-[10px] rounded-[50%] block box-border loader"
+              ></div>
             </button>
           </div>
         </form>
@@ -282,3 +283,48 @@ const login = async () => {
     </div>
   </div>
 </template>
+
+<style>
+.loader {
+  color: #fff;
+  animation: shadowRolling 3s linear infinite;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 50px 0 rgba(255, 255, 255, 0), 50px 0 rgba(255, 255, 255, 0),
+      50px 0 rgba(255, 255, 255, 0), 50px 0 rgba(255, 255, 255, 0);
+  }
+  12.5% {
+    box-shadow: 150px 0 white, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 160px 0 white, 150px 0 white, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  37.5% {
+    box-shadow: 170px 0 white, 160px 0 white, 150px 0 white,
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 180px 0 white, 170px 0 white, 160px 0 white, 150px 0 white;
+  }
+  62.5% {
+    box-shadow: 300px 0 rgba(255, 255, 255, 0), 180px 0 white, 170px 0 white,
+      160px 0 white;
+  }
+  75% {
+    box-shadow: 300px 0 rgba(255, 255, 255, 0), 300px 0 rgba(255, 255, 255, 0),
+      180px 0 white, 170px 0 white;
+  }
+  87.5% {
+    box-shadow: 300px 0 rgba(255, 255, 255, 0), 300px 0 rgba(255, 255, 255, 0),
+      300px 0 rgba(255, 255, 255, 0), 180px 0 white;
+  }
+  100% {
+    box-shadow: 300px 0 rgba(255, 255, 255, 0), 300px 0 rgba(255, 255, 255, 0),
+      300px 0 rgba(255, 255, 255, 0), 300px 0 rgba(255, 255, 255, 0);
+  }
+}
+</style>

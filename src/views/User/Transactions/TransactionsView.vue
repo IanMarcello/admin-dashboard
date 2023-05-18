@@ -90,7 +90,7 @@ const transactions = [
         </button>
       </div>
     </div>
-    <div class="mt-8 flex flex-col">
+    <div class="mt-8 mx-5 flex flex-col">
       <div
         class="-my-2 -mx-4 overflow-x-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800 sm:-mx-6 lg:-mx-8"
       >

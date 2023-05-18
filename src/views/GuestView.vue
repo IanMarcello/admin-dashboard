@@ -33,12 +33,12 @@ onBeforeUnmount(() => {
         "
       >
         <div
-          class="container mx-auto flex px-5 py-24 items-center justify-center flex-col"
+          class="mx-auto flex px-5 py-24 items-center justify-center flex-col"
         >
           <img
             class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center"
             alt="hero"
-            src="@/assets/images/content/dmc_heroicon.png"
+            src="@/assets/images/dmc_heroicon.png"
           />
           <div class="text-center lg:w-5/12 w-full">
             <h1

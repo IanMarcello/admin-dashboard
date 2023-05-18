@@ -33,6 +33,9 @@ const option = ref({
     text: "Users Categorized by Gender",
     top: 10,
     left: "center",
+    textStyle: {
+      fontFamily: "Chillax-Regular",
+    },
   },
   tooltip: {
     trigger: "item",
@@ -70,7 +73,7 @@ const option = ref({
 
 <template>
   <v-chart
-    class="chart"
+    class="chart font-italic"
     :option="option"
     :key="toggleStore.show"
     :autoresize="true"

@@ -5,7 +5,7 @@
         class="py-20 w-full px-4 m-4 rounded-md"
         style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
       >
-        <div class="container mx-auto px-6 dark:text-dark-900">
+        <div class="mx-auto px-6 dark:text-dark-900">
           <h2 class="text-4xl font-bold mb-2">
             Devil May Cry 5 Special Edition
           </h2>
@@ -14,7 +14,7 @@
           </h3>
 
           <button
-            class="font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider"
+            class="font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider transition transform ease duration-200 hover:-translate-y-1"
           >
             Pre Order
           </button>
@@ -23,14 +23,14 @@
     </div>
 
     <div>
-      <section class="container mt-10 mx-auto px-6 p-10">
+      <section class="mt-10 mx-auto p-10">
         <h2 class="text-4xl font-bold text-center mb-8">Characters</h2>
 
         <div
           class="flex gap-y-16 justify-between items-center pt-16 flex-none flex-col md:flex-row md:flex-wrap"
         >
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'dante' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -47,10 +47,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Dante</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'vergil' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -67,10 +67,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Vergil</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'nero' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -87,10 +87,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Nero</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'v' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -107,10 +107,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">V</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'trish' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -127,10 +127,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Trish</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'lady' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -147,10 +147,10 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Lady</span>
-            </a>
+            </router-link>
           </div>
           <div>
-            <a href="#">
+            <router-link :to="{ name: 'nico' }" class="cursor-default">
               <div class="card h-full flex justify-center relative items-end">
                 <div
                   class="wrapper absolute w-full transition-all duration-500 -z-[1]"
@@ -167,7 +167,7 @@
                 />
               </div>
               <span class="font-dmc text-2xl">Nico</span>
-            </a>
+            </router-link>
           </div>
         </div>
       </section>
@@ -175,24 +175,24 @@
 
     <div>
       <section>
-        <div class="container mx-auto px-6 py-20">
+        <div class="mx-auto px-6 py-20">
           <h2 class="text-4xl font-bold text-center mb-8">Review Scores</h2>
-          <div class="flex flex-wrap md:flex-nowrap md:justify-between">
-            <div class="w-full md:w-1/3 rounded shadow-lg py-4 px-4 mb-4">
-              <p class="text-center font-bold text-2xl mb-5">8.5/10</p>
-              <p class="text-center font-bold text-4xl">GameZone</p>
+          <div
+            class="flex flex-col lg:flex-row md:justify-between text-center font-bold"
+          >
+            <div class="w-full rounded shadow-lg py-4 px-4 mb-4">
+              <p class="text-2xl mb-5">8.5/10</p>
+              <p class="text-4xl">GameZone</p>
             </div>
 
-            <div
-              class="w-full md:w-1/3 md:mx-10 rounded shadow-lg py-4 px-2 mb-4 mx-0"
-            >
-              <p class="text-center font-bold text-2xl mb-5">9.0/10</p>
-              <p class="text-center font-bold text-4xl">GameSpot</p>
+            <div class="w-full lg:mx-10 rounded shadow-lg py-4 px-2 mb-4 mx-0">
+              <p class="text-2xl mb-5">9.0/10</p>
+              <p class="text-4xl">GameSpot</p>
             </div>
 
-            <div class="w-full md:w-1/3 rounded shadow-lg py-4 px-2 mb-4">
-              <p class="text-center font-bold text-2xl mb-5">9.5/10</p>
-              <p class="text-center font-bold text-4xl">IGN</p>
+            <div class="w-full rounded shadow-lg py-4 px-2 mb-4">
+              <p class="text-2xl mb-5">9.5/10</p>
+              <p class="text-4xl">IGN</p>
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@
 
     <div>
       <section class="px-4 m-4 rounded-md" style="background-color: #667eea">
-        <div class="container mx-auto px-6 text-center py-20">
+        <div class="mx-auto px-6 text-center py-20">
           <h2 class="mb-6 text-4xl font-bold text-center">Limited in Stock</h2>
           <h3 class="my-4 text-2xl">
             Get yourself the Devil May Cry 5 Special Edition!
