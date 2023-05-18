@@ -100,17 +100,44 @@ const router = createRouter({
         {
           path: "dante",
           name: "dante",
-          component: () => import("@/views/User/HeroSection/DanteView.vue"),
+          component: () =>
+            import("@/views/User/HeroSection/Characters/DanteView.vue"),
         },
         {
           path: "nero",
           name: "nero",
-          component: () => import("@/views/User/HeroSection/NeroView.vue"),
+          component: () =>
+            import("@/views/User/HeroSection/Characters/NeroView.vue"),
         },
         {
           path: "vergil",
           name: "vergil",
-          component: () => import("@/views/User/HeroSection/VergilView.vue"),
+          component: () =>
+            import("@/views/User/HeroSection/Characters/VergilView.vue"),
+        },
+        {
+          path: "v",
+          name: "v",
+          component: () =>
+            import("@/views/User/HeroSection/Characters/VView.vue"),
+        },
+        {
+          path: "trish",
+          name: "trish",
+          component: () =>
+            import("@/views/User/HeroSection/Characters/TrishView.vue"),
+        },
+        {
+          path: "lady",
+          name: "lady",
+          component: () =>
+            import("@/views/User/HeroSection/Characters/LadyView.vue"),
+        },
+        {
+          path: "nico",
+          name: "nico",
+          component: () =>
+            import("@/views/User/HeroSection/Characters/NicoView.vue"),
         },
       ],
     },
