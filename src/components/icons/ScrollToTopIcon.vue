@@ -36,7 +36,7 @@ onBeforeUnmount(() => {
       x: false,
       y: true,
     }"
-    class="bg-light-300 dark:bg-dark-700 fixed bottom-5 p-2 rounded-md right-5 transition-opacity ease-in duration-200"
+    class="bg-light-300 dark:bg-dark-700 fixed bottom-5 p-2 rounded-md right-5 transition-all ease-in duration-200 dark:hover:bg-dark-800 hover:bg-light-400 cursor-pointer"
     :class="active ? 'opacity-1' : 'opacity-0'"
   >
     <IcRoundArrowUpward class="dark:text-light-100 text-dark-800" />

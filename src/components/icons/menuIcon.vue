@@ -9,7 +9,7 @@ const toggleStore = useToggleStore();
 <template>
   <a
     @click.prevent="toggleStore.toggleShow"
-    class="flex p-2 rounded-lg dark:bg-dark-600 hover:bg-light-100 dark:hover:bg-dark-700"
+    class="flex p-2 cursor-pointer rounded-lg dark:bg-dark-600 hover:bg-light-100 dark:hover:bg-dark-700"
   >
     <div class="text-slate-900 dark:text-slate-200">
       <IcRoundMenu

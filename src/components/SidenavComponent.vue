@@ -10,7 +10,7 @@ const toggleStore = useToggleStore();
 
 <template>
   <nav
-    class="fixed min-h-screen w-64 px-1 transition-transform top-16 sm:top-0 sm:sticky sm:h-screen sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-dark-450 dark:text-slate-200 shadow-sm shadow-light-300 dark:shadow-light-800"
+    class="fixed min-h-screen w-64 px-1 transition-transform top-16 z-20 sm:top-0 sm:sticky sm:h-screen sm:order-first sm:w-64 sm:flex text-slate-900 bg-light-50 dark:bg-dark-450 dark:text-slate-200 shadow-sm shadow-light-300 dark:shadow-light-800"
     :class="[
       toggleStore.openSidebar ? 'translate-x-0 shadow-lg' : '-translate-x-full',
     ]"
