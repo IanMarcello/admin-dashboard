@@ -122,18 +122,6 @@ const toggleStore = useToggleStore();
               </DisclosurePanel>
             </Disclosure>
           </li>
-          <li class="mb-1">
-            <router-link
-              :to="{ name: 'herosection' }"
-              active-class="active bg-gradient-to-r from-light-200 to-light-300 dark:from-dark-700 dark:to-dark-600"
-              class="flex flex-row gap-2 p-2 text-base font-medium rounded-lg hover:bg-gradient-to-r hover:from-light-100 hover:to-light-200 hover:dark:from-dark-500 hover:dark:to-dark-600"
-            >
-              <span>
-                <IcOutlineKeyboardDoubleArrowRight class="w-6 h-6" />
-              </span>
-              <span class="ml-3">Hero Section</span>
-            </router-link>
-          </li>
         </ul>
       </div>
     </div>
