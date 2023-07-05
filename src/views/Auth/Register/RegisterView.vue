@@ -37,39 +37,35 @@ const register = async () => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
+  <main
+    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
-    <div class="flex items-center justify-end gap-3">
-      <localeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-      <themeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-    </div>
+    <section class="flex items-center justify-center sm:justify-end gap-x-3">
+      <localeIcon />
+      <themeIcon />
+    </section>
 
-    <div
-      class="sm:mx-auto sm:w-full sm:max-w-md text-dark-900 dark:text-light-200"
+    <section
+      class="flex flex-col items-center text-dark-900 dark:text-light-200"
     >
       <logoIcon />
-      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
+      <h2 class="mt-6 text-3xl font-bold tracking-tight">
         {{ $t("register.register") }}
       </h2>
-      <p class="mt-2 text-sm text-center text-light-700 dark:text-light-500">
+      <p class="mt-2 text-sm text-light-700 dark:text-light-500">
         {{ $t("register.have_account") }},
-        {{ " " }}
         <router-link
           :to="{ name: 'login' }"
           class="font-medium dark:text-indigo-500 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-500"
-          >{{ $t("register.login") }}</router-link
         >
+          {{ $t("register.login") }}
+        </router-link>
       </p>
-    </div>
+    </section>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <section class="flex justify-center mt-8">
       <div
-        class="px-4 py-8 rounded-md shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600 sm:rounded-lg sm:px-10"
+        class="w-full max-w-md px-10 py-8 rounded-lg shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600"
       >
         <form class="space-y-6" @submit.prevent="register">
           <div>
@@ -138,7 +134,7 @@ const register = async () => {
           <div>
             <button
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
               {{ $t("register.register") }}
             </button>
@@ -153,9 +149,9 @@ const register = async () => {
               />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 rounded bg-light-100 dark:bg-dark-400">{{
-                $t("register.register_with")
-              }}</span>
+              <span class="px-2 rounded bg-light-100 dark:bg-dark-400">
+                {{ $t("register.register_with") }}
+              </span>
             </div>
           </div>
 
@@ -223,6 +219,6 @@ const register = async () => {
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>

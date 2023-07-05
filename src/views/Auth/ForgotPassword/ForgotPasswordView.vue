@@ -8,30 +8,26 @@ const authStore = useAuthStore();
 </script>
 
 <template>
-  <div
-    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
+  <main
+    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
-    <div class="flex items-center justify-center gap-3 mb-6">
-      <localeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-      <themeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-    </div>
+    <section class="flex flex-row items-center justify-center gap-x-3 mb-6">
+      <localeIcon />
+      <themeIcon />
+    </section>
 
-    <div
-      class="sm:mx-auto sm:w-full sm:max-w-md text-dark-900 dark:text-light-200"
+    <section
+      class="flex flex-col items-center text-dark-900 dark:text-light-200"
     >
       <authLogoIcon />
-      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
+      <h2 class="mt-6 text-3xl font-bold tracking-tight">
         {{ $t("forgot.reset") }}
       </h2>
-    </div>
+    </section>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <section class="mt-8 flex justify-center">
       <div
-        class="px-4 py-8 rounded-md shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600 sm:rounded-lg sm:px-10"
+        class="w-full max-w-md px-10 py-8 rounded-lg shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600"
       >
         <form class="space-y-6" @submit.prevent="password_reset">
           <div>
@@ -53,16 +49,16 @@ const authStore = useAuthStore();
           <div>
             <button
               type="submit"
-              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               {{ $t("forgot.reset") }}
             </button>
           </div>
         </form>
       </div>
-    </div>
+    </section>
 
-    <div
+    <section
       class="flex mt-8 items-center justify-evenly sm:mx-auto sm:w-full sm:max-w-md"
     >
       <div class="pr-2">
@@ -88,6 +84,6 @@ const authStore = useAuthStore();
           </router-link>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>

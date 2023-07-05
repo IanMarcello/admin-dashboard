@@ -4,23 +4,23 @@ import localeIcon from "@/components/icons/localeIcon.vue";
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col pt-16 pb-12">
+  <div class="flex flex-col min-h-screen pt-16 pb-12">
     <main
-      class="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8"
+      class="flex flex-col justify-center flex-grow w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"
     >
       <div class="flex items-center justify-center gap-3 mb-6">
         <localeIcon
-          class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+          class="transition duration-200 ease-in rounded-lg dark:bg-dark-700 dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
         />
         <themeIcon
-          class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+          class="transition duration-200 ease-in rounded-lg dark:bg-dark-700 dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
         />
       </div>
-      <div class="flex flex-shrink-0 justify-center">
-        <router-link :to="{ name: 'home' }" class="inline-flex">
+      <div class="flex justify-center flex-shrink-0">
+        <router-link :to="{ name: 'login' }" class="inline-flex">
           <span class="sr-only">Your Company</span>
           <img
-            class="h-12 w-auto"
+            class="w-auto h-12"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt=""
           />

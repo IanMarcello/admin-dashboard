@@ -75,62 +75,60 @@ const login = async () => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col justify-center min-h-screen py-6 px-4 sm:mx-0 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
+  <main
+    class="flex flex-col justify-center min-h-screen px-4 py-6 sm:px-6 lg:px-8 bg-gradient-to-br from-light-100 to-light-300 dark:bg-gradient-to-tl dark:from-dark-600 dark:to-dark-800"
   >
-    <div class="flex items-center justify-center sm:justify-start gap-3">
-      <localeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-      <themeIcon
-        class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
-      />
-    </div>
+    <section
+      class="flex flex-row items-center justify-center gap-x-3 sm:justify-end"
+    >
+      <localeIcon />
+      <themeIcon />
+    </section>
 
-    <div
-      class="sm:mx-auto sm:w-full sm:max-w-md text-dark-900 dark:text-light-200"
+    <section
+      class="flex flex-col items-center justify-center text-dark-900 dark:text-light-200"
     >
       <authLogoIcon />
-      <h2 class="mt-6 text-3xl font-bold tracking-tight text-center">
+      <h2 class="mt-2 text-3xl font-bold tracking-tight">
         {{ $t("login.login_account") }}
       </h2>
-      <p class="mt-2 text-sm text-center text-light-700 dark:text-light-500">
+      <span class="mt-2 text-sm text-light-700 dark:text-light-500">
         {{ $t("login.no_account") }},
-        {{ " " }}
         <router-link
           :to="{ name: 'register' }"
-          class="font-medium dark:text-indigo-500 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-500"
-          >{{ $t("login.register") }}</router-link
+          class="font-medium text-indigo-600 dark:text-indigo-500 dark:hover:text-indigo-400 hover:text-indigo-500"
         >
-      </p>
-    </div>
+          {{ $t("login.register") }}
+        </router-link>
+      </span>
+    </section>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <section class="mt-8 flex justify-center">
       <div
-        class="px-4 py-8 rounded-md shadow-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600 sm:rounded-lg sm:px-10"
+        class="max-w-md w-full px-10 py-8 shadow-lg rounded-lg text-dark-900 dark:text-light-200 bg-light-200 dark:bg-dark-600"
       >
         <form class="space-y-6" @submit.prevent="login">
           <div>
-            <label for="email" class="block text-sm font-medium">{{
-              $t("login.email_address")
-            }}</label>
+            <label for="email" class="block text-sm font-medium">
+              {{ $t("login.email_address") }}
+            </label>
             <div class="mt-1">
               <input
                 id="email"
                 name="email"
                 type="email"
-                autocomplete="off"
+                autocomplete="on"
                 required
                 v-model="authStore.email"
-                class="block w-full pl-3 pr-10 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
+                class="block autofill:bg-transparent w-full py-2 px-3 text-sm border rounded-md shadow-sm bg-light-100 border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
               />
             </div>
           </div>
 
           <div>
-            <label for="password" class="block text-sm font-medium">{{
-              $t("login.password")
-            }}</label>
+            <label for="password" class="block text-sm font-medium">
+              {{ $t("login.password") }}
+            </label>
             <div class="relative mt-1">
               <input
                 id="password"
@@ -139,46 +137,47 @@ const login = async () => {
                 autocomplete="current-password"
                 required
                 v-model="authStore.password"
-                class="block w-full pl-3 pr-10 py-2 bg-light-100 border rounded-md shadow-sm appearance-none border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
+                class="block autofill:bg-transparent w-full py-2 pl-3 pr-10 text-sm border rounded-md shadow-sm bg-light-100 border-slate-300 dark:border-dark-300 dark:bg-dark-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
               />
               <div
-                class="cursor-pointer absolute inset-y-0 right-0 flex items-center pr-3"
+                class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
               >
                 <IcBaselineVisibility
                   @click.prevent="visibility = !visibility"
                   v-if="visibility"
-                  class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
+                  class="w-5 h-5 transition-opacity opacity-50 dark:opacity-70 hover:opacity-70 dark:hover:opacity-100"
                   aria-hidden="true"
                 />
                 <IcBaselineVisibilityOff
                   @click.prevent="visibility = !visibility"
                   v-else
-                  class="h-5 w-5 opacity-50 dark:opacity-70 transition-opacity ease hover:opacity-70 dark:hover:opacity-100"
+                  class="w-5 h-5 transition-opacity opacity-50 dark:opacity-70 hover:opacity-70 dark:hover:opacity-100"
                   aria-hidden="true"
                 />
               </div>
             </div>
           </div>
 
-          <div class="flex items-center justify-between">
+          <div class="flex justify-between">
             <div class="flex items-center">
               <input
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                class="w-4 h-4 rounded-md text-indigo-600 border-gray-300 focus:ring-indigo-500"
+                class="w-4 h-4 text-indigo-600 border-gray-300 rounded-md focus:ring-indigo-500"
               />
-              <label for="remember-me" class="block ml-2 text-sm">{{
-                $t("login.remember_me")
-              }}</label>
+              <label for="remember-me" class="block ml-2 text-sm">
+                {{ $t("login.remember_me") }}
+              </label>
             </div>
 
             <div class="text-sm">
               <router-link
                 :to="{ name: 'forgot' }"
-                class="font-medium dark:text-indigo-500 dark:hover:text-indigo-400 text-indigo-600 hover:text-indigo-500"
-                >{{ $t("login.forgot_password") }}?</router-link
+                class="font-medium text-indigo-600 dark:text-indigo-500 dark:hover:text-indigo-400 hover:text-indigo-500 outline-none focus:border-b-2 focus:border-indigo-500"
               >
+                {{ $t("login.forgot_password") }}?
+              </router-link>
             </div>
           </div>
 
@@ -186,17 +185,17 @@ const login = async () => {
             <button
               v-if="!authStore.loading"
               type="submit"
-              class="flex justify-center items-center h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex items-center justify-center w-full h-10 py-4 text-sm font-medium text-white transition bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700"
             >
               {{ $t("login.login") }}
             </button>
             <button
               v-if="authStore.loading"
               type="submit"
-              class="flex justify-start items-start h-10 w-full py-4 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm transition ease-in duration-200 hover:bg-indigo-700"
+              class="flex items-start justify-start w-full h-10 py-4 text-sm font-medium text-white bg-indigo-600 rounded-md shadow-sm outline-none"
             >
               <div
-                class="w-[10px] h-[10px] rounded-[50%] block box-border loader"
+                class="w-2.5 h-2.5 rounded-full block box-border loader"
               ></div>
             </button>
           </div>
@@ -210,9 +209,9 @@ const login = async () => {
               />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 rounded bg-light-100 dark:bg-dark-400">{{
-                $t("login.continue_with")
-              }}</span>
+              <span class="px-2 rounded bg-light-100 dark:bg-dark-400">
+                {{ $t("login.continue_with") }}
+              </span>
             </div>
           </div>
 
@@ -220,7 +219,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium transition duration-200 ease-in transform border rounded-md shadow-sm hover:-translate-y-1 active:translate-y-0 bg-light-50 dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
                 <span class="sr-only">Login with Facebook</span>
                 <svg
@@ -241,7 +240,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium transition duration-200 ease-in transform border rounded-md shadow-sm hover:-translate-y-1 active:translate-y-0 bg-light-50 dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
                 <span class="sr-only">Login with Twitter</span>
                 <svg
@@ -260,7 +259,7 @@ const login = async () => {
             <div>
               <router-link
                 :to="{}"
-                class="inline-flex justify-center w-full px-4 py-2 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 text-sm font-medium bg-light-50 border rounded-md shadow-sm dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
+                class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium transition duration-200 ease-in transform border rounded-md shadow-sm hover:-translate-y-1 active:translate-y-0 bg-light-50 dark:bg-dark-700 dark:border-dark-500 border-light-400 text-light-800 dark:text-light-100 hover:bg-light-300 hover:dark:bg-dark-400"
               >
                 <span class="sr-only">Login with GitHub</span>
                 <svg
@@ -280,8 +279,8 @@ const login = async () => {
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <style>
