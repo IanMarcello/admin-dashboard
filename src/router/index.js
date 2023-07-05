@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import GuestView from "@/views/GuestView.vue";
 
 function checkAuthentication() {
   var isAuthenticated = false;
@@ -29,19 +28,13 @@ function UserGuardRoutes(to, from, next) {
   if (isAuthenticated) {
     next();
   } else {
-    next({ name: "home" });
+    next({ name: "login" });
   }
 }
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: "/landing",
-      name: "home",
-      beforeEnter: AuthGuardRoutes,
-      component: GuestView,
-    },
     {
       path: "/",
       component: () => import("@/views/User/BaseView.vue"),
