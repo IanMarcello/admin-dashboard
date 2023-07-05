@@ -4,7 +4,10 @@ import IcOutlineLanguage from "~icons/ic/round-language";
 </script>
 
 <template>
-  <Menu as="div" class="relative inline-block text-left">
+  <Menu
+    as="div"
+    class="relative inline-block text-left rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+  >
     <div>
       <MenuButton
         class="inline-flex justify-center w-full px-4 py-2 text-sm font-light text-slate-900 dark:text-slate-200"

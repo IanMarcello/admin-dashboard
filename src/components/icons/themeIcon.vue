@@ -16,7 +16,10 @@ const setTheme = () => {
 </script>
 
 <template>
-  <div @click.prevent="setTheme">
+  <div
+    @click.prevent="setTheme"
+    class="rounded-lg dark:bg-dark-700 transition duration-200 ease-in dark:bg-opacity-20 hover:bg-light-400 hover:dark:bg-dark-500"
+  >
     <span
       class="flex items-center justify-center px-4 py-2 font-medium cursor-pointer text-slate-900 dark:text-slate-200"
     >

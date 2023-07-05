@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'home' }">
-    <img class="mx-auto h-12 w-auto" src="@/assets/logo.svg" alt="Logo" />
+  <router-link :to="{ name: 'login' }">
+    <img class="h-12" src="@/assets/logo.svg" alt="Tailiwind Logo" />
   </router-link>
 </template>
