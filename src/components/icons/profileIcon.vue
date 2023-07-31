@@ -34,9 +34,9 @@ const logout = async () => {
 <template>
   <Menu as="div" class="relative inline-block">
     <div>
-      <MenuButton>
+      <MenuButton class="outline-none">
         <span
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-light-300 dark:bg-dark-400"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-light-300 dark:bg-dark-400"
         >
           <span
             class="font-medium leading-none text-dark-900 dark:text-light-200"
@@ -55,7 +55,7 @@ const logout = async () => {
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute right-0 z-20 mt-2 origin-top-right bg-light-50 divide-y rounded-md shadow-lg w-36 divide-slate-400 dark:divide-slate-200 dark:bg-dark-600"
+        class="absolute right-0 z-20 mt-2 origin-top-right divide-y rounded-md shadow-lg bg-light-50 w-36 divide-slate-400 dark:divide-slate-200 dark:bg-dark-600"
       >
         <div class="px-1 py-1">
           <MenuItem>
