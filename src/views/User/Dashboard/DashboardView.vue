@@ -36,12 +36,12 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
 <template>
   <div class="grid gap-2 m-5">
     <section class="grid">
-      <div class="p-3 h-fit overflow-auto text-slate-900 dark:text-slate-200">
+      <div class="p-3 overflow-auto h-fit text-slate-900 dark:text-slate-200">
         <p class="text-base font-semibold text-indigo-600">
           {{ $t("user.welcome") }},
         </p>
         <h1
-          class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-200 capitalize sm:text-3xl"
+          class="text-4xl font-bold tracking-tight capitalize text-slate-900 dark:text-slate-200 sm:text-3xl"
         >
           {{ user }}
         </h1>
@@ -51,15 +51,15 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
       <StatsView />
     </section>
     <section
-      class="mt-3 grid grid-rows-2 gap-4 lg:grid-cols-12 md:grid-rows-none"
+      class="grid grid-rows-2 gap-4 mt-3 lg:grid-cols-12 md:grid-rows-none"
     >
       <div
-        class="overflow-auto rounded-lg lg:col-span-8 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
+        class="rounded-lg shadow lg:col-span-8 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         <StackedAreaChart />
       </div>
       <div
-        class="overflow-auto rounded-lg lg:col-span-4 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
+        class="rounded-lg shadow lg:col-span-4 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         <PieChart />
       </div>
@@ -69,20 +69,20 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
+        class="p-3 overflow-auto rounded-lg shadow sm:col-span-6 h-96 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.six") }}
       </div>
       <div
-        class="grid grid-rows-2 p-3 overflow-auto rounded-lg sm:col-span-6 gap-y-4 h-96 bg-light-50 dark:bg-dark-450 shadow"
+        class="grid grid-rows-2 p-3 overflow-auto rounded-lg shadow sm:col-span-6 gap-y-4 h-96 bg-light-50 dark:bg-dark-450"
       >
         <div
-          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow-sm"
+          class="p-3 overflow-auto rounded-lg shadow-sm bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.seven") }}
         </div>
         <div
-          class="p-3 overflow-auto rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow-sm"
+          class="p-3 overflow-auto rounded-lg shadow-sm bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
         >
           {{ $t("dashboard.grid") }}{{ $t("dashboard.number.eight") }}
         </div>
@@ -90,19 +90,19 @@ const user = JSON.parse(sessionStorage.getItem("user")).name;
     </section>
     <section class="grid grid-rows-2 gap-4 sm:grid-cols-12 sm:grid-rows-none">
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
+        class="p-3 overflow-auto rounded-lg shadow sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.nine") }}
       </div>
       <div
-        class="p-3 overflow-auto rounded-lg sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200 shadow"
+        class="p-3 overflow-auto rounded-lg shadow sm:col-span-6 h-44 bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         {{ $t("dashboard.grid") }}{{ $t("dashboard.number.ten") }}
       </div>
     </section>
     <section class="grid">
       <div
-        class="p-3 overflow-auto shadow rounded-lg bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
+        class="p-3 overflow-auto rounded-lg shadow bg-light-50 dark:bg-dark-450 text-slate-900 dark:text-slate-200"
       >
         <TableView />
       </div>
