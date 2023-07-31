@@ -17,14 +17,23 @@ export const useAuthStore = defineStore("auth", {
     async login() {
       this.loading = true;
 
-      const response = await http.post(
-        "/api/login/create",
-        {
-          email: this.email,
-          password: this.password,
+      // const response = await http.post(
+      //   "/api/login/create",
+      //   {
+      //     email: this.email,
+      //     password: this.password,
+      //   },
+      //   { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+      // );
+
+      const response = {
+        data: {
+          code: 200,
+          user: {
+            name: "Ian Marcello",
+          },
         },
-        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
-      );
+      };
 
       if (response.data.code == 200) {
         sessionStorage.setItem(
