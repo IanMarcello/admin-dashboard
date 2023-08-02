@@ -112,13 +112,13 @@ const transactions = [
               </th>
               <th
                 scope="col"
-                class="px-4 py-4 text-sm font-semibold text-left hidden lg:table-cell"
+                class="hidden px-4 py-4 text-sm font-semibold text-left lg:table-cell"
               >
                 Payment Method
               </th>
               <th
                 scope="col"
-                class="px-4 py-4 text-sm font-semibold text-left hidden lg:table-cell"
+                class="hidden px-4 py-4 text-sm font-semibold text-left lg:table-cell"
               >
                 Transaction Nature
               </th>
@@ -127,7 +127,7 @@ const transactions = [
               </th>
               <th
                 scope="col"
-                class="px-4 py-4 text-sm font-semibold text-left hidden lg:table-cell"
+                class="hidden px-4 py-4 text-sm font-semibold text-left lg:table-cell"
               >
                 Transaction Time
               </th>
@@ -155,16 +155,16 @@ const transactions = [
               <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
                 {{ transaction.reference_number }}
               </td>
-              <td class="px-4 py-4 text-sm font-medium hidden lg:table-cell">
+              <td class="hidden px-4 py-4 text-sm font-medium lg:table-cell">
                 {{ transaction.payment_method }}
               </td>
-              <td class="px-4 py-4 text-sm font-medium hidden lg:table-cell">
+              <td class="hidden px-4 py-4 text-sm font-medium lg:table-cell">
                 {{ transaction.nature }}
               </td>
               <td class="px-4 py-4 text-sm font-medium">
                 {{ dateFormatter.format(new Date(transaction.date)) }}
               </td>
-              <td class="px-4 py-4 text-sm font-medium hidden lg:table-cell">
+              <td class="hidden px-4 py-4 text-sm font-medium lg:table-cell">
                 {{ transaction.time }}
               </td>
               <td class="px-4 py-4 text-sm font-medium">
