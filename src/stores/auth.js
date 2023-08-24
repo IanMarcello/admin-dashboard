@@ -18,13 +18,15 @@ export const useAuthStore = defineStore("auth", {
       this.loading = true;
 
       // const response = await http.post(
-      //   "/api/login/create",
+      //   "http://localhost:8080/login",
       //   {
       //     email: this.email,
       //     password: this.password,
       //   },
-      //   { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+      //   { headers: { "Content-Type": "application/x-www-form-urlencoded", "Access-Control-Allow-Origin": '*' } }
       // );
+
+      // console.log(response)
 
       const response = {
         data: {
